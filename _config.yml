@@ -1,4 +1,4 @@
-title: "Apnea.FYI"
+title: "apnea.fyi"
 author: "Kristofer Stensland"
 description: "Made with <b style=\"color: #f45;\">&lt;3</b>"
 permalink: /:title/
@@ -29,3 +29,5 @@ comments:
 
 plugins:
  - jekyll-feed
+
+# Original Theme https://github.com/niklasbuschmann/contrast

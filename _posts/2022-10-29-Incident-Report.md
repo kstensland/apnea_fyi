@@ -1,8 +1,12 @@
 ---
 layout: post
 author: kris
-title: Incident Report October 29, 2022
+title: Incident Report
+post_description: Something bad almost happened, but it's okay. We learned some valuable lessons.
 ---
+
+**Date**: October 29, 2022
+
 **Location**: Lake Washington off of Mercer Island
 
 **Noteworthy Conditions**: Water temps in low 50s, poor visibility.
