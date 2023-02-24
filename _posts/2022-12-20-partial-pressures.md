@@ -5,9 +5,14 @@ post_description: Partial pressures used to not make sense to me. So I made it m
 ---
 
 
+# Why did I write this?
+For whatever reason, partial pressures are something that just did not click with me the first, second...or third time I learned it. I understood why they are important as well as the impact they have on the necessary skills for freediving, but the way they affect us just didn't make sense to me.
+
+So I did some re-reading, some extracurricular research, and some soul searching to understand it. What follows are the components of partial pressures as _I_ understand them. Hopefully this helps them make sense for you.
+
 # What are Partial Pressures?
 
-Let's start with some really basic principles about air and gases.
+Let's start with some really basic principles about air and gases. Partial pressures are useful to understand near sea-level, high altitudes, and at depth for freediving.
 
 ## The air you breathe is made of many gases
 
@@ -34,34 +39,36 @@ This is why it's harder to breathe at high altitudes. Your lungs hold the same v
 
 ## Each gas in air has a different measurement of pressure.
 
-
+_This section to be filled out_
 
 ---- 
 
 # How does Oxygen get into our blood?
 
-Lungs are filled with little sacks called _alveoli_. These sacks of air have capilaries in their membranes. When blood passes through these capilaries, O<sub>2</sub> is _pushed_ into that blood by pressure.
+Lungs are filled with little sacks called alveoli. These sacks of air have capilaries in their membranes. When blood passes through these capilaries, O<sub>2</sub> is absobed into that blood. This absorption requires pressure. I like to think of the pressure in our lungs pushing O<sub>2</sub> into our blood.
 
 **The amount of O<sub>2</sub> that gets pushed into our blood is determined by the partial pressure of O<sub>2</sub> in our lungs.**
 
-...Make sure you read that a few times. Because this is the piece of the picture that *I* was missing and couldn't wrap my head around. This means that *if there is more pressure in your lungs, then your blood will absorb O<sub>2</sub> at a faster rate.* This is referred to as Henry's Law.
+...Make sure you read that a few times. Because this is the piece of the picture that *I* couldn't wrap my head around. This means that *if there is more pressure in your lungs, then your blood will absorb O<sub>2</sub> at a faster rate.* This is referred to as Henry's Law.
 
 # Why does this matter for freediving?
 
-Before I get to the answer, let's revisit some main principles:
+Before I get to the answer, let's revisit some basic principles:
 
 1. The deeper we travel underwater, the more pressure our bodies experience.
 2. As air pressure increases, three things happen to the air inside our lungs:
-   - The volume of air decreases (Boyle's Law).****
-   - The mass of gases that air consists of remain the same.
+   - The volume of air decreases (Boyle's Law).
+   - The mass of gases in that our lungs remain the same.
    - The partial pressures of the gases increase (Dalton's Law).
 3. The rate at which O<sub>2</sub> is absorbed into blood is determined by the partial pressure of oxygen in our lungs (Henry's Law).
 
 When applied to freediving, this means...
 
-## The deeper you go, the faster your blood pulls oxygen out of the air in your lungs.
+## 1. The deeper you go, the faster your blood pulls oxygen out of your lungs.
 
-You can easily infer why this is important. As you use your muscles to ascend, you use up the oxygen in your blood. But if most of the oxygen in your lungs was pushed into your blood at depth, then you have less oxygen as you get closer to the surface. This is a major contributor to LMC's and blacokouts, and why they usually happen within the last 10 meters of your ascent.
+You can easily infer why this is important. As you use your muscles to ascend, you use up the oxygen in your blood. But if most of the oxygen in your lungs was pushed into your blood at depth, then you have less oxygen as you get closer to the surface.
+
+This is a major contributor to shallow water LMC's and blackouts. As you get within 10 meters of the surface on your ascent, there is already less O<sub>2</sub> in your  lungs. But since there is also less pressure there might not be enough to push the remaining O<sub>2</sub> into your blood.
 
 
 <!--
