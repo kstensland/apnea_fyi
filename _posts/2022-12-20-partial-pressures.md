@@ -1,5 +1,5 @@
 ---
-title: Patrial Pressures Demystified
+title: Partial Pressures Demystified
 layout: post
 post_description: Partial pressures used to not make sense to me. So I made it make sense to me...for you.
 ---
@@ -53,23 +53,30 @@ Lungs are filled with little sacks called alveoli. These sacks of air have capil
 
 # Why does this matter for freediving?
 
-Before I get to the answer, let's revisit some basic principles:
+Before I get to the answer, let's revisit the basic principles:
 
 1. The deeper we travel underwater, the more pressure our bodies experience.
 2. As air pressure increases, three things happen to the air inside our lungs:
    - The volume of air decreases (Boyle's Law).
    - The mass of gases in that our lungs remain the same.
    - The partial pressures of the gases increase (Dalton's Law).
-3. The rate at which O<sub>2</sub> is absorbed into blood is determined by the partial pressure of oxygen in our lungs (Henry's Law).
+3. The rate at which gases are absorbed into blood is determined by the partial pressure of oxygen in our lungs (Henry's Law).
 
 When applied to freediving, this means...
 
 ## 1. The deeper you go, the faster your blood pulls oxygen out of your lungs.
 
-You can easily infer why this is important. As you use your muscles to ascend, you use up the oxygen in your blood. But if most of the oxygen in your lungs was pushed into your blood at depth, then you have less oxygen as you get closer to the surface.
+This is probably the easiest to understand. At depth, you're lungs are pushing more O<sub>2</sub> into your blood than on the surface. If too much of the O<sub>2</sub> in your lungs was pushed into your blood at depth, then you might not have enough O<sub>2</sub> in your lungs as you get closer to the surface.
 
-This is a major contributor to shallow water LMC's and blackouts. As you get within 10 meters of the surface on your ascent, there is already less O<sub>2</sub> in your  lungs. But since there is also less pressure there might not be enough to push the remaining O<sub>2</sub> into your blood.
+## 2. The partial pressure in your lungs decreases as you ascend.
 
+This is a major contributor to shallow water LMC's and blackouts. As you get within 10 meters of the surface on your ascent, there is less O<sub>2</sub> in your  lungs,  but there is _also less pressure_ to push the remaining O<sub>2</sub> into your blood. If you used up too much O<sub>2</sub> at depth, the partial-pressure of O<sub>2</sub> might be too weak to push that remaining O<sub>2</sub> into your blood.
+
+## 3. Nitrogen Narcosis (aka The Bends)
+
+This is more common in scuba diving, but it also affects freedivers who frequently dive below 25 meters. Nitrogen also gets absorbed from our lungs into our blood. As we ascend, the partial pressure of that gas in our lungs also decreases. 
+
+If freedivers continually dive and don't take long enough surface intervals, the nitrogen in our blood can remain and expand, which causes narcosis when those bubbles travel to our brain. 
 
 <!--
 
