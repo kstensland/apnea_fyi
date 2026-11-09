@@ -26,6 +26,9 @@
 {% else %}
   {% assign pages = site.pages | where_exp: "item", "item.title and item.sitemap != false" | sort: "order" %}
 {% endif %}
+<link rel='icon' type='image/png' href='{{ '/assets/images/favicon.png' | relative_url }}'>
+<link rel='icon' sizes='16x16 32x32 48x48' href='{{ '/assets/images/favicon.ico' | relative_url }}'>
+<link rel='apple-touch-icon' sizes='180x180' href='{{ '/assets/images/apple-touch-icon.png' | relative_url }}'>
 
 <header>
   <a href="{{ "/" | relative_url }}" class="title">
