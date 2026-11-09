@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>About | apnea.fyi</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Kristofer Stensland">
+<meta name="generator" content="Jekyll v4.4.1">
+<link rel="canonical" href="http://localhost:4000/about/">
+
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<link rel="alternate" href="/feed.xml" type="application/atom+xml" title="apnea.fyi">
+
+
+
+
+
+
+
+<header>
+  <a href="/" class="title">
+    
+    <img src="/assets/images/snorkel_frog.png" class="header_icon"/>
+    apnea.fyi
+    
+  </a>
+  <nav><a href="/" >Home</a><a href="/about/" class="selected">About</a></nav>
+
+</header>
+
+<article>
+  <header><h1><a href="/about/">About</a></h1></header>
+  <h1 id="apnea_fyi">apnea_fyi</h1>
+
+<p>A static site built with <a href="https://jekyllrb.com/">Jekyll</a>.</p>
+
+<h2 id="versions">Versions</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tool</th>
+      <th>Version</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ruby</td>
+      <td>4.0.9</td>
+    </tr>
+    <tr>
+      <td>Jekyll</td>
+      <td>4.4.1</td>
+    </tr>
+    <tr>
+      <td>Bundler</td>
+      <td>4.0.24</td>
+    </tr>
+    <tr>
+      <td>jekyll-sass-converter</td>
+      <td>3.1.0 (uses Dart Sass via <code class="language-plaintext highlighter-rouge">sass-embedded</code>)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The exact gem versions are locked in <code class="language-plaintext highlighter-rouge">Gemfile.lock</code>. Commit that file so everyone gets the same versions.</p>
+
+<h2 id="prerequisites-macos">Prerequisites (macOS)</h2>
+
+<h3 id="1-xcode-command-line-tools">1. Xcode command line tools</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xcode-select <span class="nt">--install</span>
+</code></pre></div></div>
+
+<h3 id="2-homebrew">2. Homebrew</h3>
+
+<p>Install from <a href="https://brew.sh">brew.sh</a> if you don’t have it.</p>
+
+<h3 id="3-ruby-409-via-chruby">3. Ruby 4.0.9 via chruby</h3>
+
+<p>Don’t use the Ruby that ships with macOS (2.6.x). It’s too old for this project.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="nb">install </span>chruby ruby-install
+ruby-install ruby 4.0.9
+</code></pre></div></div>
+
+<p>Add chruby to your shell config:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"source </span><span class="si">$(</span>brew <span class="nt">--prefix</span><span class="si">)</span><span class="s2">/opt/chruby/share/chruby/chruby.sh"</span> <span class="o">&gt;&gt;</span> ~/.zshrc
+<span class="nb">echo</span> <span class="s2">"source </span><span class="si">$(</span>brew <span class="nt">--prefix</span><span class="si">)</span><span class="s2">/opt/chruby/share/chruby/auto.sh"</span> <span class="o">&gt;&gt;</span> ~/.zshrc
+</code></pre></div></div>
+
+<p>Quit and reopen Terminal, then switch to the installed version:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chruby ruby-4.0.9
+ruby <span class="nt">-v</span>    <span class="c"># should print ruby 4.0.9</span>
+</code></pre></div></div>
+
+<p>To select it automatically in this project, create a <code class="language-plaintext highlighter-rouge">.ruby-version</code> file. With <code class="language-plaintext highlighter-rouge">auto.sh</code> loaded, chruby switches whenever you <code class="language-plaintext highlighter-rouge">cd</code> into the folder:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"4.0.9"</span> <span class="o">&gt;</span> .ruby-version
+</code></pre></div></div>
+
+<h2 id="setup">Setup</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone &lt;repo-url&gt; apnea_fyi    <span class="c"># skip if you already have the folder</span>
+<span class="nb">cd </span>apnea_fyi
+gem <span class="nb">install </span>bundler
+bundle <span class="nb">install</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">bundle install</code> reads the <code class="language-plaintext highlighter-rouge">Gemfile</code> and installs Jekyll and all plugins and themes.</p>
+
+<h2 id="run-the-site-locally">Run the site locally</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">exec </span>jekyll serve <span class="nt">--livereload</span>
+</code></pre></div></div>
+
+<p>Open <a href="http://localhost:4000/">http://localhost:4000/</a>. With <code class="language-plaintext highlighter-rouge">--livereload</code>, the browser refreshes when you save a file.</p>
+
+<p>Always run Jekyll with <code class="language-plaintext highlighter-rouge">bundle exec</code> so it uses the gem versions from <code class="language-plaintext highlighter-rouge">Gemfile.lock</code>.</p>
+
+<h3 id="useful-commands">Useful commands</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>What it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code></td>
+      <td>Build and serve the site, rebuilding on changes</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">bundle exec jekyll serve --drafts</code></td>
+      <td>Include posts in <code class="language-plaintext highlighter-rouge">_drafts/</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">bundle exec jekyll build</code></td>
+      <td>Build once into <code class="language-plaintext highlighter-rouge">_site/</code> without serving</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">bundle exec jekyll doctor</code></td>
+      <td>Check the site for config problems and deprecations</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">bundle update</code></td>
+      <td>Update gems within the limits set in the <code class="language-plaintext highlighter-rouge">Gemfile</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<p><strong><code class="language-plaintext highlighter-rouge">ruby -v</code> shows 2.6.x</strong>
+The shell is still using the macOS system Ruby. Check that the two <code class="language-plaintext highlighter-rouge">chruby</code> lines are in <code class="language-plaintext highlighter-rouge">~/.zshrc</code>, reload with <code class="language-plaintext highlighter-rouge">source ~/.zshrc</code>, then run <code class="language-plaintext highlighter-rouge">chruby ruby-4.0.9</code>. Run <code class="language-plaintext highlighter-rouge">chruby</code> with no arguments to list installed Rubies. The active one is marked with <code class="language-plaintext highlighter-rouge">*</code>.</p>
+
+<p><strong><code class="language-plaintext highlighter-rouge">cannot load such file -- csv</code> (or <code class="language-plaintext highlighter-rouge">base64</code>, <code class="language-plaintext highlighter-rouge">bigdecimal</code>, <code class="language-plaintext highlighter-rouge">logger</code>)</strong>
+This comes from running a Jekyll version older than 4.4 on Ruby 3.4 or newer. Jekyll 4.4 and later install <code class="language-plaintext highlighter-rouge">csv</code> and <code class="language-plaintext highlighter-rouge">base64</code> as dependencies. Confirm the <code class="language-plaintext highlighter-rouge">Gemfile</code> has <code class="language-plaintext highlighter-rouge">gem "jekyll", "~&gt; 4.4"</code> and run <code class="language-plaintext highlighter-rouge">bundle update jekyll</code>.</p>
+
+<p><strong><code class="language-plaintext highlighter-rouge">cannot load such file -- webrick</code></strong>
+Newer Ruby versions don’t bundle it. Run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle add webrick
+</code></pre></div></div>
+
+<p><strong>Sass error such as <code class="language-plaintext highlighter-rouge">expected end of rule</code> pointing at <code class="language-plaintext highlighter-rouge">assets/css/index.sass</code></strong>
+Dart Sass looks for imports next to the stylesheet before checking <code class="language-plaintext highlighter-rouge">_sass/</code>. If the main stylesheet shares a name with an imported partial (for example <code class="language-plaintext highlighter-rouge">assets/css/index.sass</code> containing <code class="language-plaintext highlighter-rouge">@import index</code>), the file ends up importing itself. Rename either the stylesheet or the partial so the names differ. If you rename the stylesheet, update the <code class="language-plaintext highlighter-rouge">&lt;link&gt;</code> that references the compiled <code class="language-plaintext highlighter-rouge">.css</code> file in your layouts or includes.</p>
+
+<p><strong><code class="language-plaintext highlighter-rouge">@import is deprecated</code> warnings</strong>
+These are harmless for now. Dart Sass plans to remove <code class="language-plaintext highlighter-rouge">@import</code>, so you may want to migrate to <code class="language-plaintext highlighter-rouge">@use</code> at some point.</p>
+
+<p><strong>Gem install fails with native extension errors</strong>
+Make sure the Xcode command line tools are installed (<code class="language-plaintext highlighter-rouge">xcode-select --install</code>).</p>
+
+<p><strong>Stale or odd output after config or dependency changes</strong>
+Stop the server, delete the generated folder, and start again:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">rm</span> <span class="nt">-rf</span> _site .jekyll-cache
+bundle <span class="nb">exec </span>jekyll serve <span class="nt">--livereload</span>
+</code></pre></div></div>
+
+<h2 id="project-notes">Project notes</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">_config.yml</code> isn’t reloaded by the live server. Restart <code class="language-plaintext highlighter-rouge">jekyll serve</code> after editing it.</li>
+  <li><code class="language-plaintext highlighter-rouge">_site/</code> and <code class="language-plaintext highlighter-rouge">.jekyll-cache/</code> are generated and should be listed in <code class="language-plaintext highlighter-rouge">.gitignore</code>.</li>
+</ul>
+
+</article>
+
+
+
+<footer>
+  <div>Made with <b style="color: #f45;">&lt;3</b></div>
+  <nav><a href="mailto:kstensland@gmail.com" ><svg aria-label="Mail" class="icon">
+      <use xlink:href="/assets/fontawesome/icons.svg#envelope"></use>
+    </svg></a><a href="/feed.xml" ><svg aria-label="Subscribe" class="icon">
+      <use xlink:href="/assets/fontawesome/icons.svg#rss"></use>
+    </svg></a></nav>
+
+</footer>
+
+
+</html>

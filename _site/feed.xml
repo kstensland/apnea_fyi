@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-11-08T19:18:29-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">apnea.fyi</title><subtitle>Made with &lt;b style=&quot;color: #f45;&quot;&gt;&amp;lt;3&lt;/b&gt;</subtitle><author><name>Kristofer Stensland</name></author><entry><title type="html">How to pick a freediving agency?</title><link href="http://localhost:4000/freedive-organizations/" rel="alternate" type="text/html" title="How to pick a freediving agency?" /><published>2022-12-20T00:00:00-08:00</published><updated>2022-12-20T00:00:00-08:00</updated><id>http://localhost:4000/freedive-organizations</id><content type="html" xml:base="http://localhost:4000/freedive-organizations/"><![CDATA[<h1 id="tldr">TLDR</h1>
+<p>The one with the school/instructor you have the best relationship with.</p>
+
+<h1 id="summary">Summary</h1>
+<p>There are a few major freedive certification agencies:</p>
+
+<ul>
+  <li>PFI (Performance Freedivers International)</li>
+  <li>FII (Freediving Instructors International)</li>
+  <li>PADI</li>
+  <li>AIDA</li>
+  <li>Molchanovs</li>
+</ul>]]></content><author><name>Kristofer Stensland</name></author><summary type="html"><![CDATA[TLDR The one with the school/instructor you have the best relationship with. Summary There are a few major freedive certification agencies: PFI (Performance Freedivers International) FII (Freediving Instructors International) PADI AIDA Molchanovs]]></summary></entry><entry><title type="html">Partial Pressures Demystified</title><link href="http://localhost:4000/partial-pressures/" rel="alternate" type="text/html" title="Partial Pressures Demystified" /><published>2022-12-20T00:00:00-08:00</published><updated>2022-12-20T00:00:00-08:00</updated><id>http://localhost:4000/partial-pressures</id><content type="html" xml:base="http://localhost:4000/partial-pressures/"><![CDATA[<h1 id="why-did-i-write-this">Why did I write this?</h1>
+<p>For whatever reason, partial pressures are something that just did not click with me the first, second…or third time I learned it. I understood why they are important as well as the impact they have on the necessary skills for freediving, but the way they affect us just didn’t make sense to me.</p>
+
+<p>So I did some re-reading, some extracurricular research, and some soul searching to understand it. What follows are the components of partial pressures as <em>I</em> understand them. Hopefully this helps them make sense for you.</p>
+
+<h1 id="what-are-partial-pressures">What are Partial Pressures?</h1>
+
+<p>Let’s start with some really basic principles about air and gases. Partial pressures are useful to understand near sea-level, high altitudes, and at depth for freediving.</p>
+
+<h2 id="the-air-you-breathe-is-made-of-many-gases">The air you breathe is made of many gases</h2>
+
+<p>Generally speaking air is made of the following gases.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Gas</th>
+      <th>% of Air</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Nitrogen (N<sub>2</sub>)</td>
+      <td>78%</td>
+    </tr>
+    <tr>
+      <td>Oxygen (O<sub>2</sub>)</td>
+      <td>21%</td>
+    </tr>
+    <tr>
+      <td>Carbon Dioxied (CO<sub>2</sub>)</td>
+      <td>0.04%</td>
+    </tr>
+    <tr>
+      <td>Other Trace Gases</td>
+      <td>0.96%</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For the purposes of this article, we don’t care about the other trace gases.</p>
+
+<p>These percentages remain the same at different pressures. But the mass of each gas changes for the same volume. This is what Boyle’s Law refers to.</p>
+
+<p>Meaning, at sea-level one liter of air contains the same <em>percentage</em> of oxygen as one liter of air would contain at the top of Mount Everest. In fact, at the top of Everest, there is 1/3 the amount of oxygen in one liter than in the same volume at sea level.</p>
+
+<p>This is why it’s harder to breathe at high altitudes. Your lungs hold the same volume of air, but there is less oxygen (and other gases) within that same volume.</p>
+
+<p>&lt; IMAGE HERE TO SHOW DIFFERENCE IN VOLUME &gt;</p>
+
+<hr />
+
+<h2 id="each-gas-in-air-has-a-different-measurement-of-pressure">Each gas in air has a different measurement of pressure.</h2>
+
+<p><em>This section to be filled out</em></p>
+
+<hr />
+
+<h1 id="how-does-oxygen-get-into-our-blood">How does Oxygen get into our blood?</h1>
+
+<p>Lungs are filled with little sacks called alveoli. These sacks of air have capilaries in their membranes. When blood passes through these capilaries, O<sub>2</sub> is absobed into that blood. This absorption requires pressure. I like to think of the pressure in our lungs pushing O<sub>2</sub> into our blood.</p>
+
+<p><strong>The amount of O<sub>2</sub> that gets pushed into our blood is determined by the partial pressure of O<sub>2</sub> in our lungs.</strong></p>
+
+<p>…Make sure you read that a few times. Because this is the piece of the picture that <em>I</em> couldn’t wrap my head around. This means that <em>if there is more pressure in your lungs, then your blood will absorb O<sub>2</sub> at a faster rate.</em> This is referred to as Henry’s Law.</p>
+
+<h1 id="why-does-this-matter-for-freediving">Why does this matter for freediving?</h1>
+
+<p>Before I get to the answer, let’s revisit the basic principles:</p>
+
+<ol>
+  <li>The deeper we travel underwater, the more pressure our bodies experience.</li>
+  <li>As air pressure increases, three things happen to the air inside our lungs:
+    <ul>
+      <li>The volume of air decreases (Boyle’s Law).</li>
+      <li>The mass of gases in that our lungs remain the same.</li>
+      <li>The partial pressures of the gases increase (Dalton’s Law).</li>
+    </ul>
+  </li>
+  <li>The rate at which gases are absorbed into blood is determined by the partial pressure of oxygen in our lungs (Henry’s Law).</li>
+</ol>
+
+<p>When applied to freediving, this means…</p>
+
+<h2 id="1-the-deeper-you-go-the-faster-your-blood-pulls-oxygen-out-of-your-lungs">1. The deeper you go, the faster your blood pulls oxygen out of your lungs.</h2>
+
+<p>This is probably the easiest to understand. At depth, you’re lungs are pushing more O<sub>2</sub> into your blood than on the surface. If too much of the O<sub>2</sub> in your lungs was pushed into your blood at depth, then you might not have enough O<sub>2</sub> in your lungs as you get closer to the surface.</p>
+
+<h2 id="2-the-partial-pressure-in-your-lungs-decreases-as-you-ascend">2. The partial pressure in your lungs decreases as you ascend.</h2>
+
+<p>This is a major contributor to shallow water LMC’s and blackouts. As you get within 10 meters of the surface on your ascent, there is less O<sub>2</sub> in your  lungs,  but there is <em>also less pressure</em> to push the remaining O<sub>2</sub> into your blood. If you used up too much O<sub>2</sub> at depth, the partial-pressure of O<sub>2</sub> might be too weak to push that remaining O<sub>2</sub> into your blood.</p>
+
+<h2 id="3-nitrogen-narcosis-aka-the-bends">3. Nitrogen Narcosis (aka The Bends)</h2>
+
+<p>This is more common in scuba diving, but it also affects freedivers who frequently dive below 25 meters. Nitrogen also gets absorbed from our lungs into our blood. As we ascend, the partial pressure of that gas in our lungs also decreases.</p>
+
+<p>If freedivers continually dive and don’t take long enough surface intervals, the nitrogen in our blood can remain and expand, which causes narcosis when those bubbles travel to our brain.</p>
+
+<!--
+
+NOTES
+
+The amount of each gas that ends up dissolved in the blood depends on the solubility (‘dissolvability') of that gas in the blood (sometimes called the liquid or “aqueous phase”), and on the partial pressure of the same gas in the air (sometimes called the “gas phase”). Here’s a simplified example:
+
+http://www.freedive-earth.com/learn-freedive/what-hell-partial-pressure-anyway
+
+Combind with http://www.freedive-earth.com/learn-freedive/blacking-out-while-freediving
+ 
+-->]]></content><author><name>Kristofer Stensland</name></author><summary type="html"><![CDATA[Why did I write this? For whatever reason, partial pressures are something that just did not click with me the first, second…or third time I learned it. I understood why they are important as well as the impact they have on the necessary skills for freediving, but the way they affect us just didn’t make sense to me. So I did some re-reading, some extracurricular research, and some soul searching to understand it. What follows are the components of partial pressures as I understand them. Hopefully this helps them make sense for you. What are Partial Pressures? Let’s start with some really basic principles about air and gases. Partial pressures are useful to understand near sea-level, high altitudes, and at depth for freediving. The air you breathe is made of many gases Generally speaking air is made of the following gases. Gas % of Air Nitrogen (N2) 78% Oxygen (O2) 21% Carbon Dioxied (CO2) 0.04% Other Trace Gases 0.96% For the purposes of this article, we don’t care about the other trace gases. These percentages remain the same at different pressures. But the mass of each gas changes for the same volume. This is what Boyle’s Law refers to. Meaning, at sea-level one liter of air contains the same percentage of oxygen as one liter of air would contain at the top of Mount Everest. In fact, at the top of Everest, there is 1/3 the amount of oxygen in one liter than in the same volume at sea level. This is why it’s harder to breathe at high altitudes. Your lungs hold the same volume of air, but there is less oxygen (and other gases) within that same volume. &lt; IMAGE HERE TO SHOW DIFFERENCE IN VOLUME &gt; Each gas in air has a different measurement of pressure. This section to be filled out How does Oxygen get into our blood? Lungs are filled with little sacks called alveoli. These sacks of air have capilaries in their membranes. When blood passes through these capilaries, O2 is absobed into that blood. This absorption requires pressure. I like to think of the pressure in our lungs pushing O2 into our blood. The amount of O2 that gets pushed into our blood is determined by the partial pressure of O2 in our lungs. …Make sure you read that a few times. Because this is the piece of the picture that I couldn’t wrap my head around. This means that if there is more pressure in your lungs, then your blood will absorb O2 at a faster rate. This is referred to as Henry’s Law. Why does this matter for freediving? Before I get to the answer, let’s revisit the basic principles: The deeper we travel underwater, the more pressure our bodies experience. As air pressure increases, three things happen to the air inside our lungs: The volume of air decreases (Boyle’s Law). The mass of gases in that our lungs remain the same. The partial pressures of the gases increase (Dalton’s Law). The rate at which gases are absorbed into blood is determined by the partial pressure of oxygen in our lungs (Henry’s Law). When applied to freediving, this means… 1. The deeper you go, the faster your blood pulls oxygen out of your lungs. This is probably the easiest to understand. At depth, you’re lungs are pushing more O2 into your blood than on the surface. If too much of the O2 in your lungs was pushed into your blood at depth, then you might not have enough O2 in your lungs as you get closer to the surface. 2. The partial pressure in your lungs decreases as you ascend. This is a major contributor to shallow water LMC’s and blackouts. As you get within 10 meters of the surface on your ascent, there is less O2 in your lungs, but there is also less pressure to push the remaining O2 into your blood. If you used up too much O2 at depth, the partial-pressure of O2 might be too weak to push that remaining O2 into your blood. 3. Nitrogen Narcosis (aka The Bends) This is more common in scuba diving, but it also affects freedivers who frequently dive below 25 meters. Nitrogen also gets absorbed from our lungs into our blood. As we ascend, the partial pressure of that gas in our lungs also decreases. If freedivers continually dive and don’t take long enough surface intervals, the nitrogen in our blood can remain and expand, which causes narcosis when those bubbles travel to our brain.]]></summary></entry><entry><title type="html">Incident Report</title><link href="http://localhost:4000/Incident-Report/" rel="alternate" type="text/html" title="Incident Report" /><published>2022-10-29T00:00:00-07:00</published><updated>2022-10-29T00:00:00-07:00</updated><id>http://localhost:4000/Incident-Report</id><content type="html" xml:base="http://localhost:4000/Incident-Report/"><![CDATA[<p><strong>Date</strong>: October 29, 2022</p>
+
+<p><strong>Location</strong>: Lake Washington off of Mercer Island</p>
+
+<p><strong>Noteworthy Conditions</strong>: Water temps in low 50s, poor visibility.</p>
+
+<hr />
+
+<h2 id="what-was-the-plan-for-the-dive">What was the plan for the dive?</h2>
+
+<p>There were 4 divers involved:</p>
+<ol>
+  <li><strong>Diver A</strong> - This person was doing a dive to 36 meters FIM.</li>
+  <li><strong>Diver B</strong> (author) - This person was following Diver A with the intention of filming their entire dive. Diver B’s target depth was 30 meters with the intention of filming the Diver A’s bottom 5 meters from there, and then following Diver A to the surface. Diver B was using bifins as propulsion. <strong>Note</strong>: Since Diver B is the author, I may switch between referring to them as <em>Diver B</em> and first-person pronouns.</li>
+  <li><strong>Safety A</strong> - Safety for Diver A. Meet Diver A at 15 meters.</li>
+  <li><strong>Safety B</strong> - Safety for Diver B. Meet Diver B at 15 meters.</li>
+</ol>
+
+<p>This is considered an easy dive for all the divers involved. We have all done many dives to similar or deeper depths, in the same conditions, and in the same location. The intention of filming was to document the dive for a skills evaluation.</p>
+
+<p>It’s also worth noting that the visbility in this lake is pretty poor, and it gets pitch black at around 20 meters. We always have a light on the bottom weight, and Diver B was carrying a flashlight to keep Diver A lit up for the camera.</p>
+
+<h2 id="what-happened">What happened?</h2>
+
+<p>Diver A made it to their target depth. Diver B followed Diver A and stopped at around 28 meters. While waiting for Diver A to come back up, Diver B felt anxious and decided to start their ascent. On the way up, Diver B started to feel tired and more anxious.</p>
+
+<p>Diver B met Safety B at 15 meters, and immediately signaled for help. The signal was a wave, but more wrist rotation than a side-to-side wave. Safety B continued swimming up with Diver B, but <strong><em>did not help Diver B as requested</em></strong>.</p>
+
+<p>Thinking there was a miscommunication in sybmols, Diver B started using a more side-to-side and erratic wave. Safety B still continued swimming but did not help Diver B.</p>
+
+<p>Getting more nervous, Diver B started shaking his head, and waving more frantically. After a second or two of this, Safety B grabbed Diver B and helped them to the surface.</p>
+
+<p>It’s hard to know exactly how long Diver B was signalling to Safety B before Safety B started their assist, but it was clearly long enough to be a problem for Diver B. It’s fair to say it was at least 5 seconds, and at most 10 seconds.</p>
+
+<p>At the surface, Safety B held Diver B up high out of the water and kept their air ways overtly clear of the water. Diver B had a light LMC and tunnel vision, but did not black out. After a round of recovery breaths, Diver B gave the <em>okay</em> signal and was considered good.</p>
+
+<h2 id="what-went-wrong">What went wrong?</h2>
+
+<p>It’s easy to understand that Safety B did not react quickly enough, but I think there are a few other things that went wrong with this dive that put Diver B in the position to need help in the first place. I’ll break down each one.</p>
+
+<h3 id="why-didnt-safety-b-help-at-the-first-signal">Why didn’t Safety B help at the first signal?</h3>
+
+<p>Safety B said they saw the signal, but thought it meant something different. They thought Diver B was trying to tell them to move out of frame for the video. Only after Diver B gave a more sustained and frantic signal did Safety B realize they were asking for help.</p>
+
+<p>It’s also worth noting that this was Safety B’s first “real” save. Since they’ve never been in a scenario where they’ve actually needed to help someone, it was a bit of a shock for them to realize what was actually happening.</p>
+
+<h3 id="why-did-diver-b-need-help">Why did Diver B need help?</h3>
+
+<p>I’d like to make it clear that 30 meters is considered a relatively easy dive for Diver B. I’ve hit greaters depths many times prior at the same location, and even did a successful 33 meter dive during the same morning prior to this dive.</p>
+
+<p>So what went wrong? A few things:</p>
+
+<p><strong>Diver B is not familar with camera work.</strong></p>
+
+<p>This is textbook task loading. During the breathe-up I was focused on filming Diver A. In retrospect, I definitely did not relax during the breathe-up the same way I would have if not being the camera operator.</p>
+
+<p>During the dive, I was also constantly making sure I had Diver A in frame, and that my flashlight was shining on them. This is a lot more work than I am used to doing for dives this deep.</p>
+
+<p><strong>Diver B was already tired</strong></p>
+
+<p>This was not my first dive of the day to this depth. I did a 33m dive 15 minutes prior to this dive, and felt my legs burning much of the way up.</p>
+
+<p>This does not usually happen for me during 30-35 meter dives. This should have been an indicator that I should have taken the rest of the day easy and not targeted <em>deep</em> dives, let alone film them.</p>
+
+<p><strong>Rushed Implementation</strong></p>
+
+<p>This one is a bit harder to explain, but there was a bit of a rushed feel. Once we determined our roles and what we were going to do, we just sort of did it. We didn’t do a practice run, and didn’t take it very slowly.</p>
+
+<h2 id="what-did-we-do-right">What did we do right?</h2>
+
+<p>Despite the things that went wrong, there were a few decisions we made in the planning process that made it so things didn’t go worse.</p>
+
+<ol>
+  <li>It was a great idea to make sure both divers had a safety. We talked before the dive wondering if it was necessary, or if 4 divers on the same line would be too crowded. I am <em>very</em> glad we made the decision to have one safety for each diver.</li>
+  <li>Since I was feeling tired, I took my ascent very slow and continued the same slow pace the entire time I was with the safety. Even though my safety did not react immediately, I did not panic, and made a very concious effort to stay calm. Once the safety started their assist, I relaxed completely and stopped kicking. This probably prevented me from having a blackout.</li>
+  <li>Except for an immediate response, Safety B did everything else correctly. They met me at the right depth, they assisted me correctly - once they realized what was happening, and they kept me elevated out of the water once at the surface.</li>
+</ol>
+
+<h2 id="what-are-the-lessons-learned">What are the lessons learned?</h2>
+
+<p>There are a few takeaways from this to make sure the same mistakes don’t happen again.</p>
+
+<ol>
+  <li><strong>Any signal should be presumed as a bad signal!</strong> This is the obvious one. There is no reason for a diver to communicate anything except “I need help!” Even if I was telling my safety to move out of frame, they should make the assumption that I need help. A good camera shot is not worth the risk of blacking out. <a href="https://www.youtube.com/watch?v=srpZeGYQ0WM">Hawaii HammaHs has a great video of a very similar incident</a> and comes up with the same rule. I understand this rule doesn’t apply for competition dives as a safety touching a diver can ruin a white-card…but this was not a competition dive.</li>
+  <li><strong>Plan your dive and dive your plan</strong>. Borrowing this one from the scuba world. This was a complicated dive. If we didn’t plan ahead, it could have been worse.</li>
+  <li><strong>Practice Complicated Scenarios First.</strong> Even though we all knew the plan, it would have been a good idea to have done a practice run of the same dive but at shallower depths. That way everyone is comfortable with their roles and we have a better idea of what to expect when doing it deeper. Ideally, this would have helped me realize that I am <em>not</em> relaxed when filming.</li>
+  <li><strong>Practice safety drills more often.</strong> There was a unanimous agreement after this incident that we should run through safety drills more often.</li>
+  <li><strong>Be concious of your limitations.</strong> I should have known after my first dive of the day that I was not in the best shape to do more 30 meter dives. I also should have practiced filming dives more often and at shallower depths so that those skills are refined, and come naturally.</li>
+</ol>
+
+<h2 id="souhhows-the-footage">So…uh…how’s the footage?</h2>
+<p>Here’s the video recorded by Diver B. It was not my camera, and isn’t hosted on my channel. https://www.youtube.com/watch?v=EC35LUD2roY</p>
+
+<p>You can hear me in discomfort at 28 meters before turning around. Unfortunately the incident with the safety was not caught on camera. Thankfully, it still qualifies Diver A for the skill evaluation they were shooting for!</p>]]></content><author><name>kris</name></author><summary type="html"><![CDATA[Date: October 29, 2022 Location: Lake Washington off of Mercer Island Noteworthy Conditions: Water temps in low 50s, poor visibility. What was the plan for the dive? There were 4 divers involved: Diver A - This person was doing a dive to 36 meters FIM. Diver B (author) - This person was following Diver A with the intention of filming their entire dive. Diver B’s target depth was 30 meters with the intention of filming the Diver A’s bottom 5 meters from there, and then following Diver A to the surface. Diver B was using bifins as propulsion. Note: Since Diver B is the author, I may switch between referring to them as Diver B and first-person pronouns. Safety A - Safety for Diver A. Meet Diver A at 15 meters. Safety B - Safety for Diver B. Meet Diver B at 15 meters. This is considered an easy dive for all the divers involved. We have all done many dives to similar or deeper depths, in the same conditions, and in the same location. The intention of filming was to document the dive for a skills evaluation. It’s also worth noting that the visbility in this lake is pretty poor, and it gets pitch black at around 20 meters. We always have a light on the bottom weight, and Diver B was carrying a flashlight to keep Diver A lit up for the camera. What happened? Diver A made it to their target depth. Diver B followed Diver A and stopped at around 28 meters. While waiting for Diver A to come back up, Diver B felt anxious and decided to start their ascent. On the way up, Diver B started to feel tired and more anxious. Diver B met Safety B at 15 meters, and immediately signaled for help. The signal was a wave, but more wrist rotation than a side-to-side wave. Safety B continued swimming up with Diver B, but did not help Diver B as requested. Thinking there was a miscommunication in sybmols, Diver B started using a more side-to-side and erratic wave. Safety B still continued swimming but did not help Diver B. Getting more nervous, Diver B started shaking his head, and waving more frantically. After a second or two of this, Safety B grabbed Diver B and helped them to the surface. It’s hard to know exactly how long Diver B was signalling to Safety B before Safety B started their assist, but it was clearly long enough to be a problem for Diver B. It’s fair to say it was at least 5 seconds, and at most 10 seconds. At the surface, Safety B held Diver B up high out of the water and kept their air ways overtly clear of the water. Diver B had a light LMC and tunnel vision, but did not black out. After a round of recovery breaths, Diver B gave the okay signal and was considered good. What went wrong? It’s easy to understand that Safety B did not react quickly enough, but I think there are a few other things that went wrong with this dive that put Diver B in the position to need help in the first place. I’ll break down each one. Why didn’t Safety B help at the first signal? Safety B said they saw the signal, but thought it meant something different. They thought Diver B was trying to tell them to move out of frame for the video. Only after Diver B gave a more sustained and frantic signal did Safety B realize they were asking for help. It’s also worth noting that this was Safety B’s first “real” save. Since they’ve never been in a scenario where they’ve actually needed to help someone, it was a bit of a shock for them to realize what was actually happening. Why did Diver B need help? I’d like to make it clear that 30 meters is considered a relatively easy dive for Diver B. I’ve hit greaters depths many times prior at the same location, and even did a successful 33 meter dive during the same morning prior to this dive. So what went wrong? A few things: Diver B is not familar with camera work. This is textbook task loading. During the breathe-up I was focused on filming Diver A. In retrospect, I definitely did not relax during the breathe-up the same way I would have if not being the camera operator. During the dive, I was also constantly making sure I had Diver A in frame, and that my flashlight was shining on them. This is a lot more work than I am used to doing for dives this deep. Diver B was already tired This was not my first dive of the day to this depth. I did a 33m dive 15 minutes prior to this dive, and felt my legs burning much of the way up. This does not usually happen for me during 30-35 meter dives. This should have been an indicator that I should have taken the rest of the day easy and not targeted deep dives, let alone film them. Rushed Implementation This one is a bit harder to explain, but there was a bit of a rushed feel. Once we determined our roles and what we were going to do, we just sort of did it. We didn’t do a practice run, and didn’t take it very slowly. What did we do right? Despite the things that went wrong, there were a few decisions we made in the planning process that made it so things didn’t go worse. It was a great idea to make sure both divers had a safety. We talked before the dive wondering if it was necessary, or if 4 divers on the same line would be too crowded. I am very glad we made the decision to have one safety for each diver. Since I was feeling tired, I took my ascent very slow and continued the same slow pace the entire time I was with the safety. Even though my safety did not react immediately, I did not panic, and made a very concious effort to stay calm. Once the safety started their assist, I relaxed completely and stopped kicking. This probably prevented me from having a blackout. Except for an immediate response, Safety B did everything else correctly. They met me at the right depth, they assisted me correctly - once they realized what was happening, and they kept me elevated out of the water once at the surface. What are the lessons learned? There are a few takeaways from this to make sure the same mistakes don’t happen again. Any signal should be presumed as a bad signal! This is the obvious one. There is no reason for a diver to communicate anything except “I need help!” Even if I was telling my safety to move out of frame, they should make the assumption that I need help. A good camera shot is not worth the risk of blacking out. Hawaii HammaHs has a great video of a very similar incident and comes up with the same rule. I understand this rule doesn’t apply for competition dives as a safety touching a diver can ruin a white-card…but this was not a competition dive. Plan your dive and dive your plan. Borrowing this one from the scuba world. This was a complicated dive. If we didn’t plan ahead, it could have been worse. Practice Complicated Scenarios First. Even though we all knew the plan, it would have been a good idea to have done a practice run of the same dive but at shallower depths. That way everyone is comfortable with their roles and we have a better idea of what to expect when doing it deeper. Ideally, this would have helped me realize that I am not relaxed when filming. Practice safety drills more often. There was a unanimous agreement after this incident that we should run through safety drills more often. Be concious of your limitations. I should have known after my first dive of the day that I was not in the best shape to do more 30 meter dives. I also should have practiced filming dives more often and at shallower depths so that those skills are refined, and come naturally. So…uh…how’s the footage? Here’s the video recorded by Diver B. It was not my camera, and isn’t hosted on my channel. https://www.youtube.com/watch?v=EC35LUD2roY You can hear me in discomfort at 28 meters before turning around. Unfortunately the incident with the safety was not caught on camera. Thankfully, it still qualifies Diver A for the skill evaluation they were shooting for!]]></summary></entry><entry><title type="html">Advanced examples</title><link href="http://localhost:4000/advanced-examples/" rel="alternate" type="text/html" title="Advanced examples" /><published>2017-01-01T00:00:00-08:00</published><updated>2017-01-01T00:00:00-08:00</updated><id>http://localhost:4000/advanced-examples</id><content type="html" xml:base="http://localhost:4000/advanced-examples/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/4943215/55412536-edbba180-5567-11e9-9c70-6d33bca3f8ed.jpg" alt="Swiss Alps" /></p>
+
+<h2 id="mathjax">MathJax</h2>
+
+<p>You can enable MathJax by setting <code class="language-plaintext highlighter-rouge">mathjax: true</code> on a page or globally in the <code class="language-plaintext highlighter-rouge">_config.yml</code>. Some examples:</p>
+
+<p><a href="https://en.wikipedia.org/wiki/Euler%27s_formula">Euler’s formula</a> relates the  complex exponential function to the trigonometric functions.</p>
+
+\[e^{i\theta}=\cos(\theta)+i\sin(\theta)\]
+
+<p>The <a href="https://en.wikipedia.org/wiki/Lagrangian_mechanics">Euler-Lagrange</a> differential equation is the fundamental equation of calculus of variations.</p>
+
+\[\frac{\mathrm{d}}{\mathrm{d}t} \left ( \frac{\partial L}{\partial \dot{q}} \right ) = \frac{\partial L}{\partial q}\]
+
+<p>The <a href="https://en.wikipedia.org/wiki/Schr%C3%B6dinger_equation">Schrödinger equation</a> describes how the quantum state of a quantum system changes with time.</p>
+
+\[i\hbar\frac{\partial}{\partial t} \Psi(\mathbf{r},t) = \left [ \frac{-\hbar^2}{2\mu}\nabla^2 + V(\mathbf{r},t)\right ] \Psi(\mathbf{r},t)\]
+
+<h2 id="code">Code</h2>
+
+<p>Embed code by putting <code class="language-plaintext highlighter-rouge">{% highlight language %}</code> <code class="language-plaintext highlighter-rouge">{% endhighlight %}</code> blocks around it. Adding the parameter <code class="language-plaintext highlighter-rouge">linenos</code> will show source lines besides the code.</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="k">static</span> <span class="kt">void</span> <span class="nf">asyncEnabled</span><span class="p">(</span><span class="n">Dict</span><span class="o">*</span> <span class="n">args</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">vAdmin</span><span class="p">,</span> <span class="n">String</span><span class="o">*</span> <span class="n">txid</span><span class="p">,</span> <span class="k">struct</span> <span class="n">Allocator</span><span class="o">*</span> <span class="n">requestAlloc</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">struct</span> <span class="n">Admin</span><span class="o">*</span> <span class="n">admin</span> <span class="o">=</span> <span class="n">Identity_check</span><span class="p">((</span><span class="k">struct</span> <span class="n">Admin</span><span class="o">*</span><span class="p">)</span> <span class="n">vAdmin</span><span class="p">);</span>
+    <span class="kt">int64_t</span> <span class="n">enabled</span> <span class="o">=</span> <span class="n">admin</span><span class="o">-&gt;</span><span class="n">asyncEnabled</span><span class="p">;</span>
+    <span class="n">Dict</span> <span class="n">d</span> <span class="o">=</span> <span class="n">Dict_CONST</span><span class="p">(</span><span class="n">String_CONST</span><span class="p">(</span><span class="s">"asyncEnabled"</span><span class="p">),</span> <span class="n">Int_OBJ</span><span class="p">(</span><span class="n">enabled</span><span class="p">),</span> <span class="nb">NULL</span><span class="p">);</span>
+    <span class="n">Admin_sendMessage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">d</span><span class="p">,</span> <span class="n">txid</span><span class="p">,</span> <span class="n">admin</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="gists">Gists</h2>
+
+<p>With the <code class="language-plaintext highlighter-rouge">jekyll-gist</code> plugin, which is preinstalled on Github Pages, you can embed gists simply by using the <code class="language-plaintext highlighter-rouge">gist</code> command:</p>
+
+<script src="https://gist.github.com/5555251.js?file=gist.md"></script>
+
+<h2 id="images">Images</h2>
+
+<p>Upload an image to the <em>assets</em> folder and embed it with <code class="language-plaintext highlighter-rouge">![title](/assets/name.jpg))</code>. Keep in mind that the path needs to be adjusted if Jekyll is run inside a subfolder.</p>
+
+<p>A wrapper <code class="language-plaintext highlighter-rouge">div</code> with the class <code class="language-plaintext highlighter-rouge">large</code> can be used to increase the width of an image or iframe.</p>
+
+<p><img src="https://user-images.githubusercontent.com/4943215/55412447-bcdb6c80-5567-11e9-8d12-b1e35fd5e50c.jpg" alt="Flower" /></p>
+
+<p><a href="https://unsplash.com/photos/iGrsa9rL11o">Flower</a> by Tj Holowaychuk</p>
+
+<h2 id="embedded-content">Embedded content</h2>
+
+<p>You can also embed a lot of stuff, for example from YouTube, using the <code class="language-plaintext highlighter-rouge">embed.html</code> include.</p>
+
+<div style="position: relative; margin: 1.5em 0; padding-bottom: 56.25%;">
+  <iframe style="position: absolute;" src="https://www.youtube.com/embed/_C0A5zX-iqM" width="100%" height="100%" frameborder="0" allowfullscreen=""></iframe>
+</div>]]></content><author><name>Kristofer Stensland</name></author><category term="media" /><summary type="html"><![CDATA[]]></summary></entry></feed>
