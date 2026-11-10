@@ -5,7 +5,7 @@ permalink: /events/
 ---
 <article>
   <section class="event-list">
-    <h2>Events</h2>
+    <h2>Upcoming Events</h2>
     {%- assign events = site.events | sort: "event_date" -%}
     {% for event in events %}
       <a class="event-card" href="{{ event.url | relative_url }}">
