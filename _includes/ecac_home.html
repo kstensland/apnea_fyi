@@ -1,0 +1,14 @@
+{%- assign posts = paginator.posts | default: site.posts -%}
+{% for post in posts %}
+  <article>
+    {% include meta.html post=post preview=true %}
+    {{ post.post_description }}
+    <div class="more"><a href="{{ post.url | relative_url }}">read more</a></div>
+  </article>
+{% endfor %}
+
+<footer>
+  <div>{{ site.description | default: site.title }}</div>
+  {% include social-links.html %}
+  {% if site.external %}{% include menu.html menu=site.external %}{% endif %}
+</footer>

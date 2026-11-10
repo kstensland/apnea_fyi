@@ -1,18 +1,10 @@
 ---
-layout: null
-permalink: /emeraldcity/
-sitemap: false
+layout: default
+title: "Emerald City Apnea Challenge"
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Redirecting…</title>
-  <meta http-equiv="refresh" content="0; url=https://linktr.ee/emeraldcityapneachallenge?utm_source=ig&amp;utm_medium=social&amp;utm_content=link_in_bio">
-  <link rel="canonical" href="https://linktr.ee/emeraldcityapneachallenge">
-  <script>location.replace("https://linktr.ee/emeraldcityapneachallenge?utm_source=ig&utm_medium=social&utm_content=link_in_bio");</script>
-</head>
-<body>
-  <p>Redirecting to <a href="https://linktr.ee/emeraldcityapneachallenge?utm_source=ig&amp;utm_medium=social&amp;utm_content=link_in_bio">Emerald City Apnea Challenge</a>…</p>
-</body>
-</html>
+{% if site.show_excerpts %}
+  {% include ecac_home.html %}
+{% else %}
+  {% include ecac_home.html %}
+  <!-- {% include archive.html title="Posts" %} -->
+{% endif %}

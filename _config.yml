@@ -1,6 +1,6 @@
 title: "apnea.fyi"
 author: "Kristofer Stensland"
-description: "Made with LOVE <b style=\"color: #f45;\">&lt;3</b>"
+description: "Find us on social media: "
 permalink: /:title/
 lang: "en"
 excerpt_separator: "\n\n\n"
@@ -20,8 +20,7 @@ navigation:                # accepts {file, title, url, icon, sidebaricon}
   - {file: "README.md"}
 
 external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
-  - {title: Mail, icon: envelope, url: "mailto:kstensland@gmail.com"}
-  - {title: Subscribe, icon: rss, url: "/feed.xml"}
+  - {title: Mail, icon: envelope, url: "mailto:emeraldcityapneachallenge@gmail.com"}
 
 comments:
 #  disqus_shortname: ""    # see https://disqus.com/
@@ -30,4 +29,8 @@ comments:
 plugins:
  - jekyll-feed
 
+social:
+  facebook: "https://www.facebook.com/profile.php?id=61584381043663"
+  instagram: "https://www.instagram.com/emeraldcityapneachallenge"
+  youtube: "https://www.youtube.com/@emeraldcityapneachallenge"
 # Original Theme https://github.com/niklasbuschmann/contrast
