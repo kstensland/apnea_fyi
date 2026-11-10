@@ -1,0 +1,29 @@
+{%- comment -%}
+  Google Maps embed with a placeholder. The placeholder stays until the map
+  iframe has loaded, then the map replaces it.
+  Pass: query (search text) and label (used for the iframe title).
+{%- endcomment -%}
+<div class="event-map">
+  <div class="map-placeholder" role="status">
+    <p>Loading map&hellip;</p>
+    <a href="https://www.google.com/maps/search/?api=1&amp;query={{ include.query | url_encode }}" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+  </div>
+  <iframe
+    hidden
+    title="Map of {{ include.label | escape }}"
+    src="https://www.google.com/maps?q={{ include.query | url_encode }}&amp;output=embed"
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+<script>
+  (function () {
+    document.querySelectorAll('.event-map').forEach(function (box) {
+      var frame = box.querySelector('iframe');
+      var placeholder = box.querySelector('.map-placeholder');
+      if (!frame || !placeholder) return;
+      frame.addEventListener('load', function () {
+        placeholder.remove();
+        frame.hidden = false;
+      });
+    });
+  })();
+</script>

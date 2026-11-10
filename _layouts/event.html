@@ -25,13 +25,7 @@ layout: default
   {% endif %}
 
   {% if page.map_query %}
-    <div class="event-map">
-      <iframe
-        title="Map of {{ page.location | escape }}"
-        src="https://www.google.com/maps?q={{ page.map_query | url_encode }}&amp;output=embed"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
+    {% include event_map.html query=page.map_query label=page.location %}
   {% endif %}
 
   {{ content }}
