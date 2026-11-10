@@ -26,6 +26,11 @@ comments:
 #  disqus_shortname: ""    # see https://disqus.com/
 #  isso_domain: ""         # see https://posativ.org/isso/
 
+collections:
+  events:                  # one Markdown file per event in _events/
+    output: true
+    permalink: /events/:name/
+
 plugins:
  - jekyll-feed
 

@@ -1,0 +1,17 @@
+---
+layout: default
+title: "Events"
+permalink: /events/
+---
+<article>
+  <header><h1>Events</h1></header>
+  <ul class="archive">
+    {% assign events = site.events | sort: "event_date" %}
+    {% for event in events %}
+    <li>
+      <time datetime="{{ event.event_date | date_to_xmlschema }}">{{ event.event_date | date: "%Y-%m-%d" }}</time>
+      <a href="{{ event.url | relative_url }}">{{ event.title | escape }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</article>

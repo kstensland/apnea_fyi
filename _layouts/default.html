@@ -44,7 +44,9 @@
 
 <footer>
   <div>{{ site.description | default: site.title }}</div>
-  {% include social-links.html %}
-  {% if site.external %}{% include menu.html menu=site.external %}{% endif %}
+  <div class="footer-links">
+    {% include social-links.html %}
+    {% if site.external %}{% include menu.html menu=site.external %}{% endif %}
+  </div>
 </footer>
 </html>

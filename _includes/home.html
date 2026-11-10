@@ -1,16 +1,15 @@
-{%- assign posts = paginator.posts | default: site.posts -%}
-{% for post in posts %}
-  <article>
-    {% include meta.html post=post preview=true %}
-    {{ post.post_description }}
-    <div class="more"><a href="{{ post.url | relative_url }}">read more</a></div>
-  </article>
-{% endfor %}
-
-{% if paginator.total_pages > 1 %}
-  <footer>
-    {% if paginator.previous_page %}<a href="{{ paginator.previous_page_path | relative_url }}">« newer posts</a>{% else %}<span></span>{% endif %}
-    <span>page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-    {% if paginator.next_page %}<a href="{{ paginator.next_page_path | relative_url }}">older posts »</a>{% else %}<span></span>{% endif %}
-  </footer>
-{% endif %}
+<article>
+<section class="event-list">
+  <h2>Events</h2>
+  {%- assign events = site.events | sort: "event_date" -%}
+  {% for event in events %}
+    <a class="event-card" href="{{ event.url | relative_url }}">
+      <span class="event-card-title">{{ event.title | escape }}</span>
+      <span class="event-card-meta">
+        <time datetime="{{ event.event_date | date_to_xmlschema }}">{% include event_date_text.html event=event %}</time>
+        {% if event.location %}&middot; {{ event.location | escape }}{% endif %}
+      </span>
+    </a>
+  {% endfor %}
+</section>
+</article>

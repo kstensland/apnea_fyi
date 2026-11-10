@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "index" as *;
+
 .title
   font-size: 1.25em
 
@@ -66,7 +69,7 @@ a:hover .icon
 
 .highlight // https://github.com/richleland/pygments-css/blob/master/monokai.css <http://unlicense.org>
   pre
-    background: rgba(lighten($dark, 6%), 0.9)
+    background: rgba(color.adjust($dark, $lightness: 6%), 0.9)
     color: white
   .c
     color: #a29f90

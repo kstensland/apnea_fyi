@@ -36,3 +36,37 @@
     display: block
     width: 1.75em
     height: 1.75em
+
+// Social links and the email link share one row in the footer.
+.footer-links
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  justify-content: center
+  gap: .5em 1.25em
+
+.footer-links > nav
+  margin: 0
+
+.footer-links .social ul
+  margin: 0
+
+.footer-links a
+  margin: 0
+
+.footer-links > nav:not(.social) a
+  display: inline-flex
+  padding: .4em
+  border-radius: 50%
+  color: inherit
+  opacity: .75
+  transition: opacity .15s, transform .15s
+
+  &:hover, &:focus-visible
+    opacity: 1
+    transform: translateY(-2px)
+
+.footer-links .icon
+  display: block
+  width: 1.75em
+  height: 1.75em

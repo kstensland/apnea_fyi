@@ -6,9 +6,3 @@
     <div class="more"><a href="{{ post.url | relative_url }}">read more</a></div>
   </article>
 {% endfor %}
-
-<footer>
-  <div>{{ site.description | default: site.title }}</div>
-  {% include social-links.html %}
-  {% if site.external %}{% include menu.html menu=site.external %}{% endif %}
-</footer>

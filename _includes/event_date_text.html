@@ -1,0 +1,5 @@
+{%- if include.event.event_end_date -%}
+  {{ include.event.event_date | date: "%B %-d" }} &amp; {{ include.event.event_end_date | date: "%-d, %Y" }}
+{%- else -%}
+  {{ include.event.event_date | date: "%B %-d, %Y" }}
+{%- endif -%}
