@@ -6,6 +6,70 @@
 .event-list h2
   margin-bottom: .25em
 
+.past-events
+  margin-top: 3em
+
+.results-trigger
+  display: block
+  width: 100%
+  margin: 0
+  padding: 0
+  border: 0
+  background: none
+  cursor: zoom-in
+
+  img
+    display: block
+    width: 100%
+    height: auto
+    border-radius: 4px
+
+.results-hint
+  margin: .5em 0 0
+  opacity: .7
+  font-size: .9em
+
+.results-dialog
+  max-width: none
+  max-height: none
+  width: auto
+  height: auto
+  margin: auto
+  padding: 0
+  border: 0
+  background: transparent
+
+  &::backdrop
+    background: rgba($dark, .85)
+
+.results-frame
+  position: relative
+
+.results-dialog img
+  display: block
+  max-width: 92vw
+  max-height: 88vh
+  width: auto
+  height: auto
+  border-radius: 4px
+
+.results-close
+  position: absolute
+  top: .4em
+  right: .4em
+  width: 2.2em
+  height: 2.2em
+  border: 0
+  border-radius: 50%
+  background: rgba($dark, .75)
+  color: $light
+  font-size: 1.5em
+  line-height: 1
+  cursor: pointer
+
+  &:hover, &:focus-visible
+    background: $dark
+
 .event-card
   display: block
   padding: .75em 1em

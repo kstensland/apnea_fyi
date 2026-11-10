@@ -33,9 +33,12 @@ comments:
 #  isso_domain: ""         # see https://posativ.org/isso/
 
 collections:
-  events:                  # one Markdown file per event in _events/
+  events:                  # one Markdown file per upcoming event in _events/
     output: true
     permalink: /events/:name/
+  past_events:             # one Markdown file per past event in _past_events/
+    output: true
+    permalink: /events/past/:name/
 
 plugins:
  - jekyll-feed
