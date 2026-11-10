@@ -1,9 +1,3 @@
----
-title: "About"
-permalink: "/about/"
-layout: page
----
-
 # apnea_fyi
 
 A static site built with [Jekyll](https://jekyllrb.com/).
