@@ -62,9 +62,20 @@ bundle exec jekyll serve --livereload   # http://localhost:4000/
 - Do not paste shell commands into the Gemfile. It once broke with `bundle update jekyll` appended to a gem line.
 - Favicon `<link>` tags go in `<head>`. The layout has historically had no explicit `<head>`/`<body>` wrapper (the browser infers them). A cleaned-up version was proposed (**verify** whether applied). Sass selectors like `body > header` and `body > footer` depend on those being direct children of `<body>`.
 
-## Deployment (open question)
+## Hosting and deployment
 
-The live page reports `meta generator: Jekyll v3.10.0`. That is the version GitHub Pages' built-in builder uses, not the local 4.4.1. The local Sass setup (Dart Sass, renamed files) may not build on GitHub Pages' older Jekyll. Check the repo's Actions or Pages build status for failures. If builds fail, the clean fix is a GitHub Actions workflow that builds with Jekyll 4.4. Confirm how the site is actually deployed before changing the Gemfile or Sass.
+The site is hosted on **GitHub Pages** from the repo `kstensland/apnea_fyi`, and it is served at the custom domain **apnea.fyi** (set by the `CNAME` file in the repo root). HTTPS is enforced.
+
+How it works:
+
+- Pages is set to the legacy source: the `main` branch, root folder (`/`). There is no `.github/workflows` directory, so no GitHub Actions build runs.
+- Every push to `main` makes GitHub run its built-in **"pages build and deployment"** job. That job runs Jekyll on GitHub's servers, writes the output to `_site/` there, and publishes it. The local `_site/` folder is never uploaded.
+- GitHub's builder uses **Jekyll 3.10.0** and its own Ruby Sass (not Dart Sass) and ignores the local `Gemfile`. It logs a warning that the `github-pages` gem can't satisfy the Gemfile. Because of this, local builds can pass while the GitHub build fails.
+- The local preview (`bundle exec jekyll serve`) uses Jekyll 4.4.1 and Dart Sass, so it's the more current setup.
+
+Current status (checked with `gh run list` and `gh run view --log-failed`): the last three Pages builds **failed**, so the live site is out of date. The error is in `assets/css/frame.sass`, which the Pages build compiles even though `show_frame` is off. Ruby Sass rejects the `@use "sass:color"` line and `color.adjust(...)` calls, so `main.sass` and `frame.sass` both break on GitHub. Check Pages builds with `gh run list --limit 3` and `gh run view <id> --log-failed` after a push.
+
+Fix options: (1) add a GitHub Actions workflow that builds with Jekyll 4.4 and deploys the `_site/` output, and switch the Pages source to "GitHub Actions"; or (2) rewrite the Sass so Ruby Sass can compile it (no `@use`, no `color.*` functions, and no `math.div`). Option 1 is the cleaner fix. Confirm with the owner before changing the Pages source setting, since it changes how every deploy works.
 
 ## Known work in progress and ideas
 
