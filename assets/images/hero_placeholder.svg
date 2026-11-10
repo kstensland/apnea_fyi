@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="686" viewBox="0 0 1600 686" role="img" aria-label="Placeholder hero image">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f3d2a"/>
+      <stop offset="0.55" stop-color="#1f7a4d"/>
+      <stop offset="1" stop-color="#5fbf7a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="686" fill="url(#g)"/>
+  <text x="800" y="355" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="48" fill="#ffffff" fill-opacity="0.85">Hero image placeholder</text>
+</svg>

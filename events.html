@@ -4,14 +4,17 @@ title: "Events"
 permalink: /events/
 ---
 <article>
-  <header><h1>Events</h1></header>
-  <ul class="archive">
-    {% assign events = site.events | sort: "event_date" %}
+  <section class="event-list">
+    <h2>Events</h2>
+    {%- assign events = site.events | sort: "event_date" -%}
     {% for event in events %}
-    <li>
-      <time datetime="{{ event.event_date | date_to_xmlschema }}">{{ event.event_date | date: "%Y-%m-%d" }}</time>
-      <a href="{{ event.url | relative_url }}">{{ event.title | escape }}</a>
-    </li>
+      <a class="event-card" href="{{ event.url | relative_url }}">
+        <span class="event-card-title">{{ event.title | escape }}</span>
+        <span class="event-card-meta">
+          <time datetime="{{ event.event_date | date_to_xmlschema }}">{% include event_date_text.html event=event %}</time>
+          {% if event.location %}&middot; {{ event.location | escape }}{% endif %}
+        </span>
+      </a>
     {% endfor %}
-  </ul>
+  </section>
 </article>

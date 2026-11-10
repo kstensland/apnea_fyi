@@ -8,6 +8,7 @@
 @use "classes";
 @use "social";
 @use "events";
+@use "hero";
 
 @media (min-width: 40em)
   body > header, body > article, body > footer
@@ -27,6 +28,10 @@ body > header
   border-bottom: 1px solid reduce(14)
 
 {% endif %}
+
+body > header
+  padding-top: .6em
+  padding-bottom: .6em
 
 body > footer
   box-shadow: 0 0 .6em rgba($dark, 0.04) inset

@@ -1,15 +1,6 @@
-<article>
-<section class="event-list">
-  <h2>Events</h2>
-  {%- assign events = site.events | sort: "event_date" -%}
-  {% for event in events %}
-    <a class="event-card" href="{{ event.url | relative_url }}">
-      <span class="event-card-title">{{ event.title | escape }}</span>
-      <span class="event-card-meta">
-        <time datetime="{{ event.event_date | date_to_xmlschema }}">{% include event_date_text.html event=event %}</time>
-        {% if event.location %}&middot; {{ event.location | escape }}{% endif %}
-      </span>
-    </a>
-  {% endfor %}
-</section>
-</article>
+<section class="hero">
+    <img src="{{ '/assets/images/home_page_hero.jpg' | relative_url }}" width="3894" height="2932" alt="Emerald City Apnea Challenge">
+    <div class="hero-action">
+      <a class="hero-cta" href="{{ '/events/' | relative_url }}">Register for an upcoming event</a>
+    </div>
+  </section>
