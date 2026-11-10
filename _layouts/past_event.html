@@ -24,19 +24,30 @@ layout: default
     <div class="more"><a href="{{ page.drive_url }}" target="_blank" rel="noopener noreferrer">View event photos on Google Drive</a></div>
   {% endif %}
 
-  {% if page.results_image %}
+  {% if page.results %}
     <h2>Results</h2>
-    <button type="button" class="results-trigger" aria-haspopup="dialog" aria-controls="results-dialog">
-      <img src="{{ page.results_image | relative_url }}" alt="{{ page.results_alt | default: 'Event results' | escape }}">
-    </button>
-    <p class="results-hint">Select the results to view them full size.</p>
+    <div class="results-grid">
+      {% for result in page.results %}
+        {%- assign result_id = "results-dialog-" | append: forloop.index -%}
+        {%- assign result_alt = result.alt | default: "Event results" | escape -%}
+        <figure class="results-item">
+          <button type="button" class="results-trigger" aria-haspopup="dialog" aria-controls="{{ result_id }}">
+            <img src="{{ result.image | relative_url }}" alt="{{ result_alt }}">
+          </button>
+          {% if result.label %}<figcaption>{{ result.label | escape }}</figcaption>{% endif %}
+        </figure>
 
-    <dialog id="results-dialog" class="results-dialog" aria-label="Results for {{ page.title | escape }}">
-      <div class="results-frame">
-        <button type="button" class="results-close" aria-label="Close results">&times;</button>
-        <img src="{{ page.results_image | relative_url }}" alt="{{ page.results_alt | default: 'Event results' | escape }}">
-      </div>
-    </dialog>
+        <dialog id="{{ result_id }}" class="results-dialog" aria-label="{{ result.label | default: 'Results' | escape }} for {{ page.title | escape }}">
+          <div class="results-frame">
+            <button type="button" class="results-close" aria-label="Close results">&times;</button>
+            <button type="button" class="results-zoom" aria-pressed="false" aria-label="Zoom in">
+              <img src="{{ result.image | relative_url }}" alt="{{ result_alt }}">
+            </button>
+          </div>
+        </dialog>
+      {% endfor %}
+    </div>
+    <p class="results-hint">Click the results to view them in full size.</p>
   {% endif %}
 
   {% if page.map_query %}
@@ -54,15 +65,29 @@ layout: default
 
 <script>
   (function () {
-    var trigger = document.querySelector('.results-trigger');
-    var dialog = document.getElementById('results-dialog');
-    if (!trigger || !dialog || typeof dialog.showModal !== 'function') return;
+    document.querySelectorAll('.results-trigger').forEach(function (trigger) {
+      var dialog = document.getElementById(trigger.getAttribute('aria-controls'));
+      if (!dialog || typeof dialog.showModal !== 'function') return;
 
-    trigger.addEventListener('click', function () { dialog.showModal(); });
-    dialog.querySelector('.results-close').addEventListener('click', function () { dialog.close(); });
-    // Clicking the backdrop (the dialog itself, outside the image) closes it.
-    dialog.addEventListener('click', function (event) {
-      if (event.target === dialog) dialog.close();
+      var zoom = dialog.querySelector('.results-zoom');
+
+      trigger.addEventListener('click', function () {
+        dialog.classList.remove('is-zoomed');
+        zoom.setAttribute('aria-pressed', 'false');
+        zoom.setAttribute('aria-label', 'Zoom in');
+        dialog.showModal();
+      });
+      dialog.querySelector('.results-close').addEventListener('click', function () { dialog.close(); });
+      // Clicking the image toggles between fit-to-window and full width.
+      zoom.addEventListener('click', function () {
+        var zoomed = dialog.classList.toggle('is-zoomed');
+        zoom.setAttribute('aria-pressed', zoomed ? 'true' : 'false');
+        zoom.setAttribute('aria-label', zoomed ? 'Zoom out' : 'Zoom in');
+      });
+      // Clicking the backdrop (the dialog itself, outside the image) closes it.
+      dialog.addEventListener('click', function (event) {
+        if (event.target === dialog) dialog.close();
+      });
     });
   })();
 </script>

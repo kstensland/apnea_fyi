@@ -13,6 +13,9 @@
   display: block
   width: 100%
   margin: 0
+  line-height: 0
+  aspect-ratio: 0.75
+  overflow: hidden
   padding: 0
   border: 0
   background: none
@@ -20,9 +23,29 @@
 
   img
     display: block
+    margin: 0
     width: 100%
-    height: auto
+    max-width: 100%
+    height: 100%
+    object-fit: cover
     border-radius: 4px
+
+// Results sit side by side when there is room, and stack on narrow screens.
+.results-grid
+  display: flex
+  flex-wrap: wrap
+  align-items: flex-start
+  gap: 1.5em
+
+.results-item
+  width: 15rem
+  max-width: 100%
+  margin: 0
+
+.results-item figcaption
+  margin-top: .5em
+  font-size: .9em
+  opacity: .8
 
 .results-hint
   margin: .5em 0 0
@@ -32,8 +55,8 @@
 .results-dialog
   max-width: none
   max-height: none
-  width: auto
-  height: auto
+  width: fit-content
+  height: fit-content
   margin: auto
   padding: 0
   border: 0
@@ -52,6 +75,31 @@
   width: auto
   height: auto
   border-radius: 4px
+
+.results-zoom
+  display: block
+  margin: 0
+  padding: 0
+  border: 0
+  background: none
+  line-height: 0
+  cursor: zoom-in
+
+  img
+    display: block
+
+// Zoomed: the image fills the window width and the dialog scrolls vertically.
+.results-dialog.is-zoomed
+  max-width: 100vw
+  max-height: 96vh
+
+  .results-zoom
+    cursor: zoom-out
+
+  img
+    width: 96vw
+    max-width: none
+    max-height: none
 
 .results-close
   position: absolute
