@@ -1,11 +1,69 @@
-<section class="hero">
-    <div class="hero-media">
-      <img src="{{ '/assets/images/home_page_hero.jpg' | relative_url }}" width="3894" height="2932" alt="Freediver in open water with the Seattle skyline behind">
-      <div class="hero-overlay">
-        <h1>Community Hosted Freediving Competitions and Events in the PNW</h1>
+<!-- The home page is a vertical carousel: Home, About and Events are each a
+     full-screen page, and scrolling snaps from one page to the next.
+     The header links jump to the pages by id. -->
+<div class="home-pages">
+  <section id="home" class="home-page home-page-hero" aria-label="Home">
+    <div class="hero">
+      <div class="hero-media">
+        <img src="{{ '/assets/images/home_page_hero.jpg' | relative_url }}" width="3894" height="2932" alt="Freediver in open water with the Seattle skyline behind">
+        <div class="hero-overlay">
+          <h1>Community Hosted Freediving Competitions and Events in the PNW</h1>
+        </div>
+      </div>
+      <div class="hero-action">
+        <a class="hero-cta" href="{{ '/#events' | relative_url }}">Register for an upcoming event</a>
       </div>
     </div>
-    <div class="hero-action">
-      <a class="hero-cta" href="{{ '/events/' | relative_url }}">Register for an upcoming event</a>
+  </section>
+
+  <section id="about" class="home-page" aria-label="About">
+    <div class="home-page-inner">
+      <h2>About</h2>
+      {% include about_content.html %}
     </div>
   </section>
+
+  <section id="events" class="home-page" aria-label="Events">
+    <div class="home-page-inner">
+      {% include event_lists.html %}
+    </div>
+  </section>
+</div>
+
+<!-- Page dots, like a carousel: show which page you're on and jump to any page. -->
+<nav class="home-dots" aria-label="Home page sections">
+  <a href="#home" aria-label="Home"></a>
+  <a href="#about" aria-label="About"></a>
+  <a href="#events" aria-label="Events"></a>
+</nav>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    var header = document.querySelector("body > header");
+    var dots = document.querySelectorAll(".home-dots a");
+
+    // Each page fills the window below the sticky header.
+    function setHeaderHeight() {
+      root.style.setProperty("--header-height", header.offsetHeight + "px");
+    }
+    setHeaderHeight();
+    window.addEventListener("resize", setHeaderHeight);
+
+    // Highlight the dot for the page that fills most of the window.
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        dots.forEach(function (dot) {
+          var current = dot.getAttribute("href") === "#" + entry.target.id;
+          dot.classList.toggle("active", current);
+          if (current) dot.setAttribute("aria-current", "true");
+          else dot.removeAttribute("aria-current");
+        });
+      });
+    }, { threshold: 0.55 });
+    document.querySelectorAll(".home-page").forEach(function (page) {
+      observer.observe(page);
+    });
+  })();
+</script>

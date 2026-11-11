@@ -1,0 +1,165 @@
+{%- comment -%}
+  Official AIDA results as tabs: one tab per competition day, plus Event Ranking.
+  Pass `data`: an entry from site.data.aida_results (see _data/aida_results/).
+  Diver names link to their AIDA athlete profiles.
+{%- endcomment -%}
+{%- assign aida = include.data -%}
+{%- assign profile_base = "https://www.aidainternational.org/Athletes/Profile-" -%}
+{%- assign genders = "male,female" | split: "," -%}
+
+<section class="aida-results">
+  <h2>Official AIDA Results</h2>
+
+  <div class="aida-tabs" role="tablist" aria-label="AIDA results">
+    {%- for day in aida.days %}
+      <button type="button" role="tab" id="aida-tab-day-{{ forloop.index }}" aria-controls="aida-panel-day-{{ forloop.index }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"{% unless forloop.first %} tabindex="-1"{% endunless %}>{{ day.label | escape }}</button>
+    {%- endfor %}
+    <button type="button" role="tab" id="aida-tab-ranking" aria-controls="aida-panel-ranking" aria-selected="false" tabindex="-1">Event Ranking</button>
+  </div>
+
+  {%- for day in aida.days %}
+  <div class="aida-panel" role="tabpanel" id="aida-panel-day-{{ forloop.index }}" aria-labelledby="aida-tab-day-{{ forloop.index }}"{% unless forloop.first %} hidden{% endunless %}>
+    <div class="aida-table-wrap">
+      <table class="aida-table">
+        <thead>
+          <tr><th>Start</th><th>Diver</th><th>Nationality</th><th>Gender</th><th>Discipline</th><th>Line</th><th>Official Top</th><th>AP</th><th>RP</th><th>Card</th><th>Points</th><th>Remarks</th></tr>
+        </thead>
+        <tbody>
+          {%- for row in day.rows %}
+          <tr>
+            <td>{{ row.start }}</td>
+            <td class="aida-diver"><a href="{{ profile_base }}{{ row.profile }}" target="_blank" rel="noopener noreferrer">{{ row.diver | escape }}</a></td>
+            <td>{{ row.nationality }}</td>
+            <td>{{ row.gender }}</td>
+            <td>{{ row.discipline }}</td>
+            <td>{{ row.line }}</td>
+            <td>{{ row.official_top }}</td>
+            <td>{{ row.ap }}</td>
+            <td>{{ row.rp }}</td>
+            <td><span class="aida-card aida-card-{{ row.card | downcase }}">{{ row.card }}</span></td>
+            <td>{{ row.points }}</td>
+            <td>{{ row.remarks | escape }}</td>
+          </tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {%- endfor %}
+
+  <div class="aida-panel" role="tabpanel" id="aida-panel-ranking" aria-labelledby="aida-tab-ranking" hidden>
+    <div class="aida-filters">
+      <label>Discipline
+        <select class="aida-filter-discipline">
+          {%- for d in aida.ranking.disciplines %}
+            <option value="{{ d.name | downcase }}">{{ d.name }}</option>
+          {%- endfor %}
+          <option value="overall" selected>Overall</option>
+        </select>
+      </label>
+      <label>Gender
+        <select class="aida-filter-gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </label>
+    </div>
+
+    {%- for d in aida.ranking.disciplines %}
+      {%- assign key = d.name | downcase %}
+      {%- for gender in genders %}
+      <div class="aida-ranking" data-discipline="{{ key }}" data-gender="{{ gender }}" hidden>
+        <h3>{{ d.name }} · {{ gender | capitalize }}</h3>
+        <div class="aida-table-wrap">
+          <table class="aida-table">
+            <thead>
+              <tr><th>Medal</th><th>#</th><th>Name</th><th>Nationality</th><th>Result</th><th>Announced</th><th>Points</th><th>Penalties</th></tr>
+            </thead>
+            <tbody>
+              {%- for row in d[gender] %}
+              <tr>
+                <td>{% if row.medal != "" %}<span class="aida-medal aida-medal-{{ row.medal }}" title="{{ row.medal | capitalize }}" aria-label="{{ row.medal | capitalize }} medal"></span>{% endif %}</td>
+                <td>{{ row.rank }}</td>
+                <td class="aida-diver"><a href="{{ profile_base }}{{ row.profile }}" target="_blank" rel="noopener noreferrer">{{ row.name | escape }}</a></td>
+                <td>{{ row.nationality }}</td>
+                <td>{{ row.result }}</td>
+                <td>{{ row.announced }}</td>
+                <td>{{ row.points }}</td>
+                <td>{{ row.penalties }}</td>
+              </tr>
+              {%- endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      {%- endfor %}
+    {%- endfor %}
+
+    {%- for gender in genders %}
+    <div class="aida-ranking" data-discipline="overall" data-gender="{{ gender }}"{% unless gender == "male" %} hidden{% endunless %}>
+      <h3>Overall · {{ gender | capitalize }}</h3>
+      <div class="aida-table-wrap">
+        <table class="aida-table">
+          <thead>
+            <tr><th>#</th><th>Name</th><th>Nationality</th>{% for d in aida.ranking.disciplines %}<th>{{ d.name }}</th>{% endfor %}<th>Points</th></tr>
+          </thead>
+          <tbody>
+            {%- for row in aida.ranking.overall[gender] %}
+            <tr>
+              <td>{{ row.rank }}</td>
+              <td class="aida-diver"><a href="{{ profile_base }}{{ row.profile }}" target="_blank" rel="noopener noreferrer">{{ row.name | escape }}</a></td>
+              <td>{{ row.nationality }}</td>
+              {%- for score in row.scores %}
+              <td>{{ score }}</td>
+              {%- endfor %}
+              <td>{{ row.points }}</td>
+            </tr>
+            {%- endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    {%- endfor %}
+  </div>
+
+  <p class="aida-source">Source: <a href="{{ aida.source_url }}" target="_blank" rel="noopener noreferrer">AIDA International event results</a></p>
+</section>
+
+<script>
+  (function () {
+    var root = document.querySelector(".aida-results");
+    if (!root) return;
+    var tabs = root.querySelectorAll('[role="tab"]');
+
+    // Tabs: show one panel at a time; arrow keys move between tabs.
+    function select(tab) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute("aria-selected", on ? "true" : "false");
+        t.tabIndex = on ? 0 : -1;
+        document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+      });
+    }
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener("click", function () { select(tab); });
+      tab.addEventListener("keydown", function (e) {
+        var next = e.key === "ArrowRight" ? i + 1 : e.key === "ArrowLeft" ? i - 1 : null;
+        if (next === null) return;
+        var t = tabs[(next + tabs.length) % tabs.length];
+        select(t);
+        t.focus();
+      });
+    });
+
+    // Event Ranking: show the table for the chosen discipline and gender.
+    var discipline = root.querySelector(".aida-filter-discipline");
+    var gender = root.querySelector(".aida-filter-gender");
+    function filter() {
+      root.querySelectorAll(".aida-ranking").forEach(function (r) {
+        r.hidden = !(r.dataset.discipline === discipline.value && r.dataset.gender === gender.value);
+      });
+    }
+    discipline.addEventListener("change", filter);
+    gender.addEventListener("change", filter);
+  })();
+</script>

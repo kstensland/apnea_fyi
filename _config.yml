@@ -16,9 +16,9 @@ minimal: true             # use a dark header
 # Menu
 
 navigation:                # accepts {file, title, url, icon, sidebaricon}
-  - {file: "index.html"}
-  - {file: "about.md"}
-  - {title: "Events", url: "/events/"}
+  - {title: "Home", url: "/#home"}       # pages of the home page carousel
+  - {title: "About", url: "/#about"}
+  - {title: "Events", url: "/#events"}
 
 # Developer notes, not part of the public site
 exclude:

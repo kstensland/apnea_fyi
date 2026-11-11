@@ -4,31 +4,5 @@ title: "Events"
 permalink: /events/
 ---
 <article>
-  <section class="event-list">
-    <h2>Upcoming Events</h2>
-    {%- assign events = site.events | sort: "event_date" -%}
-    {% for event in events %}
-      <a class="event-card" href="{{ event.url | relative_url }}">
-        <span class="event-card-title">{{ event.title | escape }}</span>
-        <span class="event-card-meta">
-          <time datetime="{{ event.event_date | date_to_xmlschema }}">{% include event_date_text.html event=event %}</time>
-          {% if event.location %}&middot; {{ event.location | escape }}{% endif %}
-        </span>
-      </a>
-    {% endfor %}
-  </section>
-
-  <section class="event-list past-events">
-    <h2>Past events</h2>
-    {%- assign past_events = site.past_events | sort: "event_date" | reverse -%}
-    {% for event in past_events %}
-      <a class="event-card" href="{{ event.url | relative_url }}">
-        <span class="event-card-title">{{ event.title | escape }}</span>
-        <span class="event-card-meta">
-          <time datetime="{{ event.event_date | date_to_xmlschema }}">{% include event_date_text.html event=event %}</time>
-          {% if event.location %}&middot; {{ event.location | escape }}{% endif %}
-        </span>
-      </a>
-    {% endfor %}
-  </section>
+  {% include event_lists.html %}
 </article>

@@ -29,9 +29,14 @@ body > header
 
 {% endif %}
 
+// Logo and title sit at the window's left edge, nav links at its right edge,
+// instead of inside the centered content column.
 body > header
-  padding-top: .6em
-  padding-bottom: .6em
+  padding: .4em 1.5em
+
+// Keep the links on the right even when they wrap below the title on phones.
+body > header > nav
+  margin-left: auto
 
 body > footer
   box-shadow: 0 0 .6em rgba($dark, 0.04) inset

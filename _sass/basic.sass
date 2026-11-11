@@ -1,8 +1,10 @@
 @use "index" as *
 
+// Dark, moody deep-water background, used in both light and dark mode.
+// Soft light from the surface fades into near-black depth.
 body
-  background: $light
-  color: $dark
+  background: #050b12
+  color: $light
   font-family: $font-family
   font-weight: $font-weight
   font-size: $font-size
@@ -13,10 +15,15 @@ body
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
-@media (prefers-color-scheme: dark)
-  body
-    background: $dark
-    color: $light
+// Fixed layer behind the page, so the water stays put while content scrolls
+// (background-attachment: fixed is ignored on iOS Safari).
+body::before
+  content: ""
+  position: fixed
+  inset: 0
+  z-index: -1
+  pointer-events: none
+  background: radial-gradient(ellipse 70% 45% at 30% 0%, rgba(70, 150, 170, .22), transparent 70%), radial-gradient(ellipse 55% 35% at 80% 8%, rgba(40, 110, 140, .16), transparent 70%), radial-gradient(ellipse 120% 60% at 50% 110%, rgba(0, 0, 0, .6), transparent 70%), linear-gradient(180deg, #0c2a38 0%, #08202d 30%, #061722 60%, #050b12 100%)
 
 h1, h2, h3, h4, h5, h6
   font-weight: $heading-weight

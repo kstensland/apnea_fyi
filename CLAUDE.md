@@ -30,18 +30,21 @@ Write for readers new to competition freediving. Verify AIDA rules against AIDA'
 | Past event pages | `_past_events/*.md`, layout `past_event` | `/events/past/<name>/` |
 | Linktree redirect | `emeraldcity.html` (no layout, meta refresh) | `/emeraldcity/` |
 
-- The header nav is set in `_config.yml` under `navigation`: Home, About (`about.md`), Events (`/events/`). A nav item with a `url` links there. An item with a `file` looks up that page by file name.
+- The header nav is set in `_config.yml` under `navigation`: Home (`/#home`), About (`/#about`), Events (`/#events`). Each jumps to a page of the home page carousel. A nav item with a `url` links there. An item with a `file` looks up that page by file name.
+- `/about/` and `/events/` still exist as standalone pages for old links. Their content comes from the same includes as the home page sections (`_includes/about_content.html`, `_includes/event_lists.html`), so edit it there.
 - `README.md` is developer documentation. It is excluded from the site (see `exclude` in `_config.yml`). Do not put organization content there.
 - `CLAUDE.md` is excluded from the site too.
 
 ## Home page
 
-`_includes/home.html` renders the home page. It has no event list:
+`_includes/home.html` renders the home page as a **vertical carousel**: Home (hero), About and Events are each a full-screen page, and scrolling snaps from one page to the next:
 
-- A full-width **hero**: `assets/images/home_page_hero.jpg`, with the overlay heading "Community Hosted Freediving Competitions and Events in the PNW" and a "Register for an upcoming event" button that links to `/events/`.
-- The hero sits outside the content `<article>`, so it reaches the window edges.
+- A full-width **hero**: `assets/images/home_page_hero.jpg`, with the overlay heading "Community Hosted Freediving Competitions and Events in the PNW" and a "Register for an upcoming event" button that links to `/#events`.
+- The hero is not inside an `<article>`, so it reaches the window edges.
 - Hero height steps at fixed widths in `_sass/hero.sass` (11em, 16em, 22em, 28em, 34em). The image is cropped with `object-fit: cover`, centered.
 - The heading uses **Raleway** at weight 300, loaded from Google Fonts in `_layouts/default.html`.
+- The pages are `<section class="home-page">` elements with ids `home`, `about`, `events` inside `.home-pages`. Styles are at the end of `_sass/hero.sass`. Snapping (`scroll-snap-type: y mandatory`), the sticky header and smooth scrolling apply only on pages containing `.home-pages` (`html:has(.home-pages)`).
+- Each page is `100svh` minus the header height. A small script in `home.html` sets `--header-height` and highlights the carousel dots (`.home-dots`) on the right edge.
 - The image's alt text describes the photo (a freediver in open water with the Seattle skyline behind). Update it if the photo changes.
 
 ## Events
@@ -51,7 +54,7 @@ Events are Jekyll **collections**. Each event is one Markdown file, and the coll
 ### Upcoming events (`_events/`)
 
 - Collection `events`, layout `event`, URL `/events/<file-name>/`.
-- Listed in the "Events" section of `/events/`, sorted by `event_date` ascending.
+- Listed under "Upcoming Events" on the home page and `/events/` (from `_includes/event_lists.html`), sorted by `event_date` ascending.
 - Front matter:
 
 ```yaml
@@ -71,7 +74,7 @@ registration_url: "https://ecac.wufoo.com/forms/..."
 ### Past events (`_past_events/`)
 
 - Collection `past_events`, layout `past_event`, URL `/events/past/<file-name>/`.
-- Listed in the "Past events" section of `/events/`, newest first. Upcoming and past events never share a list.
+- Listed under "Past events" on the home page and `/events/`, newest first. Upcoming and past events never share a list.
 - Same front matter as upcoming events, **without** `registration_url`. There is no Register button.
 - Adds `drive_url` (the Google Drive photo folder) and a `results` list:
 
@@ -94,6 +97,10 @@ results:
 ---
 ```
 
+- Optional `aida_results` (a file name in `_data/aida_results/`, without `.yml`) shows the **Official AIDA Results** after the results thumbnails: a tab for each competition day plus an **Event Ranking** tab with Discipline and Gender filters, like AIDA's own page. The disciplines come from the data file (depth: CWT, CNF, FIM, CWTB; pool: DYN, DNF, STA, DYNB), and each Overall row's `scores` list follows that order. Diver names link to their AIDA athlete profiles. Rendered by `_includes/aida_results.html`.
+  - The data is copied by hand from the AIDA event page (`/Events/EventResults-<id>`, one table per day tab) and ranking page (`/Events/EventRanking-<id>`, a form posted with `discipline` = 3 CWT, 4 CNF, 5 FIM, 12 CWTB or `overall`, and `gender` = 0 male or 1 female). Follow `_data/aida_results/sept_2026_depth.yml` (depth, two days) or `nov_2026_pool.yml` (pool, one day) for the format. AIDA can correct results later, so re-check before relying on it.
+- Optional `sponsors` (a list of `name`, `image`, and optional `url`) shows a **Sponsors** section at the end of the page, after the map: logos on light cards (so black logos stay readable on the dark background), five across on desktop and two on phones. Sponsor logos are transparent PNGs in `assets/images/sponsor_*.png`. The Sept 2026 ones were cut from the Sept 5 results sheet and the Nov 2026 ones from the Nov 1 sheet, with white turned to transparency (white inside letters too). Two logos keep their white because it is part of the artwork: the Lighthouse Freediving square icon (white waves) and the Lighthouse Diving Center dive flag (white stripe). SPITSEA and Jana Strain appear on both sheets; the files hold the sharper Nov versions and both events use them.
+- Optional `youtube_id` (the ID from a YouTube link, e.g. `lBtrWxJAnho`) embeds the video under a "Competition Livestream" heading, just before the map, with a "Watch on YouTube" link below. The video's owner must allow embedding (YouTube Studio → the video → Details → Show more → Allow embedding), or the player shows "Video unavailable".
 - Each result is a **thumbnail** with a caption. Results sit side by side on wide screens and stack on phones.
 - Thumbnails are fixed at 15rem wide and 3:4 tall (`aspect-ratio: 0.75`), cropped with `object-fit: cover`. The modal shows the full image.
 - Clicking a thumbnail opens that result in a native `<dialog>` modal. Clicking the image inside the modal toggles full-width zoom. Close with the × button, a click on the dark backdrop, or Escape.
@@ -161,7 +168,7 @@ bundle exec jekyll serve --livereload   # http://localhost:4000/
 ## Project structure
 
 - `_layouts/`
-  - `default.html`: head (stylesheet, favicons, Google Fonts), header (logo `ecac_black.png`, the `.header_title` text, nav), content, and footer (description, social links, and the mail link in a shared `.footer-links` row).
+  - `default.html`: head (stylesheet, favicons, Google Fonts), header (logo `ecac_black.png`, the `.header_title` text, nav), content, and footer (social links and the mail link in one centered `.footer-links` row; `site.description` is no longer shown there).
   - `page.html`, `post.html`: for the old blog content.
   - `event.html`: upcoming event pages.
   - `past_event.html`: past event pages, including the results thumbnails and modal JS.
@@ -216,7 +223,7 @@ The site is hosted on **GitHub Pages** at **apnea.fyi** (custom domain from the 
 
 - **Sass:** the Stage 1 deprecation fixes (`color.adjust`, `color.mix`, `math.div`) and Stage 2 (`@use` instead of `@import`) are both done.
 - **Second past event:** the owner has not yet provided details for a second September 2026 event. Ask for them before adding one.
-- **Results sheets:** the Sept and Nov 2026 past events have their results. New past events can follow the steps under "Adding an event".
+- **Results sheets:** the Sept and Nov 2026 events show the Official AIDA Results tables instead of their results sheet images. The `results` images were removed from both pages on purpose, but the image files stay in `assets/images/` (the sponsor logos were cut from those sheets). New past events can follow the steps under "Adding an event".
 - **Map pins:** the Seacrest Park Cove 1 pin has not been confirmed. Check it on the page and send coordinates if it is off.
 - **Footer social links:** Facebook (`https://www.facebook.com/profile.php?id=61584381043663`), Instagram (`https://www.instagram.com/emeraldcityapneachallenge`), YouTube (`https://www.youtube.com/@emeraldcityapneachallenge`). They are gray by default and take brand colors on hover.
 - **Linktree:** `/emeraldcity/` redirects to the ECAC Linktree (`https://linktr.ee/emeraldcityapneachallenge`). The `fbclid` parameter was dropped on purpose.

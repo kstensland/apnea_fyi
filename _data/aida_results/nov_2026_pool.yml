@@ -1,0 +1,96 @@
+# Official AIDA results for the November 2026 Pool Competition.
+# Copied from https://www.aidainternational.org/Events/EventResults-5237
+# and https://www.aidainternational.org/Events/EventRanking-5237 on 2026-11-11.
+# `profile` is the AIDA athlete ID: https://www.aidainternational.org/Athletes/Profile-<profile>
+# Overall `scores` follow the order of ranking.disciplines.
+source_url: "https://www.aidainternational.org/Events/EventResults-5237"
+ranking_url: "https://www.aidainternational.org/Events/EventRanking-5237"
+days:
+  - date: 2026-11-01
+    label: "Nov 1"
+    rows:
+      - {start: 1, diver: "Alessandro Link", profile: "85b30280-2de4-42e5-a700-fd9466888ec7", nationality: "USA", gender: "M", discipline: "STA", line: "1", official_top: "11:45", ap: "01:00", rp: "02:59", card: "WHITE", points: 35.8, remarks: "Ok"}
+      - {start: 2, diver: "Karen Ogilvie", profile: "b83cbfef-698d-4de1-b59f-1ad6c6dddb26", nationality: "CAN", gender: "F", discipline: "STA", line: "2", official_top: "11:45", ap: "02:30", rp: "05:22", card: "WHITE", points: 64.4, remarks: "Ok"}
+      - {start: 3, diver: "James Jenkins", profile: "98da1aa7-46b0-4153-9b58-2867d9211a28", nationality: "USA", gender: "M", discipline: "STA", line: "3", official_top: "11:45", ap: "02:45", rp: "03:57", card: "RED", points: 0, remarks: "Dqsp"}
+      - {start: 4, diver: "Michael Maxim", profile: "8b2ff7c9-f758-4d24-b202-edd06dc97709", nationality: "USA", gender: "M", discipline: "STA", line: "1", official_top: "11:57", ap: "03:00", rp: "06:24", card: "WHITE", points: 76.8, remarks: "Ok"}
+      - {start: 5, diver: "Benn Drysdale", profile: "246003e6-415d-4f90-88c9-078237cb68e1", nationality: "CAN", gender: "M", discipline: "STA", line: "2", official_top: "11:57", ap: "03:30", rp: "05:21", card: "WHITE", points: 64.2, remarks: "Ok"}
+      - {start: 6, diver: "Richard Vanderbyl", profile: "b69920a0-532c-4d10-9461-f61b0c77c11e", nationality: "CAN", gender: "M", discipline: "STA", line: "3", official_top: "11:57", ap: "04:00", rp: "04:05", card: "YELLOW", points: 48, remarks: "Latestart"}
+      - {start: 7, diver: "Brian Yifeng Tong", profile: "3ece8d3e-da1e-43ae-92f0-4d7c5725bd63", nationality: "CHN", gender: "M", discipline: "STA", line: "1", official_top: "12:09", ap: "00:01", rp: "03:52", card: "WHITE", points: 46.4, remarks: "Ok"}
+      - {start: 8, diver: "Nessim Könsgen", profile: "1a2afb31-046c-4d30-a015-c1d58cf44983", nationality: "CAN", gender: "M", discipline: "STA", line: "2", official_top: "12:09", ap: "04:00", rp: "06:40", card: "WHITE", points: 80, remarks: "Ok"}
+      - {start: 9, diver: "Sarah Woodworth", profile: "fcccc282-9ffc-44b6-b6b6-7e9baf4cef31", nationality: "USA", gender: "F", discipline: "STA", line: "3", official_top: "12:09", ap: "04:30", rp: "04:42", card: "WHITE", points: 56.4, remarks: "Ok"}
+      - {start: 10, diver: "Charles Link", profile: "ba288fa6-61ab-4758-a51e-d9b0fa210914", nationality: "USA", gender: "M", discipline: "DNF", line: "1", official_top: "12:21", ap: "10 m", rp: "68 m", card: "WHITE", points: 34, remarks: "Ok"}
+      - {start: 11, diver: "Stephan Lany", profile: "0a71e21c-53de-455f-a2e1-ea7f34e37c21", nationality: "USA", gender: "M", discipline: "DNF", line: "1", official_top: "12:30", ap: "117 m", rp: "143 m", card: "RED", points: 0, remarks: "Dqsp"}
+      - {start: 12, diver: "Yang Yu", profile: "7dffadb6-9d66-49c2-95ff-df510e65bf69", nationality: "CHN", gender: "F", discipline: "DYNB", line: "1", official_top: "12:39", ap: "10 m", rp: "68 m", card: "WHITE", points: 34, remarks: "Ok"}
+      - {start: 13, diver: "Phoebe Wong", profile: "ed1b26c2-8e87-4da4-b038-a304688b07d8", nationality: "CAN", gender: "F", discipline: "DNF", line: "1", official_top: "12:48", ap: "40 m", rp: "101 m", card: "RED", points: 0, remarks: "Dqsp,dqother"}
+      - {start: 14, diver: "Ze Chen", profile: "115b55c0-4a03-4bb5-91d3-b3a95a508cf0", nationality: "USA", gender: "M", discipline: "DYNB", line: "1", official_top: "12:57", ap: "1 m", rp: "109 m", card: "WHITE", points: 54.5, remarks: "Ok"}
+      - {start: 15, diver: "Jialin Zhou", profile: "209c688d-2681-4327-a890-9a58ad323249", nationality: "CHN", gender: "F", discipline: "DYNB", line: "1", official_top: "13:06", ap: "10 m", rp: "95 m", card: "WHITE", points: 47.5, remarks: "Ok"}
+      - {start: 16, diver: "Dittam Dey", profile: "e088be30-da4c-4a44-8ac0-aa7efd5ce98d", nationality: "CAN", gender: "M", discipline: "DYN", line: "1", official_top: "13:15", ap: "100 m", rp: "137 m", card: "RED", points: 0, remarks: "Dqsp"}
+      - {start: 17, diver: "Alessandro Link", profile: "85b30280-2de4-42e5-a700-fd9466888ec7", nationality: "USA", gender: "M", discipline: "DYNB", line: "1", official_top: "13:24", ap: "20 m", rp: "68 m", card: "WHITE", points: 34, remarks: "Ok"}
+      - {start: 18, diver: "Karen Ogilvie", profile: "b83cbfef-698d-4de1-b59f-1ad6c6dddb26", nationality: "CAN", gender: "F", discipline: "DNF", line: "1", official_top: "13:33", ap: "33 m", rp: "125 m", card: "WHITE", points: 62.5, remarks: "Ok"}
+      - {start: 19, diver: "James Jenkins", profile: "98da1aa7-46b0-4153-9b58-2867d9211a28", nationality: "USA", gender: "M", discipline: "DYNB", line: "1", official_top: "13:42", ap: "50 m", rp: "63 m", card: "WHITE", points: 31.5, remarks: "Ok"}
+      - {start: 20, diver: "Michael Maxim", profile: "8b2ff7c9-f758-4d24-b202-edd06dc97709", nationality: "USA", gender: "M", discipline: "DYNB", line: "1", official_top: "13:51", ap: "75 m", rp: "137 m", card: "WHITE", points: 68.5, remarks: "Ok"}
+      - {start: 21, diver: "Benn Drysdale", profile: "246003e6-415d-4f90-88c9-078237cb68e1", nationality: "CAN", gender: "M", discipline: "DNF", line: "1", official_top: "14:00", ap: "55 m", rp: "108 m", card: "WHITE", points: 54, remarks: "Ok"}
+      - {start: 22, diver: "Richard Vanderbyl", profile: "b69920a0-532c-4d10-9461-f61b0c77c11e", nationality: "CAN", gender: "M", discipline: "DYNB", line: "1", official_top: "14:09", ap: "44 m", rp: "141 m", card: "WHITE", points: 70.5, remarks: "Ok"}
+      - {start: 23, diver: "Charles Link", profile: "ba288fa6-61ab-4758-a51e-d9b0fa210914", nationality: "USA", gender: "M", discipline: "DYNB", line: "1", official_top: "14:18", ap: "55 m", rp: "77 m", card: "WHITE", points: 38.5, remarks: "Ok"}
+      - {start: 24, diver: "Stephan Lany", profile: "0a71e21c-53de-455f-a2e1-ea7f34e37c21", nationality: "USA", gender: "M", discipline: "DYNB", line: "1", official_top: "14:27", ap: "127 m", rp: "135 m", card: "WHITE", points: 67.5, remarks: "Ok"}
+      - {start: 25, diver: "Yang Yu", profile: "7dffadb6-9d66-49c2-95ff-df510e65bf69", nationality: "CHN", gender: "F", discipline: "DYN", line: "1", official_top: "14:36", ap: "11 m", rp: "63 m", card: "YELLOW", points: 26.5, remarks: "Pull"}
+      - {start: 26, diver: "Phoebe Wong", profile: "ed1b26c2-8e87-4da4-b038-a304688b07d8", nationality: "CAN", gender: "F", discipline: "DYNB", line: "1", official_top: "14:45", ap: "40 m", rp: "68 m", card: "WHITE", points: 34, remarks: "Ok"}
+ranking:
+  disciplines:
+    - name: "DYN"
+      male:
+        - {medal: "gold", rank: "1.", name: "Dittam Dey", profile: "e088be30-da4c-4a44-8ac0-aa7efd5ce98d", nationality: "CAN", result: "137 m", announced: "100 m", points: 0, penalties: 0}
+      female:
+        - {medal: "gold", rank: "1.", name: "Yang Yu", profile: "7dffadb6-9d66-49c2-95ff-df510e65bf69", nationality: "CHN", result: "63 m", announced: "11 m", points: 26.5, penalties: 5}
+    - name: "DNF"
+      male:
+        - {medal: "gold", rank: "1.", name: "Benn Drysdale", profile: "246003e6-415d-4f90-88c9-078237cb68e1", nationality: "CAN", result: "108 m", announced: "55 m", points: 54, penalties: 0}
+        - {medal: "silver", rank: "2.", name: "Charles Link", profile: "ba288fa6-61ab-4758-a51e-d9b0fa210914", nationality: "USA", result: "68 m", announced: "10 m", points: 34, penalties: 0}
+        - {medal: "bronze", rank: "3.", name: "Stephan Lany", profile: "0a71e21c-53de-455f-a2e1-ea7f34e37c21", nationality: "USA", result: "143 m", announced: "117 m", points: 0, penalties: 0}
+      female:
+        - {medal: "gold", rank: "1.", name: "Karen Ogilvie", profile: "b83cbfef-698d-4de1-b59f-1ad6c6dddb26", nationality: "CAN", result: "125 m", announced: "33 m", points: 62.5, penalties: 0}
+        - {medal: "silver", rank: "2.", name: "Phoebe Wong", profile: "ed1b26c2-8e87-4da4-b038-a304688b07d8", nationality: "CAN", result: "101 m", announced: "40 m", points: 0, penalties: 0}
+    - name: "STA"
+      male:
+        - {medal: "gold", rank: "1.", name: "Nessim Könsgen", profile: "1a2afb31-046c-4d30-a015-c1d58cf44983", nationality: "CAN", result: "06:40", announced: "04:00", points: 80, penalties: 0}
+        - {medal: "silver", rank: "2.", name: "Michael Maxim", profile: "8b2ff7c9-f758-4d24-b202-edd06dc97709", nationality: "USA", result: "06:24", announced: "03:00", points: 76.8, penalties: 0}
+        - {medal: "bronze", rank: "3.", name: "Benn Drysdale", profile: "246003e6-415d-4f90-88c9-078237cb68e1", nationality: "CAN", result: "05:21", announced: "03:30", points: 64.2, penalties: 0}
+        - {medal: "", rank: "4.", name: "Richard Vanderbyl", profile: "b69920a0-532c-4d10-9461-f61b0c77c11e", nationality: "CAN", result: "04:05", announced: "04:00", points: 48, penalties: 1}
+        - {medal: "", rank: "5.", name: "Brian Yifeng Tong", profile: "3ece8d3e-da1e-43ae-92f0-4d7c5725bd63", nationality: "CHN", result: "03:52", announced: "00:01", points: 46.4, penalties: 0}
+        - {medal: "", rank: "6.", name: "Alessandro Link", profile: "85b30280-2de4-42e5-a700-fd9466888ec7", nationality: "USA", result: "02:59", announced: "01:00", points: 35.8, penalties: 0}
+        - {medal: "", rank: "7.", name: "James Jenkins", profile: "98da1aa7-46b0-4153-9b58-2867d9211a28", nationality: "USA", result: "03:57", announced: "02:45", points: 0, penalties: 0}
+      female:
+        - {medal: "gold", rank: "1.", name: "Karen Ogilvie", profile: "b83cbfef-698d-4de1-b59f-1ad6c6dddb26", nationality: "CAN", result: "05:22", announced: "02:30", points: 64.4, penalties: 0}
+        - {medal: "silver", rank: "2.", name: "Sarah Woodworth", profile: "fcccc282-9ffc-44b6-b6b6-7e9baf4cef31", nationality: "USA", result: "04:42", announced: "04:30", points: 56.4, penalties: 0}
+    - name: "DYNB"
+      male:
+        - {medal: "gold", rank: "1.", name: "Richard Vanderbyl", profile: "b69920a0-532c-4d10-9461-f61b0c77c11e", nationality: "CAN", result: "141 m", announced: "44 m", points: 70.5, penalties: 0}
+        - {medal: "silver", rank: "2.", name: "Michael Maxim", profile: "8b2ff7c9-f758-4d24-b202-edd06dc97709", nationality: "USA", result: "137 m", announced: "75 m", points: 68.5, penalties: 0}
+        - {medal: "bronze", rank: "3.", name: "Stephan Lany", profile: "0a71e21c-53de-455f-a2e1-ea7f34e37c21", nationality: "USA", result: "135 m", announced: "127 m", points: 67.5, penalties: 0}
+        - {medal: "", rank: "4.", name: "Ze Chen", profile: "115b55c0-4a03-4bb5-91d3-b3a95a508cf0", nationality: "USA", result: "109 m", announced: "1 m", points: 54.5, penalties: 0}
+        - {medal: "", rank: "5.", name: "Charles Link", profile: "ba288fa6-61ab-4758-a51e-d9b0fa210914", nationality: "USA", result: "77 m", announced: "55 m", points: 38.5, penalties: 0}
+        - {medal: "", rank: "6.", name: "Alessandro Link", profile: "85b30280-2de4-42e5-a700-fd9466888ec7", nationality: "USA", result: "68 m", announced: "20 m", points: 34, penalties: 0}
+        - {medal: "", rank: "7.", name: "James Jenkins", profile: "98da1aa7-46b0-4153-9b58-2867d9211a28", nationality: "USA", result: "63 m", announced: "50 m", points: 31.5, penalties: 0}
+      female:
+        - {medal: "gold", rank: "1.", name: "Jialin Zhou", profile: "209c688d-2681-4327-a890-9a58ad323249", nationality: "CHN", result: "95 m", announced: "10 m", points: 47.5, penalties: 0}
+        - {medal: "silver", rank: "2.", name: "Phoebe Wong", profile: "ed1b26c2-8e87-4da4-b038-a304688b07d8", nationality: "CAN", result: "68 m", announced: "40 m", points: 34, penalties: 0}
+        - {medal: "bronze", rank: "3.", name: "Yang Yu", profile: "7dffadb6-9d66-49c2-95ff-df510e65bf69", nationality: "CHN", result: "68 m", announced: "10 m", points: 34, penalties: 0}
+  overall:
+    male:
+      - {rank: "1.", name: "Michael Maxim", profile: "8b2ff7c9-f758-4d24-b202-edd06dc97709", nationality: "USA", scores: ["-", "-", "76.8", "68.5"], points: 145.3}
+      - {rank: "2.", name: "Richard Vanderbyl", profile: "b69920a0-532c-4d10-9461-f61b0c77c11e", nationality: "CAN", scores: ["-", "-", "48", "70.5"], points: 118.5}
+      - {rank: "3.", name: "Benn Drysdale", profile: "246003e6-415d-4f90-88c9-078237cb68e1", nationality: "CAN", scores: ["-", "54", "64.2", "-"], points: 118.2}
+      - {rank: "4.", name: "Nessim Könsgen", profile: "1a2afb31-046c-4d30-a015-c1d58cf44983", nationality: "CAN", scores: ["-", "-", "80", "-"], points: 80}
+      - {rank: "5.", name: "Charles Link", profile: "ba288fa6-61ab-4758-a51e-d9b0fa210914", nationality: "USA", scores: ["-", "34", "-", "38.5"], points: 72.5}
+      - {rank: "6.", name: "Alessandro Link", profile: "85b30280-2de4-42e5-a700-fd9466888ec7", nationality: "USA", scores: ["-", "-", "35.8", "34"], points: 69.8}
+      - {rank: "7.", name: "Stephan Lany", profile: "0a71e21c-53de-455f-a2e1-ea7f34e37c21", nationality: "USA", scores: ["-", "0", "-", "67.5"], points: 67.5}
+      - {rank: "8.", name: "Ze Chen", profile: "115b55c0-4a03-4bb5-91d3-b3a95a508cf0", nationality: "USA", scores: ["-", "-", "-", "54.5"], points: 54.5}
+      - {rank: "9.", name: "Brian Yifeng Tong", profile: "3ece8d3e-da1e-43ae-92f0-4d7c5725bd63", nationality: "CHN", scores: ["-", "-", "46.4", "-"], points: 46.4}
+      - {rank: "10.", name: "James Jenkins", profile: "98da1aa7-46b0-4153-9b58-2867d9211a28", nationality: "USA", scores: ["-", "-", "0", "31.5"], points: 31.5}
+      - {rank: "11.", name: "Dittam Dey", profile: "e088be30-da4c-4a44-8ac0-aa7efd5ce98d", nationality: "CAN", scores: ["0", "-", "-", "-"], points: 0}
+    female:
+      - {rank: "1.", name: "Karen Ogilvie", profile: "b83cbfef-698d-4de1-b59f-1ad6c6dddb26", nationality: "CAN", scores: ["-", "62.5", "64.4", "-"], points: 126.9}
+      - {rank: "2.", name: "Yang Yu", profile: "7dffadb6-9d66-49c2-95ff-df510e65bf69", nationality: "CHN", scores: ["26.5", "-", "-", "34"], points: 60.5}
+      - {rank: "3.", name: "Sarah Woodworth", profile: "fcccc282-9ffc-44b6-b6b6-7e9baf4cef31", nationality: "USA", scores: ["-", "-", "56.4", "-"], points: 56.4}
+      - {rank: "4.", name: "Jialin Zhou", profile: "209c688d-2681-4327-a890-9a58ad323249", nationality: "CHN", scores: ["-", "-", "-", "47.5"], points: 47.5}
+      - {rank: "5.", name: "Phoebe Wong", profile: "ed1b26c2-8e87-4da4-b038-a304688b07d8", nationality: "CAN", scores: ["-", "0", "-", "34"], points: 34}

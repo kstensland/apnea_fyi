@@ -50,8 +50,36 @@ layout: default
     <p class="results-hint">Click the results to view them in full size.</p>
   {% endif %}
 
+  {% if page.aida_results %}
+    {%- assign aida_data = site.data.aida_results[page.aida_results] -%}
+    {% include aida_results.html data=aida_data %}
+  {% endif %}
+
+  {% if page.youtube_id %}
+    <h2>Competition Livestream</h2>
+    <div class="event-video">
+      <iframe src="https://www.youtube-nocookie.com/embed/{{ page.youtube_id }}" title="{{ page.title | escape }} video" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <p class="event-video-link"><a href="https://www.youtube.com/watch?v={{ page.youtube_id }}" target="_blank" rel="noopener noreferrer">Watch on YouTube</a></p>
+    </div>
+  {% endif %}
+
   {% if page.map_query %}
     {% include event_map.html query=page.map_query label=page.location %}
+  {% endif %}
+
+  {% if page.sponsors %}
+    <section class="sponsors">
+      <h2>Sponsors</h2>
+      <ul class="sponsor-grid">
+        {% for sponsor in page.sponsors %}
+          <li class="sponsor">
+            {% if sponsor.url %}<a href="{{ sponsor.url }}" target="_blank" rel="noopener noreferrer">{% endif %}
+            <img src="{{ sponsor.image | relative_url }}" alt="{{ sponsor.name | escape }}" loading="lazy">
+            {% if sponsor.url %}</a>{% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
   {% endif %}
 
   {{ content }}
