@@ -1,10 +1,10 @@
-# CLAUDE.md: apnea.fyi (apnea_fyi)
+# CLAUDE.md: emeraldcity.apnea.fyi (apnea_fyi)
 
 Project context for Claude sessions. Keep this file current when the structure, deployment, or event format changes.
 
 ## What this is
 
-- A static site built with **Jekyll**, live at https://apnea.fyi. It is the website for the **Emerald City Apnea Challenge (ECAC)**, an organization that hosts AIDA freediving competitions in the Pacific Northwest.
+- A static site built with **Jekyll**, live at https://emeraldcity.apnea.fyi. It is the website for the **Emerald City Apnea Challenge (ECAC)**, an organization that hosts AIDA freediving competitions in the Pacific Northwest.
 - Local path: `~/Desktop/projects/apnea_fyi` on macOS (Apple silicon MacBook Air). GitHub repo: `kstensland/apnea_fyi`.
 - The old personal freediving blog content still lives in `_posts/` and `_pages/` (partial pressures, freediving organizations, an incident report, advanced examples, welcome posts). Decide with the owner whether to keep, rewrite, or remove it. It is not linked from the navigation.
 
@@ -28,7 +28,7 @@ Write for readers new to competition freediving. Verify AIDA rules against AIDA'
 | Events list (upcoming and past) | `events.html` | `/events/` |
 | Upcoming event pages | `_events/*.md`, layout `event` | `/events/<name>/` |
 | Past event pages | `_past_events/*.md`, layout `past_event` | `/events/past/<name>/` |
-| Linktree redirect | `ecac_linktree.html` (no layout, meta refresh) | `/emeraldcity/linktree` |
+| Linktree redirect | `linktree.html`, `ecac_linktree.html` (no layout, meta refresh; body in `_includes/linktree_redirect.html`) | `/linktree`, `/emeraldcity/linktree` |
 | Old blog post list (noindex) | `emeraldcity.html` | `/emeraldcity/` |
 
 - The header nav is set in `_config.yml` under `navigation`: Home (`/#home`), About (`/#about`), Events (`/#events`). Each jumps to a page of the home page carousel. A nav item with a `url` links there. An item with a `file` looks up that page by file name.
@@ -45,7 +45,7 @@ Write for readers new to competition freediving. Verify AIDA rules against AIDA'
 - `noindex: true` adds `<meta name="robots" content="noindex">`; pair it with `sitemap: false`. Used on 404, archive, `/emeraldcity/` and the theme demo post.
 - `jekyll-sitemap` writes `/sitemap.xml`; `robots.txt` points to it. Site URL is `url` in `_config.yml`.
 - Default share image: `assets/images/og_image.jpg` (1200 × 630, cropped from the hero). The hero itself is served as `home_page_hero_1200.jpg` / `home_page_hero_2400.jpg` (the 5 MB original is kept but unused). If the hero photo changes, regenerate all three, e.g. with `sips -Z 2400 -s formatOptions 82`.
-- After deploying, submit `https://apnea.fyi/sitemap.xml` in Google Search Console and check event pages with Google's Rich Results Test.
+- After deploying, submit `https://emeraldcity.apnea.fyi/sitemap.xml` in Google Search Console and check event pages with Google's Rich Results Test.
 
 ## Home page
 
@@ -226,7 +226,7 @@ bundle exec jekyll serve --livereload   # http://localhost:4000/
 
 ## Hosting and deployment
 
-The site is hosted on **GitHub Pages** at **apnea.fyi** (custom domain from the `CNAME` file, HTTPS enforced).
+The site is hosted on **GitHub Pages** at **emeraldcity.apnea.fyi** (custom domain set in Settings → Pages; the `CNAME` file matches it; HTTPS enforced). It moved from the bare `apnea.fyi` in November 2026. DNS: a CNAME record `emeraldcity` → `kstensland.github.io` at Namecheap. The wildcard `*` record is to be removed once the move is done.
 
 - Deployment uses the GitHub Actions workflow in `.github/workflows/pages.yml`. It runs on every push to `main` (and on manual dispatch). It builds with `bundle exec jekyll build` on Ruby 3.4 using the Gemfile and `Gemfile.lock`, uploads `_site/`, and deploys it with `actions/deploy-pages`.
 - Pages' **source is "GitHub Actions"** (Settings → Pages → Build and deployment). The old built-in "pages build and deployment" job should no longer run. If it does (`gh run list` shows `pages-build-deployment`), check the Pages source setting.
@@ -241,7 +241,7 @@ The site is hosted on **GitHub Pages** at **apnea.fyi** (custom domain from the 
 - **Results sheets:** the Sept and Nov 2026 events show the Official AIDA Results tables instead of their results sheet images. The `results` images were removed from both pages on purpose, but the image files stay in `assets/images/` (the sponsor logos were cut from those sheets). New past events can follow the steps under "Adding an event".
 - **Map pins:** the Seacrest Park Cove 1 pin has not been confirmed. Check it on the page and send coordinates if it is off.
 - **Footer social links:** Facebook (`https://www.facebook.com/profile.php?id=61584381043663`), Instagram (`https://www.instagram.com/emeraldcityapneachallenge`), YouTube (`https://www.youtube.com/@emeraldcityapneachallenge`). They are gray by default and take brand colors on hover.
-- **Linktree:** `/emeraldcity/linktree` redirects to the ECAC Linktree (`https://linktr.ee/emeraldcityapneachallenge`). The `fbclid` parameter was dropped on purpose.
+- **Linktree:** `/linktree` and the older `/emeraldcity/linktree` redirect to the ECAC Linktree (`https://linktr.ee/emeraldcityapneachallenge`). The `fbclid` parameter was dropped on purpose.
 - **Old blog content:** posts in `_posts/` are not linked from the navigation. Decide whether to keep them.
 
 ## Conventions for edits

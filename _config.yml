@@ -2,7 +2,7 @@ title: "Emerald City Apnea Challenge"
 # Used in <title> on the home page and as the default meta description (see _includes/seo.html).
 tagline: "Seattle Freediving Competitions"
 description: "Community-run AIDA freediving competitions in Seattle and the PNW: depth in Puget Sound, pool in Snohomish, WA. Find upcoming events, registration and results."
-url: "https://apnea.fyi"
+url: "https://emeraldcity.apnea.fyi"
 author: "Kristofer Stensland"
 email: "emeraldcityapneachallenge@gmail.com"
 logo: "/assets/images/ecac_black.png"        # Organization logo in structured data
