@@ -28,18 +28,30 @@ Write for readers new to competition freediving. Verify AIDA rules against AIDA'
 | Events list (upcoming and past) | `events.html` | `/events/` |
 | Upcoming event pages | `_events/*.md`, layout `event` | `/events/<name>/` |
 | Past event pages | `_past_events/*.md`, layout `past_event` | `/events/past/<name>/` |
-| Linktree redirect | `emeraldcity.html` (no layout, meta refresh) | `/emeraldcity/` |
+| Linktree redirect | `ecac_linktree.html` (no layout, meta refresh) | `/emeraldcity/linktree` |
+| Old blog post list (noindex) | `emeraldcity.html` | `/emeraldcity/` |
 
 - The header nav is set in `_config.yml` under `navigation`: Home (`/#home`), About (`/#about`), Events (`/#events`). Each jumps to a page of the home page carousel. A nav item with a `url` links there. An item with a `file` looks up that page by file name.
 - `/about/` and `/events/` still exist as standalone pages for old links. Their content comes from the same includes as the home page sections (`_includes/about_content.html`, `_includes/event_lists.html`), so edit it there.
 - `README.md` is developer documentation. It is excluded from the site (see `exclude` in `_config.yml`). Do not put organization content there.
 - `CLAUDE.md` is excluded from the site too.
 
+## SEO
+
+- `_includes/seo.html` (included from the head of `_layouts/default.html`) writes the `<title>`, meta description, canonical URL, robots, Open Graph and Twitter tags, and JSON-LD: `SportsOrganization` + `WebSite` on the home page, `SportsEvent` + `BreadcrumbList` on every event page.
+- Titles: home is `site.title | site.tagline`; other pages are `<page title> | Emerald City Apnea Challenge`. Front matter `seo_title` replaces the whole title, `description` sets the meta description (aim for about 150 characters), `image` overrides the share image.
+- Event pages get a generated one-sentence summary from `_includes/event_description.html`. It is shown under the event title and used as the meta description. An event's `description` front matter replaces it. Event `city` (e.g. `"Snohomish, WA"`) goes into that sentence.
+- Give event titles their month and year ("February 2027 Pool Competition") so each page has a unique title in search results.
+- `noindex: true` adds `<meta name="robots" content="noindex">`; pair it with `sitemap: false`. Used on 404, archive, `/emeraldcity/` and the theme demo post.
+- `jekyll-sitemap` writes `/sitemap.xml`; `robots.txt` points to it. Site URL is `url` in `_config.yml`.
+- Default share image: `assets/images/og_image.jpg` (1200 × 630, cropped from the hero). The hero itself is served as `home_page_hero_1200.jpg` / `home_page_hero_2400.jpg` (the 5 MB original is kept but unused). If the hero photo changes, regenerate all three, e.g. with `sips -Z 2400 -s formatOptions 82`.
+- After deploying, submit `https://apnea.fyi/sitemap.xml` in Google Search Console and check event pages with Google's Rich Results Test.
+
 ## Home page
 
 `_includes/home.html` renders the home page as a **vertical carousel**: Home (hero), About and Events are each a full-screen page, and scrolling snaps from one page to the next:
 
-- A full-width **hero**: `assets/images/home_page_hero.jpg`, with the overlay heading "Community Hosted Freediving Competitions and Events in the PNW" and a "Register for an upcoming event" button that links to `/#events`.
+- A full-width **hero**: `assets/images/home_page_hero_2400.jpg` (with a 1200 px `srcset` version), with the overlay heading "Community-Hosted Freediving Competitions in Seattle and the PNW" and a "Register for an upcoming event" button that links to `/#events`.
 - The hero is not inside an `<article>`, so it reaches the window edges.
 - Hero height steps at fixed widths in `_sass/hero.sass` (11em, 16em, 22em, 28em, 34em). The image is cropped with `object-fit: cover`, centered.
 - The heading uses **Raleway** at weight 300, loaded from Google Fonts in `_layouts/default.html`.
@@ -148,7 +160,7 @@ Serve a built copy (`bundle exec jekyll build -d <scratch dir>`) with `python3 -
 | Bundler | 4.0.24 |
 | jekyll-sass-converter | 3.1.0 (Dart Sass via `sass-embedded`) |
 
-The Gemfile pins `gem "jekyll", "~> 4.4"`. Keep `Gemfile.lock` committed.
+The Gemfile pins `gem "jekyll", "~> 4.4"` and the plugins `jekyll-feed` and `jekyll-sitemap`. `Gemfile.lock` is currently in `.gitignore`, so CI resolves gems fresh.
 
 ### Run locally
 
@@ -173,7 +185,10 @@ bundle exec jekyll serve --livereload   # http://localhost:4000/
   - `event.html`: upcoming event pages.
   - `past_event.html`: past event pages, including the results thumbnails and modal JS.
 - `_includes/`
-  - `home.html`: home page hero.
+  - `home.html`: home page carousel and hero.
+  - `seo.html`: head metadata and structured data (see SEO).
+  - `event_description.html`: one-sentence event summary.
+  - `about_content.html`, `event_lists.html`: shared by the home page and `/about/`, `/events/`.
   - `event_date_text.html`: formatted event date.
   - `event_map.html`: map embed with placeholder.
   - `social-links.html`: footer social icons (from `site.social`).
@@ -191,7 +206,7 @@ bundle exec jekyll serve --livereload   # http://localhost:4000/
 - `assets/images/`: logos (`ecac_black.png` in the header, `ecac_white.png`), `snorkel_frog.png` (old header image), favicons, `home_page_hero.jpg`, event result images, and placeholder SVGs (`hero_placeholder.svg`, `results_placeholder.svg`).
 - `assets/fontawesome/icons.svg`: Font Awesome sprite used by the menu and footer.
 - `assets/katex/`: KaTeX assets (math, off by default).
-- `_config.yml`: `navigation`, `external` (footer mail link), `social`, `collections` (`events`, `past_events`), `exclude` (`README.md`, `CLAUDE.md`), `plugins` (`jekyll-feed`), and the layout flags `minimal` (dark header), `show_frame`, `show_sidebar`, `show_excerpts`, `mathjax`.
+- `_config.yml`: `navigation`, `external` (footer mail link), `social`, `collections` (`events`, `past_events`), `exclude` (`README.md`, `CLAUDE.md`), `plugins` (`jekyll-feed`, `jekyll-sitemap`), `url`, `tagline`, `description`, `logo`, `og_image`, and the layout flags `minimal` (dark header), `show_frame`, `show_sidebar`, `show_excerpts`, `mathjax`.
 
 ### Styling notes
 
@@ -226,7 +241,7 @@ The site is hosted on **GitHub Pages** at **apnea.fyi** (custom domain from the 
 - **Results sheets:** the Sept and Nov 2026 events show the Official AIDA Results tables instead of their results sheet images. The `results` images were removed from both pages on purpose, but the image files stay in `assets/images/` (the sponsor logos were cut from those sheets). New past events can follow the steps under "Adding an event".
 - **Map pins:** the Seacrest Park Cove 1 pin has not been confirmed. Check it on the page and send coordinates if it is off.
 - **Footer social links:** Facebook (`https://www.facebook.com/profile.php?id=61584381043663`), Instagram (`https://www.instagram.com/emeraldcityapneachallenge`), YouTube (`https://www.youtube.com/@emeraldcityapneachallenge`). They are gray by default and take brand colors on hover.
-- **Linktree:** `/emeraldcity/` redirects to the ECAC Linktree (`https://linktr.ee/emeraldcityapneachallenge`). The `fbclid` parameter was dropped on purpose.
+- **Linktree:** `/emeraldcity/linktree` redirects to the ECAC Linktree (`https://linktr.ee/emeraldcityapneachallenge`). The `fbclid` parameter was dropped on purpose.
 - **Old blog content:** posts in `_posts/` are not linked from the navigation. Decide whether to keep them.
 
 ## Conventions for edits

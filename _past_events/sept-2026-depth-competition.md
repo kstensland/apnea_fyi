@@ -1,9 +1,10 @@
 ---
 layout: past_event
-title: "Sept 2026 Depth Competition"
+title: "September 2026 Depth Competition"
 event_date: 2026-09-05
 event_end_date: 2026-09-06
 location: "Seacrest Park Cove 1"
+city: "West Seattle, WA"
 map_query: "Seacrest Park Cove 1, Seattle, WA"
 drive_url: "https://drive.google.com/drive/folders/1J36j2zm_gO4DrIO0z52y12jP8LP3ssan"
 aida_results: sept_2026_depth   # _data/aida_results/sept_2026_depth.yml

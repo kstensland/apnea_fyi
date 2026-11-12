@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
-<title>{% if page.title %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}</title>
 <meta charset="{{ site.encoding }}">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% include seo.html %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap">
-<meta name="author" content="{{ page.author | default: site.author | escape }}">
+<meta name="author" content="{{ page.author | default: site.title | escape }}">
 <meta name="generator" content="Jekyll v{{ jekyll.version }}">
-<link rel="canonical" href="{{ page.url | absolute_url }}">
 {% if site.show_frame %}
 <link rel="stylesheet" href="{{ "/assets/css/frame.css" | relative_url }}">
 {% else %}
@@ -36,7 +35,7 @@
 <header>
   <a href="{{ "/" | relative_url }}" class="title">
     
-    <img src="{{ "/assets/images/ecac_black.png" | relative_url }}" alt="" class="header_icon"/>
+    <img src="{{ "/assets/images/ecac_black.png" | relative_url }}" alt="" width="1020" height="1020" class="header_icon"/>
     <span class="header_title">Emerald City Apnea Challenge</span>
     
   </a>

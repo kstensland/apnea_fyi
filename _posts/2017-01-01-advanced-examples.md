@@ -2,6 +2,8 @@
 title:  "Advanced examples"
 mathjax: true
 layout: post
+noindex: true    # theme demo content, not about freediving
+sitemap: false
 categories: media
 ---
 

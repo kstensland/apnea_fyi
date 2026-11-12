@@ -1,0 +1,24 @@
+{%- comment -%}
+  One-sentence summary of an event, shown under the title on event pages and used as the
+  meta description. Pass `event`. An event's own `description` front matter wins.
+{%- endcomment -%}
+{%- assign e = include.event -%}
+{%- if e.description -%}
+  {{ e.description }}
+{%- else -%}
+  {%- capture when -%}{% include event_date_text.html event=e %}{%- endcapture -%}
+  {%- capture where -%}{{ e.location }}{% if e.city %} in {{ e.city }}{% endif %}{%- endcapture -%}
+  {%- if e.layout == "past_event" -%}
+    {%- assign parts = "" | split: "" -%}
+    {%- if e.aida_results -%}{%- assign parts = parts | push: "Official AIDA results" -%}{%- endif -%}
+    {%- if e.drive_url -%}{%- assign parts = parts | push: "photos" -%}{%- endif -%}
+    {%- if e.youtube_id -%}{%- assign parts = parts | push: "the livestream" -%}{%- endif -%}
+    {%- if parts.size > 0 -%}
+      {{ parts | array_to_sentence_string }} from this freediving competition, held {{ when }} at {{ where }}.
+    {%- else -%}
+      A freediving competition held {{ when }} at {{ where }}, hosted by Emerald City Apnea Challenge.
+    {%- endif -%}
+  {%- else -%}
+    A freediving competition on {{ when }} at {{ where }}, hosted by Emerald City Apnea Challenge. See the details and register to compete.
+  {%- endif -%}
+{%- endif -%}
