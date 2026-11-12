@@ -5,9 +5,12 @@
   <section id="home" class="home-page home-page-hero" aria-label="Home">
     <div class="hero">
       <div class="hero-media">
-        <img src="{{ '/assets/images/home_page_hero.jpg' | relative_url }}" width="3894" height="2932" alt="Freediver in open water with the Seattle skyline behind">
+        <img src="{{ '/assets/images/home_page_hero_2400.jpg' | relative_url }}"
+             srcset="{{ '/assets/images/home_page_hero_1200.jpg' | relative_url }} 1200w, {{ '/assets/images/home_page_hero_2400.jpg' | relative_url }} 2400w"
+             sizes="100vw" width="2400" height="1807" fetchpriority="high"
+             alt="Freediver resting on a buoy in Puget Sound with the Seattle skyline and Space Needle behind">
         <div class="hero-overlay">
-          <h1>Community Hosted Freediving Competitions and Events in the PNW</h1>
+          <h1>Community-Hosted Freediving Competitions in Seattle and the PNW</h1>
         </div>
       </div>
       <div class="hero-action">
@@ -18,7 +21,7 @@
 
   <section id="about" class="home-page" aria-label="About">
     <div class="home-page-inner">
-      <h2>About</h2>
+      <h2>About Emerald City Apnea Challenge</h2>
       {% include about_content.html %}
     </div>
   </section>

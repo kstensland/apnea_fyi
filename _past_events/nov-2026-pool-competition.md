@@ -3,6 +3,7 @@ layout: past_event
 title: "November 2026 Pool Competition"
 event_date: 2026-11-01
 location: "Snohomish Aquatic Center"
+city: "Snohomish, WA"
 map_query: "Snohomish Aquatic Center, Snohomish, WA"
 drive_url: "https://drive.google.com/drive/folders/1vMbO2G_YAbPpdTi9P0agH52sQ-f2vLZb"
 youtube_id: "lBtrWxJAnho"   # https://www.youtube.com/live/lBtrWxJAnho

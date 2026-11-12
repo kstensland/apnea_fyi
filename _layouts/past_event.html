@@ -8,6 +8,7 @@ layout: default
 <article class="event past-event">
   <header>
     <h1>{{ page.title | escape }}</h1>
+    <p class="event-lead">{% include event_description.html event=page %}</p>
   </header>
 
   <dl class="event-details">

@@ -1,0 +1,158 @@
+{%- comment -%}
+  Search and social metadata for every page: <title>, meta description, canonical URL,
+  robots, Open Graph, Twitter card and JSON-LD structured data.
+
+  Front matter a page can set:
+    seo_title    replaces the whole <title> (otherwise "<title> | <site.title>")
+    description  meta description, about 150 characters (events get one generated, see event_description.html)
+    image        share image path (default: site.og_image)
+    noindex      true keeps the page out of search results (add `sitemap: false` too)
+{%- endcomment -%}
+
+{%- assign is_home = false -%}
+{%- if page.url == "/" -%}{%- assign is_home = true -%}{%- endif -%}
+{%- assign is_event = false -%}
+{%- if page.layout == "event" or page.layout == "past_event" -%}{%- assign is_event = true -%}{%- endif -%}
+
+{%- if page.seo_title -%}
+  {%- assign seo_title = page.seo_title -%}
+{%- elsif is_home -%}
+  {%- assign seo_title = site.title | append: " | " | append: site.tagline -%}
+{%- elsif page.title -%}
+  {%- assign seo_title = page.title | append: " | " | append: site.title -%}
+{%- else -%}
+  {%- assign seo_title = site.title -%}
+{%- endif -%}
+
+{%- if page.description -%}
+  {%- assign seo_description = page.description -%}
+{%- elsif is_event -%}
+  {%- capture seo_description -%}{% include event_description.html event=page %}{%- endcapture -%}
+{%- elsif page.post_description -%}
+  {%- assign seo_description = page.post_description -%}
+{%- else -%}
+  {%- assign seo_description = site.description -%}
+{%- endif -%}
+{%- assign seo_description = seo_description | strip_html | replace: "&amp;", "&" | normalize_whitespace | strip -%}
+
+{%- assign seo_image = page.image | default: site.og_image | absolute_url -%}
+{%- assign seo_url = page.url | replace: "index.html", "" | absolute_url -%}
+{%- assign logo_url = site.logo | absolute_url -%}
+
+<title>{{ seo_title | escape }}</title>
+<meta name="description" content="{{ seo_description | escape }}">
+<link rel="canonical" href="{{ seo_url }}">
+{%- if page.noindex %}
+<meta name="robots" content="noindex, follow">
+{%- endif %}
+<meta name="theme-color" content="#111111">
+
+<meta property="og:site_name" content="{{ site.title | escape }}">
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+<meta property="og:title" content="{{ page.seo_title | default: page.title | default: site.title | escape }}">
+<meta property="og:description" content="{{ seo_description | escape }}">
+<meta property="og:url" content="{{ seo_url }}">
+<meta property="og:image" content="{{ seo_image }}">
+{%- unless page.image %}
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Freediver resting on a buoy in Puget Sound with the Seattle skyline behind">
+{%- endunless %}
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.seo_title | default: page.title | default: site.title | escape }}">
+<meta name="twitter:description" content="{{ seo_description | escape }}">
+<meta name="twitter:image" content="{{ seo_image }}">
+
+{%- capture organization -%}
+{
+  "@type": "SportsOrganization",
+  "@id": {{ "/#organization" | absolute_url | jsonify }},
+  "name": {{ site.title | jsonify }},
+  "alternateName": "ECAC",
+  "url": {{ "/" | absolute_url | jsonify }},
+  "logo": {{ logo_url | jsonify }},
+  "image": {{ site.og_image | absolute_url | jsonify }},
+  "description": {{ site.description | jsonify }},
+  "email": {{ site.email | jsonify }},
+  "sport": "Freediving",
+  "areaServed": "Pacific Northwest",
+  "location": {
+    "@type": "Place",
+    "address": {"@type": "PostalAddress", "addressLocality": "Seattle", "addressRegion": "WA", "addressCountry": "US"}
+  },
+  "sameAs": [{{ site.social.facebook | jsonify }}, {{ site.social.instagram | jsonify }}, {{ site.social.youtube | jsonify }}]
+}
+{%- endcapture %}
+
+{%- if is_home %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {{ organization }},
+    {
+      "@type": "WebSite",
+      "@id": {{ "/#website" | absolute_url | jsonify }},
+      "name": {{ site.title | jsonify }},
+      "alternateName": "apnea.fyi",
+      "url": {{ "/" | absolute_url | jsonify }},
+      "publisher": {"@id": {{ "/#organization" | absolute_url | jsonify }}}
+    }
+  ]
+}
+</script>
+{%- elsif is_event %}
+{%- assign event_place = page.address | default: page.map_query | default: page.location %}
+{%- assign events_page_url = "/events/" | absolute_url %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SportsEvent",
+      "name": {{ page.title | jsonify }},
+      "description": {{ seo_description | jsonify }},
+      "url": {{ seo_url | jsonify }},
+      "image": [{{ seo_image | jsonify }}],
+      "sport": "Freediving",
+      "startDate": {{ page.event_date | date: "%Y-%m-%d" | jsonify }},
+      "endDate": {{ page.event_end_date | default: page.event_date | date: "%Y-%m-%d" | jsonify }},
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": {{ page.location | jsonify }},
+        "address": {{ event_place | jsonify }}
+      },
+      {%- if page.registration_url %}
+      "offers": {
+        "@type": "Offer",
+        "url": {{ page.registration_url | jsonify }},
+        "availability": "https://schema.org/InStock"
+      },
+      {%- endif %}
+      {%- if page.youtube_id %}
+      "recordedIn": {
+        "@type": "VideoObject",
+        "name": {{ page.title | append: " livestream" | jsonify }},
+        "description": {{ "Livestream of the " | append: page.title | append: ", hosted by " | append: site.title | jsonify }},
+        "embedUrl": {{ "https://www.youtube.com/embed/" | append: page.youtube_id | jsonify }},
+        "thumbnailUrl": {{ "https://i.ytimg.com/vi/" | append: page.youtube_id | append: "/hqdefault.jpg" | jsonify }},
+        "uploadDate": {{ page.event_date | date: "%Y-%m-%d" | jsonify }}
+      },
+      {%- endif %}
+      "organizer": {{ organization }}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": {{ "/" | absolute_url | jsonify }}},
+        {"@type": "ListItem", "position": 2, "name": "Events", "item": {{ events_page_url | jsonify }}},
+        {"@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }}, "item": {{ seo_url | jsonify }}}
+      ]
+    }
+  ]
+}
+</script>
+{%- endif %}

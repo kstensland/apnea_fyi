@@ -13,7 +13,7 @@
 </section>
 
 <section class="event-list past-events">
-  <h2>Past events</h2>
+  <h2>Past Events and Results</h2>
   {%- assign past_events = site.past_events | sort: "event_date" | reverse -%}
   {% for event in past_events %}
     <a class="event-card" href="{{ event.url | relative_url }}">
