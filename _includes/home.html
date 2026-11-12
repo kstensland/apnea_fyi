@@ -4,14 +4,42 @@
 <div class="home-pages">
   <section id="home" class="home-page home-page-hero" aria-label="Home">
     <div class="hero">
-      <div class="hero-media">
-        <img src="{{ '/assets/images/home_page_hero_2400.jpg' | relative_url }}"
-             srcset="{{ '/assets/images/home_page_hero_1200.jpg' | relative_url }} 1200w, {{ '/assets/images/home_page_hero_2400.jpg' | relative_url }} 2400w"
-             sizes="100vw" width="2400" height="1807" fetchpriority="high"
-             alt="Freediver resting on a buoy in Puget Sound with the Seattle skyline and Space Needle behind">
-        <div class="hero-overlay">
-          <h1>Community-Hosted Freediving Competitions in Seattle and the PNW</h1>
+      <!-- Hero carousel: slides come from _data/hero_slides.yml. Slides scroll
+           sideways (swipe, trackpad, arrows or dots) and advance on their own
+           until the visitor uses the controls. -->
+      {%- assign slides = site.data.hero_slides %}
+      <div class="hero-media hero-carousel" aria-roledescription="carousel" aria-label="Highlights">
+        <div class="hero-track" tabindex="0">
+          {%- for slide in slides %}
+          <div class="hero-slide" id="hero-slide-{{ forloop.index }}" role="group" aria-roledescription="slide" aria-label="{{ forloop.index }} of {{ slides.size }}">
+            <img src="{{ slide.image | relative_url }}"
+                 {%- if slide.srcset %}
+                 srcset="{% for s in slide.srcset %}{{ s.image | relative_url }} {{ s.width }}w{% unless forloop.last %}, {% endunless %}{% endfor %}"
+                 sizes="100vw"
+                 {%- endif %}
+                 width="{{ slide.width }}" height="{{ slide.height }}"
+                 {%- if slide.position %} style="object-position: {{ slide.position }}"{% endif %}
+                 {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
+                 alt="{{ slide.alt | escape }}">
+            <div class="hero-overlay">
+              {%- if forloop.first %}
+              <h1 class="hero-heading">{{ slide.text }}</h1>
+              {%- else %}
+              <p class="hero-heading">{{ slide.text }}</p>
+              {%- endif %}
+            </div>
+          </div>
+          {%- endfor %}
         </div>
+        {%- if slides.size > 1 %}
+        <button class="hero-arrow hero-prev" type="button" aria-label="Previous slide">&#8249;</button>
+        <button class="hero-arrow hero-next" type="button" aria-label="Next slide">&#8250;</button>
+        <div class="hero-dots">
+          {%- for slide in slides %}
+          <button type="button" aria-label="Go to slide {{ forloop.index }}" data-slide="{{ forloop.index0 }}"></button>
+          {%- endfor %}
+        </div>
+        {%- endif %}
       </div>
       <div class="hero-action">
         <a class="hero-cta" href="{{ '/#events' | relative_url }}">Register for an upcoming event</a>
@@ -67,6 +95,110 @@
     }, { threshold: 0.55 });
     document.querySelectorAll(".home-page").forEach(function (page) {
       observer.observe(page);
+    });
+  })();
+
+  // Hero carousel.
+  (function () {
+    var track = document.querySelector(".hero-track");
+    if (!track) return;
+    var slides = track.querySelectorAll(".hero-slide");
+    var dots = document.querySelectorAll(".hero-dots button");
+    if (slides.length < 2) return;
+    var current = 0;
+
+    function goTo(index) {
+      var i = (index + slides.length) % slides.length;
+      setCurrent(i);
+      track.scrollTo({ left: slides[i].offsetLeft, behavior: "smooth" });
+    }
+
+    var onSlideChange = function () {};
+    function setCurrent(index) {
+      var changed = index !== current;
+      current = index;
+      dots.forEach(function (dot, i) {
+        dot.classList.toggle("active", i === current);
+        if (i === current) dot.setAttribute("aria-current", "true");
+        else dot.removeAttribute("aria-current");
+      });
+      if (changed) onSlideChange();
+    }
+
+    // After a swipe or trackpad scroll, work out which slide is showing.
+    function updateDots() {
+      setCurrent(Math.round(track.scrollLeft / track.clientWidth));
+    }
+    var scrollTimer;
+    track.addEventListener("scroll", function () {
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(updateDots, 80);
+    }, { passive: true });
+    updateDots();
+
+    // Auto-advance. The current slide's line fills over --hero-interval
+    // (7s, in hero.sass); when the fill finishes, move to the next slide.
+    // Stop for good once the visitor takes over, pause while the pointer or
+    // focus is on the carousel or the hero is scrolled away or hidden, and
+    // never auto-advance for reduced-motion users.
+    var carousel = track.parentElement;
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var hovered = false, focused = false, visible = true;
+    if (!reduceMotion) carousel.classList.add("autoplay");
+
+    function stop() { carousel.classList.remove("autoplay"); }
+    function updatePaused() {
+      carousel.classList.toggle("paused", hovered || focused || !visible || document.hidden);
+    }
+
+    // Wait for the current line's fill to finish, then advance. If the
+    // visitor moves to another slide first, the fill is cancelled and its
+    // promise rejects, so nothing happens.
+    function watchProgress() {
+      if (!carousel.classList.contains("autoplay")) return;
+      var index = current;
+      var fill = dots[index].getAnimations({ subtree: true }).filter(function (a) {
+        return a.animationName === "hero-progress";
+      })[0];
+      if (!fill) return;
+      fill.finished.then(function () {
+        if (carousel.classList.contains("autoplay") && current === index) goTo(index + 1);
+      }, function () {});
+    }
+    if (carousel.classList.contains("autoplay")) {
+      if (dots[0].getAnimations) {
+        onSlideChange = watchProgress;
+        watchProgress();
+      } else {
+        // Older browsers without getAnimations().
+        carousel.querySelector(".hero-dots").addEventListener("animationend", function (e) {
+          if (e.animationName === "hero-progress" && carousel.classList.contains("autoplay")) goTo(current + 1);
+        });
+      }
+    }
+
+    carousel.addEventListener("mouseenter", function () { hovered = true; updatePaused(); });
+    carousel.addEventListener("mouseleave", function () { hovered = false; updatePaused(); });
+    carousel.addEventListener("focusin", function () { focused = true; updatePaused(); });
+    carousel.addEventListener("focusout", function () { focused = false; updatePaused(); });
+    document.addEventListener("visibilitychange", updatePaused);
+    new IntersectionObserver(function (entries) {
+      visible = entries[0].isIntersecting;
+      updatePaused();
+    }, { threshold: 0.5 }).observe(carousel);
+    track.addEventListener("touchstart", stop, { passive: true });
+    track.addEventListener("wheel", function (e) {
+      if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) stop();
+    }, { passive: true });
+
+    carousel.querySelector(".hero-prev").addEventListener("click", function () { stop(); goTo(current - 1); });
+    carousel.querySelector(".hero-next").addEventListener("click", function () { stop(); goTo(current + 1); });
+    dots.forEach(function (dot, i) {
+      dot.addEventListener("click", function () { stop(); goTo(i); });
+    });
+    track.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") { e.preventDefault(); stop(); goTo(current - 1); }
+      if (e.key === "ArrowRight") { e.preventDefault(); stop(); goTo(current + 1); }
     });
   })();
 </script>
