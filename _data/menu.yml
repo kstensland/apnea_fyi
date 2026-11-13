@@ -12,9 +12,9 @@
 - title: "Events"
   url: "/events/"
   items:
-    - {title: "Upcoming", url: "/events/#upcoming-events"}
-    - {title: "Past", url: "/events/#past-events"}
+    - {title: "Competitions", url: "/events/competitions/"}
     - {title: "Courses", url: "/courses/"}
+    - {title: "Other", url: "/events/other/"}
 - title: "About"
   url: "/about/"
 - title: "Contact"

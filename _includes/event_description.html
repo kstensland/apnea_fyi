@@ -12,7 +12,8 @@
     {%- assign parts = "" | split: "" -%}
     {%- if e.aida_results -%}{%- assign parts = parts | push: "Official AIDA results" -%}{%- endif -%}
     {%- if e.drive_url -%}{%- assign parts = parts | push: "photos" -%}{%- endif -%}
-    {%- if e.youtube_id -%}{%- assign parts = parts | push: "the livestream" -%}{%- endif -%}
+    {%- if e.livestreams.size > 1 -%}{%- assign parts = parts | push: "the livestreams" -%}
+    {%- elsif e.youtube_id or e.livestreams -%}{%- assign parts = parts | push: "the livestream" -%}{%- endif -%}
     {%- if parts.size > 0 -%}
       {{ parts | array_to_sentence_string }} from this freediving competition, held {{ when }} at {{ where }}.
     {%- else -%}

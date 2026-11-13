@@ -233,6 +233,57 @@
   margin: .5em 0 0
   font-size: .9em
 
+// Livestream carousel (`livestreams` in front matter): ‹ Part 1 of 3 › under
+// the video. The arrows are outlined circles that fill white on hover, like
+// the outline buttons.
+.video-carousel-controls
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: 1.25em
+  margin: 1em 0 0
+
+.video-carousel-status
+  min-width: 9em
+  color: rgba($light, .75)
+  font-size: .78rem
+  letter-spacing: .14em
+  text-align: center
+  text-transform: uppercase
+
+.video-carousel-prev, .video-carousel-next
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 2.5em
+  height: 2.5em
+  margin: 0
+  padding: 0
+  border: 1px solid rgba($light, .5)
+  border-radius: 50%
+  background: transparent
+  color: $light
+  cursor: pointer
+  transition: background .2s, color .2s, border-color .2s
+
+  svg
+    width: .6em
+    height: 1em
+    fill: none
+    stroke: currentColor
+    stroke-width: 2.4
+    stroke-linecap: round
+    stroke-linejoin: round
+
+  &:hover, &:focus-visible
+    border-color: $light
+    background: $light
+    color: #050b12
+
+  &:focus-visible
+    outline: 2px solid $link-color
+    outline-offset: 3px
+
 // Official AIDA results on a past event page (_includes/aida_results.html):
 // tabs for each competition day and the event ranking.
 .aida-results

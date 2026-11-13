@@ -132,13 +132,15 @@
         "availability": "https://schema.org/InStock"
       },
       {%- endif %}
-      {%- if page.youtube_id %}
+      {%- comment -%} With several `livestreams`, the first one stands for the event. {%- endcomment -%}
+      {%- assign video_id = page.youtube_id | default: page.livestreams.first.id %}
+      {%- if video_id %}
       "recordedIn": {
         "@type": "VideoObject",
         "name": {{ page.title | append: " livestream" | jsonify }},
         "description": {{ "Livestream of the " | append: page.title | append: ", hosted by " | append: site.title | jsonify }},
-        "embedUrl": {{ "https://www.youtube.com/embed/" | append: page.youtube_id | jsonify }},
-        "thumbnailUrl": {{ "https://i.ytimg.com/vi/" | append: page.youtube_id | append: "/hqdefault.jpg" | jsonify }},
+        "embedUrl": {{ "https://www.youtube.com/embed/" | append: video_id | jsonify }},
+        "thumbnailUrl": {{ "https://i.ytimg.com/vi/" | append: video_id | append: "/hqdefault.jpg" | jsonify }},
         "uploadDate": {{ page.event_date | date: "%Y-%m-%d" | jsonify }}
       },
       {%- endif %}
