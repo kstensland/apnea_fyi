@@ -28,10 +28,25 @@ Write for readers new to competition freediving. Verify AIDA rules against AIDA'
 | Events list (upcoming and past) | `events.html` | `/events/` |
 | Upcoming event pages | `_events/*.md`, layout `event` | `/events/<name>/` |
 | Past event pages | `_past_events/*.md`, layout `past_event` | `/events/past/<name>/` |
+| Get Involved (placeholder) | `get-involved/index.md` | `/get-involved/` |
+| Compete, Volunteer, Safety, Judge, Sponsor (placeholders) | `get-involved/<name>.md` | `/get-involved/<name>/` |
+| Courses (placeholder) | `courses.md` | `/courses/` |
+| Contact (email form) | `contact.md` | `/contact/` |
+| Contact form thank-you | `contact_thanks.md` | `/contact/thanks/` |
 | Linktree redirect | `linktree.html`, `ecac_linktree.html` (no layout, meta refresh; body in `_includes/linktree_redirect.html`) | `/linktree`, `/emeraldcity/linktree` |
 | Old blog post list (noindex) | `emeraldcity.html` | `/emeraldcity/` |
 
-- The header nav is set in `_config.yml` under `navigation`: Home (`/#home`), About (`/#about`), Events (`/#events`). Each jumps to a page of the home page carousel. A nav item with a `url` links there. An item with a `file` looks up that page by file name.
+- The header is always dark (`#111318`, light text), in light and dark mode alike. It has `color-scheme: dark`, and the `theme-color` meta (`#111111`, from `_includes/seo.html`) keeps the browser's own bar (Safari) dark too.
+- The header has only the logo and title on the left (they link home) and the **MENU** button on the right. The old nav links (Home, About, Events) and the `navigation` list in `_config.yml` were removed on purpose. The menu replaces them.
+- The **MENU** button at the far right of the header opens the full-screen Menu (`_includes/site_menu.html`, styles in `_sass/menu.sass`). Its items come from `_data/menu.yml`: Get Involved (Compete, Volunteer, Safety, Judge, Sponsor), Events (`/events/`, the standalone page; Upcoming and Past jump to `#upcoming-events` and `#past-events` there; Courses), About (`/about/`, the standalone page), Contact (`/contact/`). Each top-level item is a big link with its small links beside it, or below it on phones.
+  - The design follows the Super Evil Genius Corp menu on Awwwards. When it opens, the page dims, a panel shows on the right (full width on phones), the divider lines draw in, and the titles flicker through random letters before settling. On hover, a highlight sweeps across a title. Small links and MENU/CLOSE show brackets on hover. Close with CLOSE, Escape, or a click on the dimmed page. A link to a spot on the same page (like `/#about`) closes the menu at once so the page can scroll. The effects are skipped when the reader prefers reduced motion.
+  - It is a native `<dialog>` opened with `showModal()`, so focus stays inside it. Page scroll is locked with `html.menu-open`.
+  - The **Get Involved** page shows five full-width linked photos, one after another (not a carousel), the same size as the home hero: Compete, Volunteer, Safety, Judge, Sponsor. They reuse `home_page_hero_2.jpg` to `_6.jpg`, keeping the same crops. The list is `roles` in `get-involved/index.md`'s front matter, and `_includes/role_photos.html` renders it (styles in `_sass/roles.sass`). On hover or keyboard focus, a photo darkens and the role name appears in the Get Involved title's Raleway capitals (larger). The names have no highlight sweep, on purpose. On touch screens the names always show. The photos break out of the page column with `margin: calc(50% - 50vw)`, and `html:has(.role-photos) { overflow-x: clip }` prevents a sideways scrollbar.
+  - **Page titles:** every page's `<h1>` (layouts `page`, `event`, `past_event`, and `events.html`) looks and behaves like the big menu titles: the same Raleway capitals and size, and a highlight sweep shortly after the page loads and again on hover. The page titles do not scramble, on purpose; only the menu does. Those layouts put `menu-title` on the `<article>`. The script in `site_menu.html` splits the title into letters, grouped by word so long titles wrap only between words, once the page has loaded. A page using `layout: page` can also set `article_class: menu-text` (Get Involved and Contact do; `events.html` puts it on its `<article>` directly), so its paragraphs and form labels use the menu's small-link lettering.
+  - The Get Involved and Courses pages are placeholders ("details coming soon" plus the contact email), marked with an HTML comment. Replace them with real content.
+- The **Contact** page has an email form (Name, Email, Message). GitHub Pages can't send email, so the form posts to **FormSubmit** (`https://formsubmit.co/emeraldcityapneachallenge@gmail.com`), which emails each message to that inbox. The sender's address is the reply-to. Hidden fields set the subject, a table layout, and the redirect to `/contact/thanks/` (built from `url` in `_config.yml` with `absolute_url`). A hidden `_honey` field catches bots. FormSubmit shows a captcha after Send.
+  - **FormSubmit must be activated once.** The first message sent from the live site triggers an "activate form" email to the Gmail inbox, and someone must click it. Until then, no messages are delivered. After activating, FormSubmit can give a random alias to use in the form's `action` instead of the address.
+  - Form styles are in `_sass/forms.sass`.
 - `/about/` and `/events/` still exist as standalone pages for old links. Their content comes from the same includes as the home page sections (`_includes/about_content.html`, `_includes/event_lists.html`), so edit it there.
 - `README.md` is developer documentation. It is excluded from the site (see `exclude` in `_config.yml`). Do not put organization content there.
 - `CLAUDE.md` is excluded from the site too.
@@ -51,13 +66,15 @@ Write for readers new to competition freediving. Verify AIDA rules against AIDA'
 
 `_includes/home.html` renders the home page as a **vertical carousel**: Home (hero), About and Events are each a full-screen page, and scrolling snaps from one page to the next:
 
-- A full-width **hero**: `assets/images/home_page_hero_2400.jpg` (with a 1200 px `srcset` version), with the overlay heading "Community-Hosted Freediving Competitions in Seattle and the PNW" and a "Register for an upcoming event" button that links to `/#events`.
+- A full-width **hero** of photo slides. Slide 1 is `assets/images/home_page_hero_2400.jpg` (with a 1200 px `srcset` version) and the overlay heading "Community-Hosted Freediving Competitions in Seattle and the PNW"; slides 2 to 6 are `home_page_hero_2.jpg` to `home_page_hero_6.jpg`. Below it is a "Register for an upcoming event" button (`.outline-button`) that links to `/#events`.
+- The slides cross-fade every 5 seconds and loop. Cycling pauses while the mouse is over the hero, an arrow has keyboard focus, or for 4 seconds after a touch. The prev/next arrows show only during those times. On phones a sideways swipe changes the photo. The script is at the end of `home.html`, and the timings are `DELAY` and `TOUCH_HOLD` there. To add a photo, copy a `.hero-slide` block, set its alt text, and update every slide's "n of N" label.
 - The hero is not inside an `<article>`, so it reaches the window edges.
-- Hero height steps at fixed widths in `_sass/hero.sass` (11em, 16em, 22em, 28em, 34em). The image is cropped with `object-fit: cover`, centered.
+- Hero height steps at fixed widths in `_sass/hero.sass` (11em, 16em, 22em, 28em, 34em), set on `.hero-media`. Each photo is cropped with `object-fit: cover`, centered.
 - The heading uses **Raleway** at weight 300, loaded from Google Fonts in `_layouts/default.html`.
 - The pages are `<section class="home-page">` elements with ids `home`, `about`, `events` inside `.home-pages`. Styles are at the end of `_sass/hero.sass`. Snapping (`scroll-snap-type: y mandatory`), the sticky header and smooth scrolling apply only on pages containing `.home-pages` (`html:has(.home-pages)`).
+- The home section headings, "About" on the home about page and "Upcoming Events" and "Past Events" on the home events page, use the menu titles' Raleway capitals at heading size. The two event headings get the highlight sweep each time they scroll into view and on hover (set up in `site_menu.html`). "About" has no sweep, and the standalone Events page shares the event headings but not the sweep; both on purpose.
 - Each page is `100svh` minus the header height. A small script in `home.html` sets `--header-height` and highlights the carousel dots (`.home-dots`) on the right edge.
-- The image's alt text describes the photo (a freediver in open water with the Seattle skyline behind). Update it if the photo changes.
+- Each photo has alt text describing it. Update it if a photo changes.
 
 ## Events
 
@@ -192,7 +209,10 @@ bundle exec jekyll serve --livereload   # http://localhost:4000/
   - `event_date_text.html`: formatted event date.
   - `event_map.html`: map embed with placeholder.
   - `social-links.html`: footer social icons (from `site.social`).
+  - `social_text_links.html`: the Instagram, Facebook, YouTube and Email text links at the bottom of the menu (URLs from `site.social`).
   - `menu.html`: nav and footer link lists.
+  - `role_photos.html`: full-width linked photos (Get Involved page).
+  - `site_menu.html`: the header MENU button and full-screen Menu (items from `_data/menu.yml`).
   - `sidebar.html`, `archive.html`, `ecac_home.html`, `embed.html`, `meta.html`: older, mostly unused.
 - `_events/`, `_past_events/`: event collections (see Events).
 - `_sass/`: partials, all in indented `.sass` syntax.
@@ -202,11 +222,15 @@ bundle exec jekyll serve --livereload   # http://localhost:4000/
   - `social.sass`: footer social icons and the `.footer-links` row.
   - `events.sass`: event cards, event details, map placeholder, results grid, and the modal.
   - `hero.sass`: home hero, overlay text, and stepped heights.
+  - `menu.sass`: the header Menu, plus a `.visually-hidden` helper class.
+  - `forms.sass`: the Contact page form.
+  - `roles.sass`: the Get Involved linked photos.
+  - `buttons.sass`: `.outline-button`, the outlined button (MENU's lettering, fills white on hover) used by the home page's Register button and the Contact page's Send button.
 - `assets/css/`: `main.sass` (the live stylesheet), `frame.sass` (unused, `show_frame: false`), `sidebar.sass` (unused, `show_sidebar: false`). Each starts with `---` front matter, then `@use "index" as *;` and `@use` for each partial.
 - `assets/images/`: logos (`ecac_black.png` in the header, `ecac_white.png`), `snorkel_frog.png` (old header image), favicons, `home_page_hero.jpg`, event result images, and placeholder SVGs (`hero_placeholder.svg`, `results_placeholder.svg`).
 - `assets/fontawesome/icons.svg`: Font Awesome sprite used by the menu and footer.
 - `assets/katex/`: KaTeX assets (math, off by default).
-- `_config.yml`: `navigation`, `external` (footer mail link), `social`, `collections` (`events`, `past_events`), `exclude` (`README.md`, `CLAUDE.md`), `plugins` (`jekyll-feed`, `jekyll-sitemap`), `url`, `tagline`, `description`, `logo`, `og_image`, and the layout flags `minimal` (dark header), `show_frame`, `show_sidebar`, `show_excerpts`, `mathjax`.
+- `_config.yml`: `external` (footer mail link), `social`, `collections` (`events`, `past_events`), `exclude` (`README.md`, `CLAUDE.md`), `plugins` (`jekyll-feed`, `jekyll-sitemap`), `url`, `tagline`, `description`, `logo`, `og_image`, and the layout flags `minimal` (dark header), `show_frame`, `show_sidebar`, `show_excerpts`, `mathjax`. There is no `navigation` list any more; the header uses the Menu (`_data/menu.yml`).
 
 ### Styling notes
 
@@ -240,7 +264,7 @@ The site is hosted on **GitHub Pages** at **emeraldcity.apnea.fyi** (custom doma
 - **Second past event:** the owner has not yet provided details for a second September 2026 event. Ask for them before adding one.
 - **Results sheets:** the Sept and Nov 2026 events show the Official AIDA Results tables instead of their results sheet images. The `results` images were removed from both pages on purpose, but the image files stay in `assets/images/` (the sponsor logos were cut from those sheets). New past events can follow the steps under "Adding an event".
 - **Map pins:** the Seacrest Park Cove 1 pin has not been confirmed. Check it on the page and send coordinates if it is off.
-- **Footer social links:** Facebook (`https://www.facebook.com/profile.php?id=61584381043663`), Instagram (`https://www.instagram.com/emeraldcityapneachallenge`), YouTube (`https://www.youtube.com/@emeraldcityapneachallenge`). They are gray by default and take brand colors on hover.
+- **Footer social links:** icons for Facebook (`https://www.facebook.com/profile.php?id=61584381043663`), Instagram (`https://www.instagram.com/emeraldcityapneachallenge`), YouTube (`https://www.youtube.com/@emeraldcityapneachallenge`), plus the mail icon from `external`. They are gray by default and take brand colors on hover. Two alternatives were tried and reverted on purpose: text links like the menu's (too easy to miss) and thin line icons in outlined circles.
 - **Linktree:** `/linktree` and the older `/emeraldcity/linktree` redirect to the ECAC Linktree (`https://linktr.ee/emeraldcityapneachallenge`). The `fbclid` parameter was dropped on purpose.
 - **Old blog content:** posts in `_posts/` are not linked from the navigation. Decide whether to keep them.
 

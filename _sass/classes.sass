@@ -47,10 +47,15 @@ a:hover .icon
   margin: 0
 
 // Logo and title share one row, with the title centered on the logo.
+// The title's hover brackets match MENU (_sass/menu.sass).
 a.title
   display: inline-flex
   align-items: center
-  gap: .6em
+  gap: .1em
+
+  // Brackets show on hover instead of the usual link underline, like MENU.
+  &:hover
+    text-decoration: none
 
 .header_title
   line-height: 1.2

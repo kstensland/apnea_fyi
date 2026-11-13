@@ -1,0 +1,198 @@
+{%- comment -%}
+  The header's Menu: a MENU button at the right of the header that opens a
+  full-screen menu. The page dims, and a panel on the right lists the items
+  from _data/menu.yml. Divider lines draw in, the big titles unscramble, and a
+  highlight sweeps across a title on hover. Close with the Close button,
+  Escape, or a click on the dimmed page.
+{%- endcomment -%}
+<button type="button" class="menu-button menu-toggle" aria-haspopup="dialog" aria-expanded="false" aria-controls="site-menu">Menu</button>
+
+<dialog id="site-menu" class="site-menu" aria-label="Menu">
+  <div class="site-menu-panel">
+    <div class="site-menu-bar">
+      <button type="button" class="menu-button site-menu-close">Close</button>
+    </div>
+
+    <ul class="site-menu-list">
+      {%- for item in site.data.menu %}
+      <li class="site-menu-item" style="--i: {{ forloop.index0 }}">
+        <a class="site-menu-title" href="{{ item.url | relative_url }}">
+          <span class="site-menu-dot" aria-hidden="true"></span>
+          <span class="site-menu-label">{{ item.title }}</span>
+        </a>
+        {%- if item.items %}
+        <ul class="site-menu-sub">
+          {%- for sub in item.items %}
+          <li><a href="{{ sub.url | relative_url }}">{{ sub.title }}</a></li>
+          {%- endfor %}
+        </ul>
+        {%- endif %}
+      </li>
+      {%- endfor %}
+    </ul>
+
+    <p class="site-menu-social">
+      {%- include social_text_links.html -%}
+    </p>
+  </div>
+</dialog>
+
+<script>
+  (function () {
+    var toggle = document.querySelector(".menu-toggle");
+    var menu = document.getElementById("site-menu");
+    if (!toggle || !menu || typeof menu.showModal !== "function") return;
+    var root = document.documentElement;
+    var header = document.querySelector("body > header");
+    var still = window.matchMedia("(prefers-reduced-motion: reduce)");
+    var CLOSE_TIME = 300;   // matches the fade-out in _sass/menu.sass
+    var GLYPHS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ#%&*+=/<>";
+
+    // Split each big title into letters (for the effects). Screen readers get
+    // the plain title; the letters are hidden from them. Page titles styled
+    // like the menu (`article_class: menu-title`) get the same treatment.
+    function splitLetters(label) {
+      var text = label.textContent.trim();
+      label.textContent = "";
+      var plain = document.createElement("span");
+      plain.className = "visually-hidden";
+      plain.textContent = text;
+      // Letters are grouped by word, with real spaces between words, so a
+      // long title can wrap between words but never inside one.
+      var letters = document.createElement("span");
+      letters.setAttribute("aria-hidden", "true");
+      text.split(/\s+/).forEach(function (word, w) {
+        if (w > 0) letters.appendChild(document.createTextNode(" "));
+        var group = document.createElement("span");
+        group.className = "site-menu-word";
+        word.split("").forEach(function (ch) {
+          var s = document.createElement("span");
+          s.className = "site-menu-letter";
+          s.dataset.ch = ch;
+          s.textContent = ch;
+          group.appendChild(s);
+        });
+        letters.appendChild(group);
+      });
+      label.append(plain, letters);
+    }
+    var labels = menu.querySelectorAll(".site-menu-label");
+    labels.forEach(splitLetters);
+
+    // Opening: the titles flicker through random letters and settle left to
+    // right. `onDone` (optional) runs once every letter has settled.
+    function unscramble(label, delay, onDone) {
+      var letters = label.querySelectorAll(".site-menu-letter");
+      var start = performance.now() + delay;
+      function frame(now) {
+        var t = now - start, done = true;
+        letters.forEach(function (s, i) {
+          var ch = s.dataset.ch;
+          if (ch === " ") return;
+          if (t < 0) { s.textContent = ch; s.style.opacity = 0; done = false; return; }
+          s.style.opacity = "";
+          if (t >= 120 + i * 35) { s.textContent = ch; }
+          else { s.textContent = GLYPHS[Math.floor(Math.random() * GLYPHS.length)]; done = false; }
+        });
+        if (!done) requestAnimationFrame(frame);
+        else if (onDone) onDone();
+      }
+      requestAnimationFrame(frame);
+    }
+
+    // Hover: a highlight block sweeps across the title, letter by letter.
+    function addSweep(link) {
+      var letters = link.querySelectorAll(".site-menu-letter");
+      var timers = [];
+      function sweep() {
+        if (still.matches) return;
+        timers.forEach(clearTimeout);
+        timers = [];
+        letters.forEach(function (s, i) {
+          s.classList.remove("is-lit");
+          timers.push(setTimeout(function () { s.classList.add("is-lit"); }, i * 30));
+          timers.push(setTimeout(function () { s.classList.remove("is-lit"); }, i * 30 + 150));
+        });
+      }
+      link.addEventListener("mouseenter", sweep);
+      link.addEventListener("focus", sweep);
+      return sweep;
+    }
+    menu.querySelectorAll(".site-menu-title").forEach(function (link) { addSweep(link); });
+
+    // Page titles (every page's <h1>, see `.menu-title` in menu.sass): the
+    // highlight sweeps across once shortly after the page loads, and again on
+    // hover. (No scramble.) This script runs in the header, before the page
+    // content exists, so they're set up once the page has loaded.
+    function setUpPageTitles() {
+      document.querySelectorAll(".menu-title > header h1").forEach(function (h1) {
+        var title = h1.querySelector("a") || h1;
+        splitLetters(title);
+        var sweep = addSweep(title);
+        setTimeout(sweep, 300);
+      });
+
+      // "Upcoming Events" and "Past Events" on the home events page only (not
+      // the standalone Events page, and not "About" on the home about page):
+      // the sweep runs each time a heading scrolls into view, and on hover.
+      var headings = document.querySelectorAll(".home-pages #events .event-list h2");
+      if (!headings.length) return;
+      var sweeps = new Map();
+      headings.forEach(function (h2) {
+        splitLetters(h2);
+        sweeps.set(h2, addSweep(h2));
+      });
+      if ("IntersectionObserver" in window) {
+        var seen = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) sweeps.get(e.target)(); });
+        }, { threshold: 1 });
+        headings.forEach(function (h2) { seen.observe(h2); });
+      }
+    }
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", setUpPageTitles);
+    else setUpPageTitles();
+
+    function open() {
+      // Line the Close button up with the MENU button in the header.
+      var top = header.getBoundingClientRect();
+      menu.style.setProperty("--menu-bar", Math.max(top.bottom, 0) > 0 ? top.height + "px" : "");
+      menu.showModal();
+      root.classList.add("menu-open");
+      toggle.setAttribute("aria-expanded", "true");
+      requestAnimationFrame(function () { menu.classList.add("is-open"); });
+      if (!still.matches) labels.forEach(function (label, i) { unscramble(label, 150 + i * 90); });
+    }
+
+    // Closing fades the menu out first. `now` skips the fade (used when a link
+    // jumps within this page, so the page can scroll straight away).
+    function close(now) {
+      if (!menu.open) return;
+      menu.classList.remove("is-open");
+      if (now || still.matches) menu.close();
+      else setTimeout(function () { menu.close(); }, CLOSE_TIME);
+    }
+
+    menu.addEventListener("close", function () {
+      menu.classList.remove("is-open");
+      root.classList.remove("menu-open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.focus({ preventScroll: true });   // keyboard users land back on MENU
+    });
+
+    toggle.addEventListener("click", open);
+    menu.querySelector(".site-menu-close").addEventListener("click", function () { close(); });
+
+    // Escape: fade out instead of closing at once.
+    menu.addEventListener("cancel", function (e) { e.preventDefault(); close(); });
+
+    // A click on the dimmed page (outside the panel) closes the menu.
+    menu.addEventListener("click", function (e) { if (e.target === menu) close(); });
+
+    // A link to a spot on this page (like /#events): close first, then jump.
+    menu.querySelectorAll("a[href]").forEach(function (a) {
+      a.addEventListener("click", function () {
+        if (a.protocol === "mailto:" || (a.pathname === location.pathname && a.hash)) close(true);
+      });
+    });
+  })();
+</script>

@@ -3,8 +3,19 @@
 .event-list
   margin: 2em 0
 
+// "Upcoming Events" and "Past Events": the page titles' lettering (Raleway
+// capitals, see _sass/menu.sass) at the usual heading size. On the home events
+// page they also get the highlight sweep (script in site_menu.html).
 .event-list h2
   margin-bottom: .25em
+  font-family: "Raleway", "Helvetica Neue", Arial, sans-serif
+  font-weight: 400
+  letter-spacing: .03em
+  text-transform: uppercase
+
+// Only as wide as the words there, so hovering beside a heading doesn't sweep it.
+.home-pages #events .event-list h2
+  width: fit-content
 
 .past-events
   margin-top: 3em

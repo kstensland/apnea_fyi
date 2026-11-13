@@ -1,0 +1,121 @@
+@use "index" as *
+
+// Linked photos on the Get Involved page (_includes/role_photos.html).
+
+// The photos reach the window edges from inside the page's centered column.
+// clip stops a sideways scrollbar where 100vw includes the vertical scrollbar.
+html:has(.role-photos)
+  overflow-x: clip
+
+.role-photos
+  display: flex
+  flex-direction: column
+  gap: 1.5em
+  margin: 2em calc(50% - 50vw)
+  padding: 0
+  list-style: none
+
+  li
+    margin: 0
+
+@media (min-width: 40em)
+  .role-photos
+    gap: 2.5em
+    margin-top: 2.5em
+    margin-bottom: 2.5em
+
+// Same size as the home page hero (.hero-media in hero.sass): full width, with
+// the height stepping up at fixed widths. The photo is cropped to fit.
+.role-photo
+  position: relative
+  display: block
+  height: 11em
+  overflow: hidden
+  color: #fff
+  text-decoration: none
+
+  &:hover, &:focus
+    color: #fff
+    text-decoration: none
+
+  &:focus-visible
+    outline: 3px solid $link-color
+    outline-offset: -3px
+
+  img
+    display: block
+    width: 100%
+    height: 100%
+    margin: 0
+    max-width: none
+    object-fit: cover
+    object-position: 50% 50%
+
+  // The darkening layer over the photo.
+  &::after
+    content: ""
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background: rgba(2, 6, 10, .62)
+    opacity: 0
+    transition: opacity .3s ease
+
+@media (min-width: 40em)
+  .role-photo
+    height: 16em
+
+@media (min-width: 60em)
+  .role-photo
+    height: 22em
+
+@media (min-width: 80em)
+  .role-photo
+    height: 28em
+
+@media (min-width: 100em)
+  .role-photo
+    height: 34em
+
+// The page name over the center of the photo, in the same Raleway capitals as
+// the Get Involved title (and the big menu titles), at a larger size.
+.role-photo-label
+  position: absolute
+  top: 50%
+  left: 50%
+  z-index: 1
+  font-family: "Raleway", "Helvetica Neue", Arial, sans-serif
+  font-weight: 400
+  font-size: clamp(1.8rem, 1rem + 3.5vw, 3.6rem)
+  letter-spacing: .03em
+  line-height: 1.1
+  text-transform: uppercase
+  text-shadow: 0 2px .5em rgba(0, 0, 0, .45)
+  white-space: nowrap
+  opacity: 0
+  transform: translate(-50%, calc(-50% + .3em))
+  transition: opacity .3s ease, transform .3s ease
+
+.role-photo:hover, .role-photo:focus-visible
+  &::after
+    opacity: 1
+
+  .role-photo-label
+    opacity: 1
+    transform: translate(-50%, -50%)
+
+// Touch screens can't hover, so the names always show there, over a lighter
+// darkening (about the old hover strength).
+@media (hover: none)
+  .role-photo::after
+    opacity: .7
+
+  .role-photo-label
+    opacity: 1
+    transform: translate(-50%, -50%)
+
+@media (prefers-reduced-motion: reduce)
+  .role-photo::after, .role-photo-label
+    transition: none

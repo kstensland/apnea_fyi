@@ -1,0 +1,21 @@
+# The header's Menu (opened from the MENU button on the right of the header).
+# Each top-level item is a big link; its `items` are the small links beside it.
+# Rendered by _includes/site_menu.html.
+- title: "Get Involved"
+  url: "/get-involved/"
+  items:
+    - {title: "Compete", url: "/get-involved/compete/"}
+    - {title: "Volunteer", url: "/get-involved/volunteer/"}
+    - {title: "Safety", url: "/get-involved/safety/"}
+    - {title: "Judge", url: "/get-involved/judge/"}
+    - {title: "Sponsor", url: "/get-involved/sponsor/"}
+- title: "Events"
+  url: "/events/"
+  items:
+    - {title: "Upcoming", url: "/events/#upcoming-events"}
+    - {title: "Past", url: "/events/#past-events"}
+    - {title: "Courses", url: "/courses/"}
+- title: "About"
+  url: "/about/"
+- title: "Contact"
+  url: "/contact/"

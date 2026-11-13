@@ -1,0 +1,10 @@
+{%- comment -%}
+  Social media and email links as small spaced capitals, with brackets on
+  hover (styles in _sass/menu.sass), at the bottom of the menu. URLs come from
+  `social:` in _config.yml; remove a key there to hide that link. (The footer
+  uses icons instead: _includes/social-links.html.)
+{%- endcomment -%}
+{%- if site.social.instagram %}<a href="{{ site.social.instagram }}" target="_blank" rel="noopener noreferrer">Instagram</a>{% endif -%}
+{%- if site.social.facebook %}<a href="{{ site.social.facebook }}" target="_blank" rel="noopener noreferrer">Facebook</a>{% endif -%}
+{%- if site.social.youtube %}<a href="{{ site.social.youtube }}" target="_blank" rel="noopener noreferrer">YouTube</a>{% endif -%}
+<a href="mailto:emeraldcityapneachallenge@gmail.com">Email</a>

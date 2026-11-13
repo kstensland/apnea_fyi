@@ -23,11 +23,6 @@
 {% if site.comments.isso_domain and page.layout == "post" %}<script data-isso="http://{{ site.comments.isso_domain }}" src="//{{ site.comments.isso_domain }}/js/embed.min.js"></script>{% endif %}
 {% if site.show_sidebar or site.sidebar %}{% include sidebar.html %}{% endif %}
 
-{% if site.navigation %}
-  {% assign pages = site.navigation %}
-{% else %}
-  {% assign pages = site.pages | where_exp: "item", "item.title and item.sitemap != false" | sort: "order" %}
-{% endif %}
 <link rel='icon' type='image/png' href='{{ '/assets/images/favicon.png' | relative_url }}'>
 <link rel='icon' sizes='16x16 32x32 48x48' href='{{ '/assets/images/favicon.ico' | relative_url }}'>
 <link rel='apple-touch-icon' sizes='180x180' href='{{ '/assets/images/apple-touch-icon.png' | relative_url }}'>
@@ -39,7 +34,7 @@
     <span class="header_title">Emerald City Apnea Challenge</span>
     
   </a>
-  {% include menu.html menu=pages %}
+  {% include site_menu.html %}
 </header>
 
 {{ content }}

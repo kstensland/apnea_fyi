@@ -4,24 +4,51 @@
 <div class="home-pages">
   <section id="home" class="home-page home-page-hero" aria-label="Home">
     <div class="hero">
-      <div class="hero-media">
-        <img src="{{ '/assets/images/home_page_hero_2400.jpg' | relative_url }}"
-             srcset="{{ '/assets/images/home_page_hero_1200.jpg' | relative_url }} 1200w, {{ '/assets/images/home_page_hero_2400.jpg' | relative_url }} 2400w"
-             sizes="100vw" width="2400" height="1807" fetchpriority="high"
-             alt="Freediver resting on a buoy in Puget Sound with the Seattle skyline and Space Needle behind">
-        <div class="hero-overlay">
-          <h1>Community-Hosted Freediving Competitions in Seattle and the PNW</h1>
+      <!-- Photo slides. They change on their own every few seconds and pause
+           while the pointer is over them, they have focus, or they were just
+           touched. The arrows show only then, and loop around at the ends. -->
+      <div class="hero-media" role="region" aria-roledescription="carousel" aria-label="Photos">
+        <div class="hero-slide is-current" role="group" aria-roledescription="slide" aria-label="1 of 6">
+          <img src="{{ '/assets/images/home_page_hero_2400.jpg' | relative_url }}"
+               srcset="{{ '/assets/images/home_page_hero_1200.jpg' | relative_url }} 1200w, {{ '/assets/images/home_page_hero_2400.jpg' | relative_url }} 2400w"
+               sizes="100vw" width="2400" height="1807" fetchpriority="high"
+               alt="Freediver resting on a buoy in Puget Sound with the Seattle skyline and Space Needle behind">
+          <div class="hero-overlay">
+            <h1>Community-Hosted Freediving Competitions in Seattle and the PNW</h1>
+          </div>
         </div>
+        <div class="hero-slide" role="group" aria-roledescription="slide" aria-label="2 of 6">
+          <img src="{{ '/assets/images/home_page_hero_2.jpg' | relative_url }}" width="2000" height="1506" alt="A freediver at the surface beside a yellow competition buoy, with a Seattle hillside and a cargo ship behind" decoding="async">
+        </div>
+        <div class="hero-slide" role="group" aria-roledescription="slide" aria-label="3 of 6">
+          <img src="{{ '/assets/images/home_page_hero_3.jpg' | relative_url }}" width="2000" height="1506" alt="A volunteer in a green Volunteer shirt and straw hat holding the competition buoys, with a wooded shoreline behind" decoding="async">
+        </div>
+        <div class="hero-slide" role="group" aria-roledescription="slide" aria-label="4 of 6">
+          <img src="{{ '/assets/images/home_page_hero_4.jpg' | relative_url }}" style="object-position: 50% 25%" width="2000" height="1506" alt="A safety diver in a Safety shirt and long fins, seen from below the surface" decoding="async">
+        </div>
+        <div class="hero-slide" role="group" aria-roledescription="slide" aria-label="5 of 6">
+          <img src="{{ '/assets/images/home_page_hero_5.jpg' | relative_url }}" width="2000" height="1506" alt="A judge in a yellow Judge shirt floating beside the competition buoy" decoding="async">
+        </div>
+        <div class="hero-slide" role="group" aria-roledescription="slide" aria-label="6 of 6">
+          <img src="{{ '/assets/images/home_page_hero_6.jpg' | relative_url }}" style="object-position: 50% 72%" width="2000" height="1506" alt="A freediver in a blue hood and mask talking with a teammate at the surface, with the Seattle skyline behind" decoding="async">
+        </div>
+
+        <button type="button" class="hero-arrow hero-arrow-prev" aria-label="Previous photo">
+          <svg viewBox="0 0 12 20" aria-hidden="true"><path d="M10 2 2 10l8 8"/></svg>
+        </button>
+        <button type="button" class="hero-arrow hero-arrow-next" aria-label="Next photo">
+          <svg viewBox="0 0 12 20" aria-hidden="true"><path d="M2 2l8 8-8 8"/></svg>
+        </button>
       </div>
       <div class="hero-action">
-        <a class="hero-cta" href="{{ '/#events' | relative_url }}">Register for an upcoming event</a>
+        <a class="hero-cta outline-button" href="{{ '/#events' | relative_url }}">Register for an upcoming event</a>
       </div>
     </div>
   </section>
 
   <section id="about" class="home-page" aria-label="About">
     <div class="home-page-inner">
-      <h2>About Emerald City Apnea Challenge</h2>
+      <h2>About</h2>
       {% include about_content.html %}
     </div>
   </section>
@@ -68,5 +95,60 @@
     document.querySelectorAll(".home-page").forEach(function (page) {
       observer.observe(page);
     });
+  })();
+
+  // Hero photo slides.
+  (function () {
+    var hero = document.querySelector(".hero-media");
+    if (!hero) return;
+    var slides = hero.querySelectorAll(".hero-slide");
+    var DELAY = 5000;        // time each photo is shown
+    var TOUCH_HOLD = 4000;   // after a touch, arrows stay and cycling waits this long
+    var current = 0;
+    var timer = null;
+    var hovered = false, focused = false, touched = false, touchTimer = null;
+
+    function show(i) {
+      current = (i + slides.length) % slides.length;   // loop around at both ends
+      slides.forEach(function (s, n) { s.classList.toggle("is-current", n === current); });
+    }
+
+    // Cycle only while nobody is interacting with the hero.
+    function interacting() { return hovered || focused || touched; }
+    function schedule() {
+      clearTimeout(timer);
+      hero.classList.toggle("is-interacting", interacting());
+      if (!interacting()) timer = setTimeout(function () { show(current + 1); schedule(); }, DELAY);
+    }
+
+    hero.querySelector(".hero-arrow-prev").addEventListener("click", function () { show(current - 1); });
+    hero.querySelector(".hero-arrow-next").addEventListener("click", function () { show(current + 1); });
+
+    // Mouse hover (touch screens also fire pointer events, so check the type).
+    hero.addEventListener("pointerenter", function (e) { if (e.pointerType === "mouse") { hovered = true; schedule(); } });
+    hero.addEventListener("pointerleave", function (e) { if (e.pointerType === "mouse") { hovered = false; schedule(); } });
+
+    // Keyboard focus on an arrow. A tap or click also focuses the button, but
+    // that shouldn't count, or cycling would never resume after a tap.
+    hero.addEventListener("focusin", function (e) { focused = e.target.matches(":focus-visible"); schedule(); });
+    hero.addEventListener("focusout", function (e) { if (!hero.contains(e.relatedTarget)) { focused = false; schedule(); } });
+
+    // Touch: a tap shows the arrows for a few seconds; a sideways swipe changes photo.
+    var startX = null, startY = null;
+    hero.addEventListener("touchstart", function (e) {
+      startX = e.touches[0].clientX; startY = e.touches[0].clientY;
+      touched = true; clearTimeout(touchTimer); schedule();
+    }, { passive: true });
+    hero.addEventListener("touchend", function (e) {
+      if (startX !== null) {
+        var dx = e.changedTouches[0].clientX - startX, dy = e.changedTouches[0].clientY - startY;
+        if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) show(current + (dx < 0 ? 1 : -1));
+      }
+      startX = null;
+      clearTimeout(touchTimer);
+      touchTimer = setTimeout(function () { touched = false; schedule(); }, TOUCH_HOLD);
+    }, { passive: true });
+
+    schedule();
   })();
 </script>

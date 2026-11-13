@@ -1,4 +1,4 @@
-<section class="event-list">
+<section class="event-list" id="upcoming-events">
   <h2>Upcoming Events</h2>
   {%- assign events = site.events | sort: "event_date" -%}
   {% for event in events %}
@@ -12,8 +12,8 @@
   {% endfor %}
 </section>
 
-<section class="event-list past-events">
-  <h2>Past Events and Results</h2>
+<section class="event-list past-events" id="past-events">
+  <h2>Past Events</h2>
   {%- assign past_events = site.past_events | sort: "event_date" | reverse -%}
   {% for event in past_events %}
     <a class="event-card" href="{{ event.url | relative_url }}">

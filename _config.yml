@@ -19,12 +19,8 @@ show_frame: false           # adds a gray frame to the site
 show_sidebar: false        # show a sidebar instead of the usual header
 minimal: true             # use a dark header
 
-# Menu
-
-navigation:                # accepts {file, title, url, icon, sidebaricon}
-  - {title: "Home", url: "/#home"}       # pages of the home page carousel
-  - {title: "About", url: "/#about"}
-  - {title: "Events", url: "/#events"}
+# The header has only the logo, title and MENU button. The menu's items are in
+# _data/menu.yml.
 
 # Developer notes, not part of the public site
 exclude:
