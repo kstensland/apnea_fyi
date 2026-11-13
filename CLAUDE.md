@@ -29,7 +29,7 @@ Write for readers new to competition freediving. Verify AIDA rules against AIDA'
 | Upcoming event pages | `_events/*.md`, layout `event` | `/events/<name>/` |
 | Past event pages | `_past_events/*.md`, layout `past_event` | `/events/past/<name>/` |
 | Get Involved (placeholder) | `get-involved/index.md` | `/get-involved/` |
-| Compete, Volunteer, Safety, Judge, Sponsor (placeholders) | `get-involved/<name>.md` | `/get-involved/<name>/` |
+| Compete, Volunteer, Safety, Sponsor (placeholders) and Judge (real text) | `get-involved/<name>.md` | `/get-involved/<name>/` |
 | Courses (placeholder) | `courses.md` | `/courses/` |
 | Competitions (upcoming and past competitions) | `competitions.md` | `/events/competitions/` |
 | Other Events (placeholder) | `other_events.md` | `/events/other/` |

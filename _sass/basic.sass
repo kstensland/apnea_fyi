@@ -34,6 +34,11 @@ b, strong, th
 p
   text-align: justify
 
+// A paragraph with an email address is left-aligned: the long address can't
+// break, so justifying stretches the words before it into wide gaps on phones.
+p:has(a[href^="mailto:"])
+  text-align: left
+
 a
   color: $link-color
   text-decoration: inherit
