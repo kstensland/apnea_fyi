@@ -1,0 +1,35 @@
+# Slides in the home page hero carousel, in order.
+# The first slide's text is the page's <h1>; keep it the main heading.
+# To change a photo: add the new photo to assets/images/
+# (about 2400 px wide, plus a 1200 px copy for srcset), then set image,
+# srcset, width, height and alt. Describe the photo in alt.
+# Optional position (CSS object-position, e.g. "50% 35%") moves the crop
+# when faces get cut off on wide screens; the default is centered.
+- image: /assets/images/home_page_hero_2400.jpg
+  srcset:
+    - { image: /assets/images/home_page_hero_1200.jpg, width: 1200 }
+    - { image: /assets/images/home_page_hero_2400.jpg, width: 2400 }
+  width: 2400
+  height: 1807
+  alt: "Freediver resting on a buoy in Puget Sound with the Seattle skyline and Space Needle behind"
+  text: "Community-Hosted Freediving Competitions in Seattle and the PNW"
+
+- image: /assets/images/hero_boat_2000.jpg
+  srcset:
+    - { image: /assets/images/hero_boat_1200.jpg, width: 1200 }
+    - { image: /assets/images/hero_boat_2000.jpg, width: 2000 }
+  width: 2000
+  height: 1506
+  position: "50% 35%"
+  alt: "Two smiling freedivers in wetsuits sitting on the side of a boat, with a volunteer and competition judges behind them"
+  text: "Friendly environment that welcomes new and experienced freediving athletes."
+
+- image: /assets/images/hero_crew_2000.jpg
+  srcset:
+    - { image: /assets/images/hero_crew_1200.jpg, width: 1200 }
+    - { image: /assets/images/hero_crew_2000.jpg, width: 2000 }
+  width: 2000
+  height: 1506
+  position: "50% 22%"
+  alt: "Competition crew in Safety and Volunteer shirts on a boat, with two freedivers in ECAC shirts sitting on its edge"
+  text: "Don't want to compete? Come be a volunteer!"

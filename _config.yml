@@ -7,6 +7,7 @@ author: "Kristofer Stensland"
 email: "emeraldcityapneachallenge@gmail.com"
 logo: "/assets/images/ecac_black.png"        # Organization logo in structured data
 og_image: "/assets/images/og_image.jpg"     # default social share image, 1200 x 630
+google_site_verification: "vVx1DYJXRul-HKp7TzXdxzyXP9o4Z0ichKKoeIlSHHo"   # Google Search Console ownership check
 permalink: /:title/
 lang: "en"
 excerpt_separator: "\n\n\n"
