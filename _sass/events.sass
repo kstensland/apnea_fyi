@@ -17,8 +17,23 @@
 .home-pages #events .event-list h2
   width: fit-content
 
+// On the home events page the headings link to the Events page sections; they
+// keep the heading's look, with the sweep as the hover cue.
+.home-pages #events .event-list h2 a
+  color: inherit
+  text-decoration: none
+
+  &:hover, &:focus
+    color: inherit
+    text-decoration: none
+
+  &:focus-visible
+    outline: 2px solid $link-color
+    outline-offset: 2px
+
 .past-events
   margin-top: 3em
+
 
 .results-trigger
   display: block
@@ -189,6 +204,11 @@
 .event-map
   margin: 1.5em 0
 
+// Heading above each map when an event lists several (`maps` in front matter).
+.event-map-label
+  margin: 1.5em 0 -.75em
+  font-size: 1em
+
 .event-map iframe
   display: block
   width: 100%
@@ -353,9 +373,21 @@
       outline: 2px solid $link-color
       outline-offset: 2px
 
+// Shown when nobody dove a discipline (e.g. CNF at the Aug 2026 event).
+.aida-table td.aida-empty
+  opacity: .6
+  font-style: italic
+  white-space: normal
+
 .aida-ranking h3
   margin: 0 0 .5em
   font-size: 1em
+
+// Optional note above the Event Ranking (`ranking.note` in the data file).
+.aida-note
+  margin: 0 0 1em
+  font-size: .85em
+  opacity: .8
 
 .aida-source
   margin: 1em 0 0

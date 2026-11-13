@@ -139,8 +139,10 @@
       if (!headings.length) return;
       var sweeps = new Map();
       headings.forEach(function (h2) {
-        splitLetters(h2);
-        sweeps.set(h2, addSweep(h2));
+        // The headings are links to the Events page; split and sweep the link.
+        var target = h2.querySelector("a") || h2;
+        splitLetters(target);
+        sweeps.set(h2, addSweep(target));
       });
       if ("IntersectionObserver" in window) {
         var seen = new IntersectionObserver(function (entries) {

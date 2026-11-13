@@ -64,7 +64,14 @@ layout: default
     </div>
   {% endif %}
 
-  {% if page.map_query %}
+  {%- comment -%} An event held at two places (e.g. July 2025: depth at Magnuson
+    Park, pool at Snohomish) lists `maps`, each with a `label` and `query`. {%- endcomment -%}
+  {% if page.maps %}
+    {% for map in page.maps %}
+      <h3 class="event-map-label">{{ map.label | escape }}</h3>
+      {% include event_map.html query=map.query label=map.label %}
+    {% endfor %}
+  {% elsif page.map_query %}
     {% include event_map.html query=page.map_query label=page.location %}
   {% endif %}
 

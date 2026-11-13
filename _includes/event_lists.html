@@ -1,5 +1,12 @@
+{%- comment -%}
+  Upcoming and past events. Optional:
+  - `link_headings`: the "Upcoming Events" and "Past Events" headings link to
+    those sections of the standalone Events page (the home events page uses this).
+  - `past_limit`: show only the newest N past events (the home events page
+    passes 3). The standalone Events page passes neither and shows them all.
+{%- endcomment -%}
 <section class="event-list" id="upcoming-events">
-  <h2>Upcoming Events</h2>
+  <h2>{% if include.link_headings %}<a href="{{ '/events/#upcoming-events' | relative_url }}">Upcoming Events</a>{% else %}Upcoming Events{% endif %}</h2>
   {%- assign events = site.events | sort: "event_date" -%}
   {% for event in events %}
     <a class="event-card" href="{{ event.url | relative_url }}">
@@ -13,9 +20,10 @@
 </section>
 
 <section class="event-list past-events" id="past-events">
-  <h2>Past Events</h2>
+  <h2>{% if include.link_headings %}<a href="{{ '/events/#past-events' | relative_url }}">Past Events</a>{% else %}Past Events{% endif %}</h2>
   {%- assign past_events = site.past_events | sort: "event_date" | reverse -%}
-  {% for event in past_events %}
+  {%- assign past_limit = include.past_limit | default: past_events.size -%}
+  {% for event in past_events limit: past_limit %}
     <a class="event-card" href="{{ event.url | relative_url }}">
       <span class="event-card-title">{{ event.title | escape }}</span>
       <span class="event-card-meta">

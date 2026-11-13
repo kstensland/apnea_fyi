@@ -1,0 +1,121 @@
+# Official AIDA results for the April 2026 Pool Competition.
+# Copied from https://www.aidainternational.org/Events/EventResults-4900
+# and https://www.aidainternational.org/Events/EventRanking-4900 on 2026-11-12.
+# `profile` is the AIDA athlete ID: https://www.aidainternational.org/Athletes/Profile-<profile>
+# Overall `scores` follow the order of ranking.disciplines.
+source_url: "https://www.aidainternational.org/Events/EventResults-4900"
+ranking_url: "https://www.aidainternational.org/Events/EventRanking-4900"
+days:
+  - date: 2026-04-04
+    label: "Apr 4"
+    rows:
+      - {start: 1, diver: "Karen Ogilvie", profile: "b83cbfef-698d-4de1-b59f-1ad6c6dddb26", nationality: "CAN", gender: "F", discipline: "STA", line: "1", official_top: "02:00", ap: "00:15", rp: "05:14", card: "WHITE", points: 62.8, remarks: "Ok"}
+      - {start: 2, diver: "Christina Sours Molina", profile: "a452fe68-eb0d-4b83-9617-cde470d14b5b", nationality: "USA", gender: "F", discipline: "STA", line: "2", official_top: "02:00", ap: "01:00", rp: "02:05", card: "WHITE", points: 25, remarks: "Ok"}
+      - {start: 3, diver: "Megan Hart", profile: "a21ec731-4f14-4ebd-bc07-189cb06a8860", nationality: "USA", gender: "F", discipline: "STA", line: "2", official_top: "02:12", ap: "02:10", rp: "00:55", card: "YELLOW", points: 0, remarks: "Under ap"}
+      - {start: 4, diver: "Chris Weidner", profile: "b1cc8a01-0943-46d8-8c5e-67c4d3e121dd", nationality: "USA", gender: "M", discipline: "STA", line: "1", official_top: "02:24", ap: "03:04", rp: "04:31", card: "WHITE", points: 54.2, remarks: "Ok"}
+      - {start: 5, diver: "Nessim Könsgen", profile: "1a2afb31-046c-4d30-a015-c1d58cf44983", nationality: "CAN", gender: "M", discipline: "STA", line: "2", official_top: "02:24", ap: "04:00", rp: "06:16", card: "WHITE", points: 75.2, remarks: "Ok"}
+      - {start: 6, diver: "Shaun Parrott", profile: "c4baa831-9654-499d-8aa2-6dab71cee15b", nationality: "USA", gender: "M", discipline: "DNF", line: "1", official_top: "02:36", ap: "1 m", rp: "118 m", card: "WHITE", points: 59, remarks: "Ok"}
+      - {start: 7, diver: "Emily McKay", profile: "aa323295-aeba-44af-9424-9514974f9254", nationality: "USA", gender: "F", discipline: "DNF", line: "2", official_top: "02:36", ap: "50 m", rp: "78 m", card: "WHITE", points: 39, remarks: "Ok"}
+      - {start: 8, diver: "Jocelyn Proulx", profile: "26fa1f68-b4f0-4d43-bffe-30c560950c80", nationality: "CAN", gender: "M", discipline: "DNF", line: "1", official_top: "02:45", ap: "59 m", rp: "103 m", card: "WHITE", points: 51.5, remarks: "Ok"}
+      - {start: 9, diver: "Natsuko Saito", profile: "7379aa8b-5eca-4abb-b7bb-6ad5f2bfb758", nationality: "USA", gender: "F", discipline: "DNF", line: "2", official_top: "02:45", ap: "80 m", rp: "121 m", card: "RED", points: 0, remarks: "Dqbo-surface"}
+      - {start: 10, diver: "Lalena Desautels", profile: "06c31a7b-5197-4267-8b58-969e0c513ba4", nationality: "CAN", gender: "F", discipline: "DNF", line: "1", official_top: "02:54", ap: "85 m", rp: "57 m", card: "YELLOW", points: 14.5, remarks: "Under ap"}
+      - {start: 11, diver: "Kateryna Honcharova", profile: "c74310b3-e3cf-43e9-a9d8-a77c4d9a0907", nationality: "UKR", gender: "F", discipline: "DNF", line: "2", official_top: "02:54", ap: "95 m", rp: "91 m", card: "RED", points: 0, remarks: "Under ap,dqairways"}
+      - {start: 12, diver: "Benn Drysdale", profile: "246003e6-415d-4f90-88c9-078237cb68e1", nationality: "CAN", gender: "M", discipline: "DYNB", line: "1", official_top: "03:03", ap: "5 m", rp: "134 m", card: "WHITE", points: 67, remarks: "Ok"}
+      - {start: 13, diver: "Lauren Smith", profile: "e1881899-0f2a-4391-807f-1cac3d9467fc", nationality: "USA", gender: "F", discipline: "DYNB", line: "1", official_top: "03:12", ap: "25 m", rp: "52 m", card: "WHITE", points: 26, remarks: "Ok"}
+      - {start: 14, diver: "Haley O`hora", profile: "71041223-89c9-4259-bbea-7778c8eaed20", nationality: "USA", gender: "F", discipline: "DYNB", line: "2", official_top: "03:12", ap: "40 m", rp: "76 m", card: "WHITE", points: 38, remarks: "Ok"}
+      - {start: 15, diver: "Christoph Ka Wing Wong", profile: "c826a096-24b6-4d2d-9f33-5bec06b11f44", nationality: "GER", gender: "M", discipline: "DYNB", line: "1", official_top: "03:21", ap: "45 m", rp: "48 m", card: "WHITE", points: 24, remarks: "Ok"}
+      - {start: 16, diver: "Austin Truitt", profile: "1a5e004f-c046-470f-8243-a6fcfb54e9bd", nationality: "USA", gender: "M", discipline: "DYN", line: "1", official_top: "03:30", ap: "50 m", rp: "103 m", card: "WHITE", points: 51.5, remarks: "Ok"}
+      - {start: 17, diver: "Chelsea Frenkel", profile: "3d5ac45c-2a60-4113-8f62-7f60db452e9e", nationality: "CAN", gender: "F", discipline: "DYN", line: "2", official_top: "03:30", ap: "50 m", rp: "137 m", card: "WHITE", points: 68.5, remarks: "Ok"}
+      - {start: 18, diver: "Richard Vanderbyl", profile: "b69920a0-532c-4d10-9461-f61b0c77c11e", nationality: "CAN", gender: "M", discipline: "DYN", line: "1", official_top: "03:39", ap: "90 m", rp: "143 m", card: "WHITE", points: 71.5, remarks: "Ok"}
+      - {start: 19, diver: "Sylvie Kaul Anderson", profile: "5cc44b23-6e02-4586-84de-07dbd98384c4", nationality: "USA", gender: "F", discipline: "DYN", line: "2", official_top: "03:39", ap: "100 m", rp: "125 m", card: "WHITE", points: 62.5, remarks: "Ok"}
+      - {start: 20, diver: "Karen Ogilvie", profile: "b83cbfef-698d-4de1-b59f-1ad6c6dddb26", nationality: "CAN", gender: "F", discipline: "DYN", line: "1", official_top: "03:48", ap: "10 m", rp: "128 m", card: "WHITE", points: 64, remarks: "Ok"}
+      - {start: 21, diver: "Christina Sours Molina", profile: "a452fe68-eb0d-4b83-9617-cde470d14b5b", nationality: "USA", gender: "F", discipline: "DNF", line: "1", official_top: "03:57", ap: "50 m", rp: "61 m", card: "WHITE", points: 30.5, remarks: "Ok"}
+      - {start: 22, diver: "Megan Hart", profile: "a21ec731-4f14-4ebd-bc07-189cb06a8860", nationality: "USA", gender: "F", discipline: "DNF", line: "1", official_top: "04:06", ap: "50 m", rp: "27 m", card: "RED", points: 0, remarks: "Under ap,dqairways"}
+      - {start: 23, diver: "Chris Weidner", profile: "b1cc8a01-0943-46d8-8c5e-67c4d3e121dd", nationality: "USA", gender: "M", discipline: "DYNB", line: "1", official_top: "04:15", ap: "77 m", rp: "81 m", card: "WHITE", points: 40.5, remarks: "Ok"}
+      - {start: 24, diver: "Nessim Könsgen", profile: "1a2afb31-046c-4d30-a015-c1d58cf44983", nationality: "CAN", gender: "M", discipline: "DNF", line: "1", official_top: "04:24", ap: "75 m", rp: "91 m", card: "WHITE", points: 45.5, remarks: "Ok"}
+      - {start: 25, diver: "Shaun Parrott", profile: "c4baa831-9654-499d-8aa2-6dab71cee15b", nationality: "USA", gender: "M", discipline: "DYN", line: "1", official_top: "04:33", ap: "1 m", rp: "96 m", card: "WHITE", points: 48, remarks: "Ok"}
+      - {start: 26, diver: "Emily McKay", profile: "aa323295-aeba-44af-9424-9514974f9254", nationality: "USA", gender: "F", discipline: "DYNB", line: "1", official_top: "04:42", ap: "75 m", rp: "68 m", card: "YELLOW", points: 30.5, remarks: "Under ap"}
+      - {start: 27, diver: "Jocelyn Proulx", profile: "26fa1f68-b4f0-4d43-bffe-30c560950c80", nationality: "CAN", gender: "M", discipline: "DYN", line: "1", official_top: "04:51", ap: "72 m", rp: "107 m", card: "WHITE", points: 53.5, remarks: "Ok"}
+      - {start: 28, diver: "Lalena Desautels", profile: "06c31a7b-5197-4267-8b58-969e0c513ba4", nationality: "CAN", gender: "F", discipline: "DYNB", line: "2", official_top: "05:00", ap: "90 m", rp: "122 m", card: "WHITE", points: 61, remarks: "Ok"}
+      - {start: 29, diver: "Kateryna Honcharova", profile: "c74310b3-e3cf-43e9-a9d8-a77c4d9a0907", nationality: "UKR", gender: "F", discipline: "DYNB", line: "1", official_top: "05:09", ap: "115 m", rp: "114 m", card: "YELLOW", points: 56.5, remarks: "Under ap"}
+      - {start: 30, diver: "Benn Drysdale", profile: "246003e6-415d-4f90-88c9-078237cb68e1", nationality: "CAN", gender: "M", discipline: "DYN", line: "1", official_top: "05:18", ap: "5 m", rp: "137 m", card: "WHITE", points: 68.5, remarks: "Ok"}
+      - {start: 31, diver: "Lauren Smith", profile: "e1881899-0f2a-4391-807f-1cac3d9467fc", nationality: "USA", gender: "F", discipline: "DNF", line: "1", official_top: "05:27", ap: "25 m", rp: "54 m", card: "WHITE", points: 27, remarks: "Ok"}
+      - {start: 32, diver: "Haley O`hora", profile: "71041223-89c9-4259-bbea-7778c8eaed20", nationality: "USA", gender: "F", discipline: "DNF", line: "2", official_top: "05:27", ap: "25 m", rp: "66 m", card: "WHITE", points: 33, remarks: "Ok"}
+      - {start: 33, diver: "Christoph Ka Wing Wong", profile: "c826a096-24b6-4d2d-9f33-5bec06b11f44", nationality: "GER", gender: "M", discipline: "DYN", line: "1", official_top: "05:36", ap: "45 m", rp: "72 m", card: "WHITE", points: 36, remarks: "Ok"}
+      - {start: 34, diver: "Austin Truitt", profile: "1a5e004f-c046-470f-8243-a6fcfb54e9bd", nationality: "USA", gender: "M", discipline: "DNF", line: "1", official_top: "05:45", ap: "50 m", rp: "73 m", card: "WHITE", points: 36.5, remarks: "Ok"}
+      - {start: 35, diver: "Chelsea Frenkel", profile: "3d5ac45c-2a60-4113-8f62-7f60db452e9e", nationality: "CAN", gender: "F", discipline: "DNF", line: "2", official_top: "05:45", ap: "50 m", rp: "97 m", card: "WHITE", points: 48.5, remarks: "Ok"}
+      - {start: 36, diver: "Richard Vanderbyl", profile: "b69920a0-532c-4d10-9461-f61b0c77c11e", nationality: "CAN", gender: "M", discipline: "DNF", line: "1", official_top: "05:54", ap: "75 m", rp: "129 m", card: "WHITE", points: 64.5, remarks: "Ok"}
+      - {start: 37, diver: "Sylvie Kaul Anderson", profile: "5cc44b23-6e02-4586-84de-07dbd98384c4", nationality: "USA", gender: "F", discipline: "DNF", line: "2", official_top: "05:54", ap: "75 m", rp: "106 m", card: "WHITE", points: 53, remarks: "Ok"}
+ranking:
+  disciplines:
+    - name: "DYN"
+      male:
+        - {medal: "gold", rank: "1.", name: "Richard Vanderbyl", profile: "b69920a0-532c-4d10-9461-f61b0c77c11e", nationality: "CAN", result: "143 m", announced: "90 m", points: 71.5, penalties: 0}
+        - {medal: "silver", rank: "2.", name: "Benn Drysdale", profile: "246003e6-415d-4f90-88c9-078237cb68e1", nationality: "CAN", result: "137 m", announced: "5 m", points: 68.5, penalties: 0}
+        - {medal: "bronze", rank: "3.", name: "Jocelyn Proulx", profile: "26fa1f68-b4f0-4d43-bffe-30c560950c80", nationality: "CAN", result: "107 m", announced: "72 m", points: 53.5, penalties: 0}
+        - {medal: "", rank: "4.", name: "Austin Truitt", profile: "1a5e004f-c046-470f-8243-a6fcfb54e9bd", nationality: "USA", result: "103 m", announced: "50 m", points: 51.5, penalties: 0}
+        - {medal: "", rank: "5.", name: "Shaun Parrott", profile: "c4baa831-9654-499d-8aa2-6dab71cee15b", nationality: "USA", result: "96 m", announced: "1 m", points: 48, penalties: 0}
+        - {medal: "", rank: "6.", name: "Christoph Ka Wing Wong", profile: "c826a096-24b6-4d2d-9f33-5bec06b11f44", nationality: "GER", result: "72 m", announced: "45 m", points: 36, penalties: 0}
+      female:
+        - {medal: "gold", rank: "1.", name: "Chelsea Frenkel", profile: "3d5ac45c-2a60-4113-8f62-7f60db452e9e", nationality: "CAN", result: "137 m", announced: "50 m", points: 68.5, penalties: 0}
+        - {medal: "silver", rank: "2.", name: "Karen Ogilvie", profile: "b83cbfef-698d-4de1-b59f-1ad6c6dddb26", nationality: "CAN", result: "128 m", announced: "10 m", points: 64, penalties: 0}
+        - {medal: "bronze", rank: "3.", name: "Sylvie Kaul Anderson", profile: "5cc44b23-6e02-4586-84de-07dbd98384c4", nationality: "USA", result: "125 m", announced: "100 m", points: 62.5, penalties: 0}
+    - name: "DNF"
+      male:
+        - {medal: "gold", rank: "1.", name: "Richard Vanderbyl", profile: "b69920a0-532c-4d10-9461-f61b0c77c11e", nationality: "CAN", result: "129 m", announced: "75 m", points: 64.5, penalties: 0}
+        - {medal: "silver", rank: "2.", name: "Shaun Parrott", profile: "c4baa831-9654-499d-8aa2-6dab71cee15b", nationality: "USA", result: "118 m", announced: "1 m", points: 59, penalties: 0}
+        - {medal: "bronze", rank: "3.", name: "Jocelyn Proulx", profile: "26fa1f68-b4f0-4d43-bffe-30c560950c80", nationality: "CAN", result: "103 m", announced: "59 m", points: 51.5, penalties: 0}
+        - {medal: "", rank: "4.", name: "Nessim Könsgen", profile: "1a2afb31-046c-4d30-a015-c1d58cf44983", nationality: "CAN", result: "91 m", announced: "75 m", points: 45.5, penalties: 0}
+        - {medal: "", rank: "5.", name: "Austin Truitt", profile: "1a5e004f-c046-470f-8243-a6fcfb54e9bd", nationality: "USA", result: "73 m", announced: "50 m", points: 36.5, penalties: 0}
+      female:
+        - {medal: "gold", rank: "1.", name: "Sylvie Kaul Anderson", profile: "5cc44b23-6e02-4586-84de-07dbd98384c4", nationality: "USA", result: "106 m", announced: "75 m", points: 53, penalties: 0}
+        - {medal: "silver", rank: "2.", name: "Chelsea Frenkel", profile: "3d5ac45c-2a60-4113-8f62-7f60db452e9e", nationality: "CAN", result: "97 m", announced: "50 m", points: 48.5, penalties: 0}
+        - {medal: "bronze", rank: "3.", name: "Emily McKay", profile: "aa323295-aeba-44af-9424-9514974f9254", nationality: "USA", result: "78 m", announced: "50 m", points: 39, penalties: 0}
+        - {medal: "", rank: "4.", name: "Haley O`hora", profile: "71041223-89c9-4259-bbea-7778c8eaed20", nationality: "USA", result: "66 m", announced: "25 m", points: 33, penalties: 0}
+        - {medal: "", rank: "5.", name: "Christina Sours Molina", profile: "a452fe68-eb0d-4b83-9617-cde470d14b5b", nationality: "USA", result: "61 m", announced: "50 m", points: 30.5, penalties: 0}
+        - {medal: "", rank: "6.", name: "Lauren Smith", profile: "e1881899-0f2a-4391-807f-1cac3d9467fc", nationality: "USA", result: "54 m", announced: "25 m", points: 27, penalties: 0}
+        - {medal: "", rank: "7.", name: "Lalena Desautels", profile: "06c31a7b-5197-4267-8b58-969e0c513ba4", nationality: "CAN", result: "57 m", announced: "85 m", points: 14.5, penalties: 14}
+        - {medal: "", rank: "8.", name: "Kateryna Honcharova", profile: "c74310b3-e3cf-43e9-a9d8-a77c4d9a0907", nationality: "UKR", result: "91 m", announced: "95 m", points: 0, penalties: 2}
+        - {medal: "", rank: "9.", name: "Megan Hart", profile: "a21ec731-4f14-4ebd-bc07-189cb06a8860", nationality: "USA", result: "27 m", announced: "50 m", points: 0, penalties: 11.5}
+        - {medal: "", rank: "10.", name: "Natsuko Saito", profile: "7379aa8b-5eca-4abb-b7bb-6ad5f2bfb758", nationality: "USA", result: "121 m", announced: "80 m", points: 0, penalties: 0}
+    - name: "STA"
+      male:
+        - {medal: "gold", rank: "1.", name: "Nessim Könsgen", profile: "1a2afb31-046c-4d30-a015-c1d58cf44983", nationality: "CAN", result: "06:16", announced: "04:00", points: 75.2, penalties: 0}
+        - {medal: "silver", rank: "2.", name: "Chris Weidner", profile: "b1cc8a01-0943-46d8-8c5e-67c4d3e121dd", nationality: "USA", result: "04:31", announced: "03:04", points: 54.2, penalties: 0}
+      female:
+        - {medal: "gold", rank: "1.", name: "Karen Ogilvie", profile: "b83cbfef-698d-4de1-b59f-1ad6c6dddb26", nationality: "CAN", result: "05:14", announced: "00:15", points: 62.8, penalties: 0}
+        - {medal: "silver", rank: "2.", name: "Christina Sours Molina", profile: "a452fe68-eb0d-4b83-9617-cde470d14b5b", nationality: "USA", result: "02:05", announced: "01:00", points: 25, penalties: 0}
+        - {medal: "bronze", rank: "3.", name: "Megan Hart", profile: "a21ec731-4f14-4ebd-bc07-189cb06a8860", nationality: "USA", result: "00:55", announced: "02:10", points: 0, penalties: 15}
+    - name: "DYNB"
+      male:
+        - {medal: "gold", rank: "1.", name: "Benn Drysdale", profile: "246003e6-415d-4f90-88c9-078237cb68e1", nationality: "CAN", result: "134 m", announced: "5 m", points: 67, penalties: 0}
+        - {medal: "silver", rank: "2.", name: "Chris Weidner", profile: "b1cc8a01-0943-46d8-8c5e-67c4d3e121dd", nationality: "USA", result: "81 m", announced: "77 m", points: 40.5, penalties: 0}
+        - {medal: "bronze", rank: "3.", name: "Christoph Ka Wing Wong", profile: "c826a096-24b6-4d2d-9f33-5bec06b11f44", nationality: "GER", result: "48 m", announced: "45 m", points: 24, penalties: 0}
+      female:
+        - {medal: "gold", rank: "1.", name: "Lalena Desautels", profile: "06c31a7b-5197-4267-8b58-969e0c513ba4", nationality: "CAN", result: "122 m", announced: "90 m", points: 61, penalties: 0}
+        - {medal: "silver", rank: "2.", name: "Kateryna Honcharova", profile: "c74310b3-e3cf-43e9-a9d8-a77c4d9a0907", nationality: "UKR", result: "114 m", announced: "115 m", points: 56.5, penalties: 0.5}
+        - {medal: "bronze", rank: "3.", name: "Haley O`hora", profile: "71041223-89c9-4259-bbea-7778c8eaed20", nationality: "USA", result: "76 m", announced: "40 m", points: 38, penalties: 0}
+        - {medal: "", rank: "4.", name: "Emily McKay", profile: "aa323295-aeba-44af-9424-9514974f9254", nationality: "USA", result: "68 m", announced: "75 m", points: 30.5, penalties: 3.5}
+        - {medal: "", rank: "5.", name: "Lauren Smith", profile: "e1881899-0f2a-4391-807f-1cac3d9467fc", nationality: "USA", result: "52 m", announced: "25 m", points: 26, penalties: 0}
+  overall:
+    male:
+      - {rank: "1.", name: "Richard Vanderbyl", profile: "b69920a0-532c-4d10-9461-f61b0c77c11e", nationality: "CAN", scores: ["71.5", "64.5", "-", "-"], points: 136}
+      - {rank: "2.", name: "Benn Drysdale", profile: "246003e6-415d-4f90-88c9-078237cb68e1", nationality: "CAN", scores: ["68.5", "-", "-", "67"], points: 135.5}
+      - {rank: "3.", name: "Nessim Könsgen", profile: "1a2afb31-046c-4d30-a015-c1d58cf44983", nationality: "CAN", scores: ["-", "45.5", "75.2", "-"], points: 120.7}
+      - {rank: "4.", name: "Shaun Parrott", profile: "c4baa831-9654-499d-8aa2-6dab71cee15b", nationality: "USA", scores: ["48", "59", "-", "-"], points: 107}
+      - {rank: "5.", name: "Jocelyn Proulx", profile: "26fa1f68-b4f0-4d43-bffe-30c560950c80", nationality: "CAN", scores: ["53.5", "51.5", "-", "-"], points: 105}
+      - {rank: "6.", name: "Chris Weidner", profile: "b1cc8a01-0943-46d8-8c5e-67c4d3e121dd", nationality: "USA", scores: ["-", "-", "54.2", "40.5"], points: 94.7}
+      - {rank: "7.", name: "Austin Truitt", profile: "1a5e004f-c046-470f-8243-a6fcfb54e9bd", nationality: "USA", scores: ["51.5", "36.5", "-", "-"], points: 88}
+      - {rank: "8.", name: "Christoph Ka Wing Wong", profile: "c826a096-24b6-4d2d-9f33-5bec06b11f44", nationality: "GER", scores: ["36", "-", "-", "24"], points: 60}
+    female:
+      - {rank: "1.", name: "Karen Ogilvie", profile: "b83cbfef-698d-4de1-b59f-1ad6c6dddb26", nationality: "CAN", scores: ["64", "-", "62.8", "-"], points: 126.8}
+      - {rank: "2.", name: "Chelsea Frenkel", profile: "3d5ac45c-2a60-4113-8f62-7f60db452e9e", nationality: "CAN", scores: ["68.5", "48.5", "-", "-"], points: 117}
+      - {rank: "3.", name: "Sylvie Kaul Anderson", profile: "5cc44b23-6e02-4586-84de-07dbd98384c4", nationality: "USA", scores: ["62.5", "53", "-", "-"], points: 115.5}
+      - {rank: "4.", name: "Lalena Desautels", profile: "06c31a7b-5197-4267-8b58-969e0c513ba4", nationality: "CAN", scores: ["-", "14.5", "-", "61"], points: 75.5}
+      - {rank: "5.", name: "Haley O`hora", profile: "71041223-89c9-4259-bbea-7778c8eaed20", nationality: "USA", scores: ["-", "33", "-", "38"], points: 71}
+      - {rank: "6.", name: "Emily McKay", profile: "aa323295-aeba-44af-9424-9514974f9254", nationality: "USA", scores: ["-", "39", "-", "30.5"], points: 69.5}
+      - {rank: "7.", name: "Kateryna Honcharova", profile: "c74310b3-e3cf-43e9-a9d8-a77c4d9a0907", nationality: "UKR", scores: ["-", "0", "-", "56.5"], points: 56.5}
+      - {rank: "8.", name: "Christina Sours Molina", profile: "a452fe68-eb0d-4b83-9617-cde470d14b5b", nationality: "USA", scores: ["-", "30.5", "25", "-"], points: 55.5}
+      - {rank: "9.", name: "Lauren Smith", profile: "e1881899-0f2a-4391-807f-1cac3d9467fc", nationality: "USA", scores: ["-", "27", "-", "26"], points: 53}
+      - {rank: "10.", name: "Megan Hart", profile: "a21ec731-4f14-4ebd-bc07-189cb06a8860", nationality: "USA", scores: ["-", "0", "0", "-"], points: 0}
+      - {rank: "10.", name: "Natsuko Saito", profile: "7379aa8b-5eca-4abb-b7bb-6ad5f2bfb758", nationality: "USA", scores: ["-", "0", "-", "-"], points: 0}
