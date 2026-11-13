@@ -45,6 +45,7 @@ Write for readers new to competition freediving. Verify AIDA rules against AIDA'
 - `noindex: true` adds `<meta name="robots" content="noindex">`; pair it with `sitemap: false`. Used on 404, archive, `/emeraldcity/` and the theme demo post.
 - `jekyll-sitemap` writes `/sitemap.xml`; `robots.txt` points to it. Site URL is `url` in `_config.yml`.
 - Default share image: `assets/images/og_image.jpg` (1200 × 630, cropped from the hero). The hero itself is served as `home_page_hero_1200.jpg` / `home_page_hero_2400.jpg` (the 5 MB original is kept but unused). If the hero photo changes, regenerate all three, e.g. with `sips -Z 2400 -s formatOptions 82`.
+- Google Search Console ownership is verified by the `google-site-verification` meta tag on the home page, from `google_site_verification` in `_config.yml`. Keep it, or Search Console loses verification.
 - After deploying, submit `https://emeraldcity.apnea.fyi/sitemap.xml` in Google Search Console and check event pages with Google's Rich Results Test.
 
 ## Home page
