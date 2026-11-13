@@ -8,10 +8,12 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap">
 <meta name="author" content="{{ page.author | default: site.title | escape }}">
 <meta name="generator" content="Jekyll v{{ jekyll.version }}">
+{%- comment -%} ?v= changes with every build, so browsers fetch the new stylesheet
+  right after a deploy instead of reusing an old cached copy for up to 10 minutes. {%- endcomment %}
 {% if site.show_frame %}
-<link rel="stylesheet" href="{{ "/assets/css/frame.css" | relative_url }}">
+<link rel="stylesheet" href="{{ "/assets/css/frame.css" | relative_url }}?v={{ site.time | date: '%s' }}">
 {% else %}
-<link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+<link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}?v={{ site.time | date: '%s' }}">
 {% endif %}
 {% if site.plugins contains "jekyll-feed" %}<link rel="alternate" href="{{ site.feed.path | default: "/feed.xml" | relative_url }}" type="application/atom+xml" title="{{ site.title }}">{% endif %}
 {% if page.mathjax or site.mathjax %}

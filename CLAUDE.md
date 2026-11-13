@@ -245,7 +245,7 @@ bundle exec jekyll serve --livereload   # http://localhost:4000/
 - **Stylesheet and partial names must differ.** `assets/css/main.sass` and `_sass/index.sass` are named differently on purpose. A stylesheet with the same name as a partial imports itself.
 - The compiled stylesheet is `/assets/css/main.css`.
 - Do not paste shell commands into the Gemfile.
-- Browsers can cache `main.css` for up to 10 minutes after a deploy (`max-age=600`). If the live site looks wrong after a push, try a hard refresh (Cmd+Shift+R) before debugging.
+- GitHub Pages lets browsers cache `main.css` for 10 minutes (`max-age=600`). The stylesheet link in `default.html` adds `?v=<build time>`, so each deploy gets a fresh URL and browsers fetch the new CSS right away. If the live site still looks wrong after a push, try a hard refresh (Cmd+Shift+R) before debugging.
 - Dates for events: use `event_date` (see Events).
 
 ## Hosting and deployment
