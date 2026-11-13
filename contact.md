@@ -9,16 +9,16 @@ article_class: menu-text
 
 {%- comment -%}
   The form is sent by FormSubmit (https://formsubmit.co), since GitHub Pages
-  can't send email. FormSubmit emails each message to the address in the
-  form's action. The very first message sends an "activate this form" email to
-  that inbox instead; someone must click it once before messages come through.
-  After a message is sent, FormSubmit shows a short check (a captcha) and then
-  returns the visitor to /contact/thanks/.
+  can't send email. The form's action uses FormSubmit's alias for
+  emeraldcityapneachallenge@gmail.com (from its activation email), so the
+  address isn't in the page's code; FormSubmit delivers every message there.
+  The form is activated. After a message is sent, FormSubmit shows a short
+  check (a captcha) and then returns the visitor to /contact/thanks/.
 {%- endcomment -%}
 
 Questions about competing, volunteering or anything else? Send us a message and we'll reply by email.
 
-<form class="contact-form" action="https://formsubmit.co/emeraldcityapneachallenge@gmail.com" method="POST">
+<form class="contact-form" action="https://formsubmit.co/a9463ffb7787f5549fc2f7b593ad6843" method="POST">
   <!-- FormSubmit settings -->
   <input type="hidden" name="_subject" value="New message from apnea.fyi">
   <input type="hidden" name="_template" value="table">
