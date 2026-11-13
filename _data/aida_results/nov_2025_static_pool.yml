@@ -1,0 +1,130 @@
+# Official AIDA results for the November 2025 Static Pool Competition.
+# Two AIDA events on the same day: the competition (4788) and the Double
+# Dippers (4836). Each has its own results tab and its own ranking tab
+# (`rankings`); the Double Dippers ranking was copied from EventRanking-4836.
+# Copied from https://www.aidainternational.org/Events/EventResults-4788
+# and https://www.aidainternational.org/Events/EventRanking-4788 on 2026-11-12.
+# `profile` is the AIDA athlete ID: https://www.aidainternational.org/Athletes/Profile-<profile>
+# Overall `scores` follow the order of ranking.disciplines.
+source_url: "https://www.aidainternational.org/Events/EventResults-4788"
+ranking_url: "https://www.aidainternational.org/Events/EventRanking-4788"
+days:
+  - date: 2025-11-02
+    label: "Nov 2"
+    rows:
+      - {start: 1, diver: "Jocelyn Proulx", profile: "26fa1f68-b4f0-4d43-bffe-30c560950c80", nationality: "CAN", gender: "M", discipline: "STA", line: "1", official_top: "04:15", ap: "00:05", rp: "05:59", card: "WHITE", points: 71.8, remarks: "Ok"}
+      - {start: 2, diver: "Sarah Gandhi", profile: "94c16098-109c-456d-87b8-1a919708bbfe", nationality: "CAN", gender: "F", discipline: "STA", line: "2", official_top: "04:15", ap: "02:00", rp: "03:36", card: "WHITE", points: 43.2, remarks: "Ok"}
+      - {start: 3, diver: "Christina Sours Molina", profile: "a452fe68-eb0d-4b83-9617-cde470d14b5b", nationality: "USA", gender: "F", discipline: "STA", line: "2", official_top: "04:25", ap: "02:30", rp: "03:02", card: "WHITE", points: 36.4, remarks: "Ok"}
+      - {start: 4, diver: "Lauren Smith", profile: "e1881899-0f2a-4391-807f-1cac3d9467fc", nationality: "USA", gender: "F", discipline: "STA", line: "1", official_top: "04:35", ap: "03:00", rp: "01:45", card: "YELLOW", points: 6, remarks: "Under ap"}
+      - {start: 5, diver: "Hanna Wade", profile: "1a3df175-bc6c-4d36-be87-897c64a24c8f", nationality: "USA", gender: "F", discipline: "STA", line: "2", official_top: "04:35", ap: "03:00", rp: "05:07", card: "RED", points: 0, remarks: "Dqsp"}
+      - {start: 6, diver: "Austin Truitt", profile: "1a5e004f-c046-470f-8243-a6fcfb54e9bd", nationality: "USA", gender: "M", discipline: "STA", line: "1", official_top: "04:45", ap: "03:30", rp: "05:04", card: "WHITE", points: 60.8, remarks: "Ok"}
+      - {start: 7, diver: "Kateryna Honcharova", profile: "c74310b3-e3cf-43e9-a9d8-a77c4d9a0907", nationality: "UKR", gender: "F", discipline: "STA", line: "2", official_top: "04:45", ap: "03:30", rp: "04:43", card: "RED", points: 0, remarks: "Dqtouch"}
+      - {start: 8, diver: "Lalena Desautels", profile: "06c31a7b-5197-4267-8b58-969e0c513ba4", nationality: "CAN", gender: "F", discipline: "STA", line: "1", official_top: "04:55", ap: "03:30", rp: "04:31", card: "WHITE", points: 54.2, remarks: "Ok"}
+      - {start: 9, diver: "Terry C Huang", profile: "c94ca66b-c9e2-4fbc-a7dc-021c75af201c", nationality: "USA", gender: "M", discipline: "STA", line: "2", official_top: "04:55", ap: "04:00", rp: "04:27", card: "WHITE", points: 53.4, remarks: "Ok"}
+      - {start: 10, diver: "Ari Athair", profile: "5b9235f7-19cc-4973-8bf5-2c2922c5ad61", nationality: "USA", gender: "M", discipline: "STA", line: "1", official_top: "05:05", ap: "00:01", rp: "05:13", card: "WHITE", points: 62.6, remarks: "Ok"}
+      - {start: 11, diver: "Charles Turmel", profile: "86001f90-75eb-4272-947b-94d0221031a2", nationality: "CAN", gender: "M", discipline: "STA", line: "2", official_top: "05:05", ap: "00:07", rp: "03:32", card: "WHITE", points: 42.4, remarks: "Ok"}
+      - {start: 12, diver: "Ting Huang", profile: "7c824cea-ef1e-42d2-8d8a-f7b3cc47ced4", nationality: "CHN", gender: "F", discipline: "STA", line: "1", official_top: "05:15", ap: "01:30", rp: "02:36", card: "WHITE", points: 31.2, remarks: "Ok"}
+      - {start: 13, diver: "Christoph Ka Wing Wong", profile: "c826a096-24b6-4d2d-9f33-5bec06b11f44", nationality: "GER", gender: "M", discipline: "STA", line: "2", official_top: "05:15", ap: "03:00", rp: "02:48", card: "YELLOW", points: 31.2, remarks: "Under ap"}
+      - {start: 14, diver: "Madeline Hwang", profile: "9c2187c7-7ce1-471e-89d8-f0deb1eb9782", nationality: "USA", gender: "F", discipline: "STA", line: "1", official_top: "05:25", ap: "03:00", rp: "04:12", card: "WHITE", points: 50.4, remarks: "Ok"}
+      - {start: 15, diver: "Daniel Wright", profile: "fde19022-26e2-4ac8-8820-12e3555a98ad", nationality: "CAN", gender: "M", discipline: "STA", line: "2", official_top: "05:25", ap: "03:30", rp: "04:49", card: "WHITE", points: 57.8, remarks: "Ok"}
+      - {start: 16, diver: "Sarah Woodworth", profile: "fcccc282-9ffc-44b6-b6b6-7e9baf4cef31", nationality: "USA", gender: "F", discipline: "STA", line: "1", official_top: "05:35", ap: "03:30", rp: "04:37", card: "WHITE", points: 55.4, remarks: "Ok"}
+      - {start: 17, diver: "Richard Vanderbyl", profile: "b69920a0-532c-4d10-9461-f61b0c77c11e", nationality: "CAN", gender: "M", discipline: "STA", line: "2", official_top: "05:35", ap: "03:30", rp: "05:20", card: "RED", points: 0, remarks: "Dqsp"}
+      - {start: 18, diver: "Isaiah Dummer", profile: "7beaac1a-2e3a-4519-a3ff-4f032763a964", nationality: "USA", gender: "M", discipline: "STA", line: "1", official_top: "05:45", ap: "03:30", rp: "04:14", card: "WHITE", points: 50.8, remarks: "Ok"}
+      - {start: 19, diver: "Nessim Könsgen", profile: "1a2afb31-046c-4d30-a015-c1d58cf44983", nationality: "CAN", gender: "M", discipline: "STA", line: "2", official_top: "05:45", ap: "04:00", rp: "06:02", card: "YELLOW", points: 71.4, remarks: "Latestart"}
+      - {start: 20, diver: "Torrey Moreno", profile: "4bb390f2-bfaf-425e-bf5b-222d05c954c3", nationality: "USA", gender: "M", discipline: "STA", line: "1", official_top: "05:55", ap: "04:00", rp: "04:05", card: "WHITE", points: 49, remarks: "Ok"}
+  - date: 2025-11-02
+    label: "Double Dippers"
+    source_url: "https://www.aidainternational.org/Events/EventResults-4836"
+    rows:
+      - {start: 1, diver: "Ari Athair", profile: "5b9235f7-19cc-4973-8bf5-2c2922c5ad61", nationality: "USA", gender: "M", discipline: "STA", line: "1", official_top: "03:45", ap: "00:01", rp: "05:37", card: "WHITE", points: 0, remarks: "Ok"}
+      - {start: 2, diver: "Charles Turmel", profile: "86001f90-75eb-4272-947b-94d0221031a2", nationality: "CAN", gender: "M", discipline: "STA", line: "2", official_top: "03:45", ap: "00:07", rp: "05:59", card: "WHITE", points: 71.8, remarks: "Ok"}
+      - {start: 3, diver: "Ting Huang", profile: "7c824cea-ef1e-42d2-8d8a-f7b3cc47ced4", nationality: "CHN", gender: "F", discipline: "STA", line: "3", official_top: "03:45", ap: "01:30", rp: "02:59", card: "WHITE", points: 35.8, remarks: "Ok"}
+      - {start: 4, diver: "Christoph Ka Wing Wong", profile: "c826a096-24b6-4d2d-9f33-5bec06b11f44", nationality: "GER", gender: "M", discipline: "STA", line: "1", official_top: "03:55", ap: "03:00", rp: "03:32", card: "WHITE", points: 42.4, remarks: "Ok"}
+      - {start: 5, diver: "Sarah Woodworth", profile: "fcccc282-9ffc-44b6-b6b6-7e9baf4cef31", nationality: "USA", gender: "F", discipline: "STA", line: "2", official_top: "03:55", ap: "03:30", rp: "05:08", card: "WHITE", points: 61.6, remarks: "Ok"}
+      - {start: 6, diver: "Daniel Wright", profile: "fde19022-26e2-4ac8-8820-12e3555a98ad", nationality: "CAN", gender: "M", discipline: "STA", line: "3", official_top: "03:55", ap: "03:30", rp: "04:33", card: "WHITE", points: 54.6, remarks: "Ok"}
+      - {start: 7, diver: "Isaiah Dummer", profile: "7beaac1a-2e3a-4519-a3ff-4f032763a964", nationality: "USA", gender: "M", discipline: "STA", line: "1", official_top: "04:05", ap: "03:30", rp: "03:34", card: "WHITE", points: 42.8, remarks: "Ok"}
+      - {start: 8, diver: "Madeline Hwang", profile: "9c2187c7-7ce1-471e-89d8-f0deb1eb9782", nationality: "USA", gender: "F", discipline: "STA", line: "2", official_top: "04:05", ap: "03:00", rp: "03:15", card: "WHITE", points: 39, remarks: "Ok"}
+      - {start: 9, diver: "Richard Vanderbyl", profile: "b69920a0-532c-4d10-9461-f61b0c77c11e", nationality: "CAN", gender: "M", discipline: "STA", line: "3", official_top: "04:05", ap: "03:30", rp: "03:56", card: "WHITE", points: 47.2, remarks: "Ok"}
+      - {start: 10, diver: "Nessim Könsgen", profile: "1a2afb31-046c-4d30-a015-c1d58cf44983", nationality: "CAN", gender: "M", discipline: "STA", line: "1", official_top: "04:15", ap: "04:00", rp: "06:01", card: "WHITE", points: 72.2, remarks: "Ok"}
+      - {start: 11, diver: "Torrey Moreno", profile: "4bb390f2-bfaf-425e-bf5b-222d05c954c3", nationality: "USA", gender: "M", discipline: "STA", line: "2", official_top: "04:15", ap: "03:30", rp: "02:15", card: "YELLOW", points: 12, remarks: "Under ap"}
+rankings:
+  - label: "Nov 2 Event Ranking"
+    ranking_url: "https://www.aidainternational.org/Events/EventRanking-4788"
+    disciplines:
+      - name: "STA"
+        male:
+          - {medal: "gold", rank: "1.", name: "Jocelyn Proulx", profile: "26fa1f68-b4f0-4d43-bffe-30c560950c80", nationality: "CAN", result: "05:59", announced: "00:05", points: 71.8, penalties: 0}
+          - {medal: "silver", rank: "2.", name: "Nessim Könsgen", profile: "1a2afb31-046c-4d30-a015-c1d58cf44983", nationality: "CAN", result: "06:02", announced: "04:00", points: 71.4, penalties: 1}
+          - {medal: "bronze", rank: "3.", name: "Ari Athair", profile: "5b9235f7-19cc-4973-8bf5-2c2922c5ad61", nationality: "USA", result: "05:13", announced: "00:01", points: 62.6, penalties: 0}
+          - {medal: "", rank: "4.", name: "Austin Truitt", profile: "1a5e004f-c046-470f-8243-a6fcfb54e9bd", nationality: "USA", result: "05:04", announced: "03:30", points: 60.8, penalties: 0}
+          - {medal: "", rank: "5.", name: "Daniel Wright", profile: "fde19022-26e2-4ac8-8820-12e3555a98ad", nationality: "CAN", result: "04:49", announced: "03:30", points: 57.8, penalties: 0}
+          - {medal: "", rank: "6.", name: "Terry C Huang", profile: "c94ca66b-c9e2-4fbc-a7dc-021c75af201c", nationality: "USA", result: "04:27", announced: "04:00", points: 53.4, penalties: 0}
+          - {medal: "", rank: "7.", name: "Isaiah Dummer", profile: "7beaac1a-2e3a-4519-a3ff-4f032763a964", nationality: "USA", result: "04:14", announced: "03:30", points: 50.8, penalties: 0}
+          - {medal: "", rank: "8.", name: "Torrey Moreno", profile: "4bb390f2-bfaf-425e-bf5b-222d05c954c3", nationality: "USA", result: "04:05", announced: "04:00", points: 49, penalties: 0}
+          - {medal: "", rank: "9.", name: "Charles Turmel", profile: "86001f90-75eb-4272-947b-94d0221031a2", nationality: "CAN", result: "03:32", announced: "00:07", points: 42.4, penalties: 0}
+          - {medal: "", rank: "10.", name: "Christoph Ka Wing Wong", profile: "c826a096-24b6-4d2d-9f33-5bec06b11f44", nationality: "GER", result: "02:48", announced: "03:00", points: 31.2, penalties: 2.4}
+          - {medal: "", rank: "11.", name: "Richard Vanderbyl", profile: "b69920a0-532c-4d10-9461-f61b0c77c11e", nationality: "CAN", result: "05:20", announced: "03:30", points: 0, penalties: 0}
+        female:
+          - {medal: "gold", rank: "1.", name: "Sarah Woodworth", profile: "fcccc282-9ffc-44b6-b6b6-7e9baf4cef31", nationality: "USA", result: "04:37", announced: "03:30", points: 55.4, penalties: 0}
+          - {medal: "silver", rank: "2.", name: "Lalena Desautels", profile: "06c31a7b-5197-4267-8b58-969e0c513ba4", nationality: "CAN", result: "04:31", announced: "03:30", points: 54.2, penalties: 0}
+          - {medal: "bronze", rank: "3.", name: "Madeline Hwang", profile: "9c2187c7-7ce1-471e-89d8-f0deb1eb9782", nationality: "USA", result: "04:12", announced: "03:00", points: 50.4, penalties: 0}
+          - {medal: "", rank: "4.", name: "Sarah Gandhi", profile: "94c16098-109c-456d-87b8-1a919708bbfe", nationality: "CAN", result: "03:36", announced: "02:00", points: 43.2, penalties: 0}
+          - {medal: "", rank: "5.", name: "Christina Sours Molina", profile: "a452fe68-eb0d-4b83-9617-cde470d14b5b", nationality: "USA", result: "03:02", announced: "02:30", points: 36.4, penalties: 0}
+          - {medal: "", rank: "6.", name: "Ting Huang", profile: "7c824cea-ef1e-42d2-8d8a-f7b3cc47ced4", nationality: "CHN", result: "02:36", announced: "01:30", points: 31.2, penalties: 0}
+          - {medal: "", rank: "7.", name: "Lauren Smith", profile: "e1881899-0f2a-4391-807f-1cac3d9467fc", nationality: "USA", result: "01:45", announced: "03:00", points: 6, penalties: 15}
+          - {medal: "", rank: "8.", name: "Kateryna Honcharova", profile: "c74310b3-e3cf-43e9-a9d8-a77c4d9a0907", nationality: "UKR", result: "04:43", announced: "03:30", points: 0, penalties: 0}
+          - {medal: "", rank: "9.", name: "Hanna Wade", profile: "1a3df175-bc6c-4d36-be87-897c64a24c8f", nationality: "USA", result: "05:07", announced: "03:00", points: 0, penalties: 0}
+    overall:
+      male:
+        - {rank: "1.", name: "Jocelyn Proulx", profile: "26fa1f68-b4f0-4d43-bffe-30c560950c80", nationality: "CAN", scores: ["71.8"], points: 71.8}
+        - {rank: "2.", name: "Nessim Könsgen", profile: "1a2afb31-046c-4d30-a015-c1d58cf44983", nationality: "CAN", scores: ["71.4"], points: 71.4}
+        - {rank: "3.", name: "Ari Athair", profile: "5b9235f7-19cc-4973-8bf5-2c2922c5ad61", nationality: "USA", scores: ["62.6"], points: 62.6}
+        - {rank: "4.", name: "Austin Truitt", profile: "1a5e004f-c046-470f-8243-a6fcfb54e9bd", nationality: "USA", scores: ["60.8"], points: 60.8}
+        - {rank: "5.", name: "Daniel Wright", profile: "fde19022-26e2-4ac8-8820-12e3555a98ad", nationality: "CAN", scores: ["57.8"], points: 57.8}
+        - {rank: "6.", name: "Terry C Huang", profile: "c94ca66b-c9e2-4fbc-a7dc-021c75af201c", nationality: "USA", scores: ["53.4"], points: 53.4}
+        - {rank: "7.", name: "Isaiah Dummer", profile: "7beaac1a-2e3a-4519-a3ff-4f032763a964", nationality: "USA", scores: ["50.8"], points: 50.8}
+        - {rank: "8.", name: "Torrey Moreno", profile: "4bb390f2-bfaf-425e-bf5b-222d05c954c3", nationality: "USA", scores: ["49"], points: 49}
+        - {rank: "9.", name: "Charles Turmel", profile: "86001f90-75eb-4272-947b-94d0221031a2", nationality: "CAN", scores: ["42.4"], points: 42.4}
+        - {rank: "10.", name: "Christoph Ka Wing Wong", profile: "c826a096-24b6-4d2d-9f33-5bec06b11f44", nationality: "GER", scores: ["31.2"], points: 31.2}
+        - {rank: "11.", name: "Richard Vanderbyl", profile: "b69920a0-532c-4d10-9461-f61b0c77c11e", nationality: "CAN", scores: ["0"], points: 0}
+      female:
+        - {rank: "1.", name: "Sarah Woodworth", profile: "fcccc282-9ffc-44b6-b6b6-7e9baf4cef31", nationality: "USA", scores: ["55.4"], points: 55.4}
+        - {rank: "2.", name: "Lalena Desautels", profile: "06c31a7b-5197-4267-8b58-969e0c513ba4", nationality: "CAN", scores: ["54.2"], points: 54.2}
+        - {rank: "3.", name: "Madeline Hwang", profile: "9c2187c7-7ce1-471e-89d8-f0deb1eb9782", nationality: "USA", scores: ["50.4"], points: 50.4}
+        - {rank: "4.", name: "Sarah Gandhi", profile: "94c16098-109c-456d-87b8-1a919708bbfe", nationality: "CAN", scores: ["43.2"], points: 43.2}
+        - {rank: "5.", name: "Christina Sours Molina", profile: "a452fe68-eb0d-4b83-9617-cde470d14b5b", nationality: "USA", scores: ["36.4"], points: 36.4}
+        - {rank: "6.", name: "Ting Huang", profile: "7c824cea-ef1e-42d2-8d8a-f7b3cc47ced4", nationality: "CHN", scores: ["31.2"], points: 31.2}
+        - {rank: "7.", name: "Lauren Smith", profile: "e1881899-0f2a-4391-807f-1cac3d9467fc", nationality: "USA", scores: ["6"], points: 6}
+        - {rank: "8.", name: "Kateryna Honcharova", profile: "c74310b3-e3cf-43e9-a9d8-a77c4d9a0907", nationality: "UKR", scores: ["0"], points: 0}
+        - {rank: "8.", name: "Hanna Wade", profile: "1a3df175-bc6c-4d36-be87-897c64a24c8f", nationality: "USA", scores: ["0"], points: 0}
+  - label: "Double Dippers Event Ranking"
+    ranking_url: "https://www.aidainternational.org/Events/EventRanking-4836"
+    disciplines:
+      - name: "STA"
+        male:
+          - {medal: "gold", rank: "1.", name: "Nessim Könsgen", profile: "1a2afb31-046c-4d30-a015-c1d58cf44983", nationality: "CAN", result: "06:01", announced: "04:00", points: 72.2, penalties: 0}
+          - {medal: "silver", rank: "2.", name: "Charles Turmel", profile: "86001f90-75eb-4272-947b-94d0221031a2", nationality: "CAN", result: "05:59", announced: "00:07", points: 71.8, penalties: 0}
+          - {medal: "bronze", rank: "3.", name: "Daniel Wright", profile: "fde19022-26e2-4ac8-8820-12e3555a98ad", nationality: "CAN", result: "04:33", announced: "03:30", points: 54.6, penalties: 0}
+          - {medal: "", rank: "4.", name: "Richard Vanderbyl", profile: "b69920a0-532c-4d10-9461-f61b0c77c11e", nationality: "CAN", result: "03:56", announced: "03:30", points: 47.2, penalties: 0}
+          - {medal: "", rank: "5.", name: "Isaiah Dummer", profile: "7beaac1a-2e3a-4519-a3ff-4f032763a964", nationality: "USA", result: "03:34", announced: "03:30", points: 42.8, penalties: 0}
+          - {medal: "", rank: "6.", name: "Christoph Ka Wing Wong", profile: "c826a096-24b6-4d2d-9f33-5bec06b11f44", nationality: "GER", result: "03:32", announced: "03:00", points: 42.4, penalties: 0}
+          - {medal: "", rank: "7.", name: "Torrey Moreno", profile: "4bb390f2-bfaf-425e-bf5b-222d05c954c3", nationality: "USA", result: "02:15", announced: "03:30", points: 12, penalties: 15}
+          - {medal: "", rank: "8.", name: "Ari Athair", profile: "5b9235f7-19cc-4973-8bf5-2c2922c5ad61", nationality: "USA", result: "05:37", announced: "00:01", points: 0, penalties: 0}
+        female:
+          - {medal: "gold", rank: "1.", name: "Sarah Woodworth", profile: "fcccc282-9ffc-44b6-b6b6-7e9baf4cef31", nationality: "USA", result: "05:08", announced: "03:30", points: 61.6, penalties: 0}
+          - {medal: "silver", rank: "2.", name: "Madeline Hwang", profile: "9c2187c7-7ce1-471e-89d8-f0deb1eb9782", nationality: "USA", result: "03:15", announced: "03:00", points: 39, penalties: 0}
+          - {medal: "bronze", rank: "3.", name: "Ting Huang", profile: "7c824cea-ef1e-42d2-8d8a-f7b3cc47ced4", nationality: "CHN", result: "02:59", announced: "01:30", points: 35.8, penalties: 0}
+    overall:
+      male:
+        - {rank: "1.", name: "Nessim Könsgen", profile: "1a2afb31-046c-4d30-a015-c1d58cf44983", nationality: "CAN", scores: ["72.2"], points: 72.2}
+        - {rank: "2.", name: "Charles Turmel", profile: "86001f90-75eb-4272-947b-94d0221031a2", nationality: "CAN", scores: ["71.8"], points: 71.8}
+        - {rank: "3.", name: "Daniel Wright", profile: "fde19022-26e2-4ac8-8820-12e3555a98ad", nationality: "CAN", scores: ["54.6"], points: 54.6}
+        - {rank: "4.", name: "Richard Vanderbyl", profile: "b69920a0-532c-4d10-9461-f61b0c77c11e", nationality: "CAN", scores: ["47.2"], points: 47.2}
+        - {rank: "5.", name: "Isaiah Dummer", profile: "7beaac1a-2e3a-4519-a3ff-4f032763a964", nationality: "USA", scores: ["42.8"], points: 42.8}
+        - {rank: "6.", name: "Christoph Ka Wing Wong", profile: "c826a096-24b6-4d2d-9f33-5bec06b11f44", nationality: "GER", scores: ["42.4"], points: 42.4}
+        - {rank: "7.", name: "Torrey Moreno", profile: "4bb390f2-bfaf-425e-bf5b-222d05c954c3", nationality: "USA", scores: ["12"], points: 12}
+        - {rank: "8.", name: "Ari Athair", profile: "5b9235f7-19cc-4973-8bf5-2c2922c5ad61", nationality: "USA", scores: ["0"], points: 0}
+      female:
+        - {rank: "1.", name: "Sarah Woodworth", profile: "fcccc282-9ffc-44b6-b6b6-7e9baf4cef31", nationality: "USA", scores: ["61.6"], points: 61.6}
+        - {rank: "2.", name: "Madeline Hwang", profile: "9c2187c7-7ce1-471e-89d8-f0deb1eb9782", nationality: "USA", scores: ["39"], points: 39}
+        - {rank: "3.", name: "Ting Huang", profile: "7c824cea-ef1e-42d2-8d8a-f7b3cc47ced4", nationality: "CHN", scores: ["35.8"], points: 35.8}

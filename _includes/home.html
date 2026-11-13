@@ -42,21 +42,21 @@
         {%- endif %}
       </div>
       <div class="hero-action">
-        <a class="hero-cta" href="{{ '/#events' | relative_url }}">Register for an upcoming event</a>
+        <a class="hero-cta outline-button" href="{{ '/#events' | relative_url }}">Register for an upcoming event</a>
       </div>
     </div>
   </section>
 
   <section id="about" class="home-page" aria-label="About">
     <div class="home-page-inner">
-      <h2>About Emerald City Apnea Challenge</h2>
+      <h2>About</h2>
       {% include about_content.html %}
     </div>
   </section>
 
   <section id="events" class="home-page" aria-label="Events">
     <div class="home-page-inner">
-      {% include event_lists.html %}
+      {% include event_lists.html past_limit=3 link_headings=true %}
     </div>
   </section>
 </div>

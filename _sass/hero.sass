@@ -206,21 +206,6 @@
   margin: 1.25em 0 0
   text-align: center
 
-.hero-cta
-  display: inline-block
-  padding: .75em 1.5em
-  border: 1.5px solid $link-color
-  border-radius: 2px
-  background: $link-color
-  color: #fff
-  font-weight: $heading-weight
-  text-decoration: none
-  transition: .2s background, .2s color
-
-  &:hover, &:focus-visible
-    background: transparent
-    color: $link-color
-
 // Home page: a vertical carousel. Home, About and Events are each a
 // full-screen page, and scrolling snaps from one page to the next.
 // Only applies on pages that contain .home-pages.
@@ -264,6 +249,15 @@ html:has(.home-pages) body > header
 @media (min-width: 40em)
   .home-page-inner
     padding: 2em calc(40% - 17em)
+
+// The home about page's "About" heading: the menu titles' lettering (Raleway
+// capitals) at the usual heading size, like "Upcoming Events" and "Past Events"
+// on the home events page. No highlight sweep, on purpose.
+#about .home-page-inner > h2
+  font-family: "Raleway", "Helvetica Neue", Arial, sans-serif
+  font-weight: 400
+  letter-spacing: .03em
+  text-transform: uppercase
 
 .home-page-inner h2:first-child,
 .home-page-inner > .event-list:first-child

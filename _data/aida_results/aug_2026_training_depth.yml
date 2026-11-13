@@ -1,0 +1,55 @@
+# Official AIDA results for the August 2026 Official Training Depth Competition.
+# Copied from https://www.aidainternational.org/Events/EventResults-5175
+# and https://www.aidainternational.org/Events/EventRanking-5175 on 2026-11-12.
+# `profile` is the AIDA athlete ID: https://www.aidainternational.org/Athletes/Profile-<profile>
+# Overall `scores` follow the order of ranking.disciplines.
+source_url: "https://www.aidainternational.org/Events/EventResults-5175"
+ranking_url: "https://www.aidainternational.org/Events/EventRanking-5175"
+days:
+  - date: 2026-08-30
+    label: "Aug 30"
+    rows:
+      - {start: 1, diver: "Brian Yifeng Tong", profile: "3ece8d3e-da1e-43ae-92f0-4d7c5725bd63", nationality: "CHN", gender: "M", discipline: "FIM", line: "", official_top: "00:00", ap: "50 m", rp: "50 m", card: "WHITE", points: 50, remarks: "Ok"}
+      - {start: 2, diver: "Shaun Parrott", profile: "c4baa831-9654-499d-8aa2-6dab71cee15b", nationality: "USA", gender: "M", discipline: "CWTB", line: "", official_top: "00:00", ap: "50 m", rp: "50 m", card: "WHITE", points: 50, remarks: "Ok"}
+      - {start: 3, diver: "Kristofer Stensland", profile: "2f3c49d7-d217-4b1a-8aca-ed24fc181bf7", nationality: "USA", gender: "M", discipline: "CWTB", line: "", official_top: "00:00", ap: "47 m", rp: "39 m", card: "YELLOW", points: 30, remarks: "No tag"}
+      - {start: 4, diver: "Walt Nestell", profile: "7b6d48b4-1509-4839-8deb-457a94e08b3a", nationality: "USA", gender: "M", discipline: "FIM", line: "", official_top: "00:00", ap: "45 m", rp: "32 m", card: "YELLOW", points: 18, remarks: "No tag,under ap"}
+      - {start: 5, diver: "Karen Ogilvie", profile: "b83cbfef-698d-4de1-b59f-1ad6c6dddb26", nationality: "CAN", gender: "F", discipline: "CWT", line: "", official_top: "00:00", ap: "42 m", rp: "42 m", card: "WHITE", points: 42, remarks: "Ok"}
+      - {start: 6, diver: "Laurie Feist", profile: "040df318-4bdc-4716-9a3e-90f0d69bb663", nationality: "GBR", gender: "F", discipline: "CWTB", line: "", official_top: "00:00", ap: "40 m", rp: "40 m", card: "WHITE", points: 40, remarks: "Ok"}
+      - {start: 7, diver: "Christoph Ka Wing Wong", profile: "c826a096-24b6-4d2d-9f33-5bec06b11f44", nationality: "GER", gender: "M", discipline: "CWT", line: "", official_top: "00:00", ap: "33 m", rp: "33 m", card: "WHITE", points: 33, remarks: "Ok"}
+      - {start: 8, diver: "Hanna Wade", profile: "1a3df175-bc6c-4d36-be87-897c64a24c8f", nationality: "USA", gender: "F", discipline: "FIM", line: "", official_top: "00:00", ap: "25 m", rp: "25 m", card: "WHITE", points: 25, remarks: "Ok"}
+      - {start: 9, diver: "Ting Huang", profile: "7c824cea-ef1e-42d2-8d8a-f7b3cc47ced4", nationality: "CHN", gender: "F", discipline: "CWT", line: "", official_top: "00:00", ap: "10 m", rp: "10 m", card: "WHITE", points: 10, remarks: "Ok"}
+ranking:
+  disciplines:
+    - name: "CWT"
+      male:
+        - {medal: "gold", rank: "1.", name: "Christoph Ka Wing Wong", profile: "c826a096-24b6-4d2d-9f33-5bec06b11f44", nationality: "GER", result: "33 m", announced: "33 m", points: 33, penalties: 0}
+      female:
+        - {medal: "gold", rank: "1.", name: "Karen Ogilvie", profile: "b83cbfef-698d-4de1-b59f-1ad6c6dddb26", nationality: "CAN", result: "42 m", announced: "42 m", points: 42, penalties: 0}
+        - {medal: "silver", rank: "2.", name: "Ting Huang", profile: "7c824cea-ef1e-42d2-8d8a-f7b3cc47ced4", nationality: "CHN", result: "10 m", announced: "10 m", points: 10, penalties: 0}
+    - name: "CNF"
+      male: []
+      female: []
+    - name: "FIM"
+      male:
+        - {medal: "gold", rank: "1.", name: "Brian Yifeng Tong", profile: "3ece8d3e-da1e-43ae-92f0-4d7c5725bd63", nationality: "CHN", result: "50 m", announced: "50 m", points: 50, penalties: 0}
+        - {medal: "silver", rank: "2.", name: "Walt Nestell", profile: "7b6d48b4-1509-4839-8deb-457a94e08b3a", nationality: "USA", result: "32 m", announced: "45 m", points: 18, penalties: 14}
+      female:
+        - {medal: "gold", rank: "1.", name: "Hanna Wade", profile: "1a3df175-bc6c-4d36-be87-897c64a24c8f", nationality: "USA", result: "25 m", announced: "25 m", points: 25, penalties: 0}
+    - name: "CWTB"
+      male:
+        - {medal: "gold", rank: "1.", name: "Shaun Parrott", profile: "c4baa831-9654-499d-8aa2-6dab71cee15b", nationality: "USA", result: "50 m", announced: "50 m", points: 50, penalties: 0}
+        - {medal: "silver", rank: "2.", name: "Kristofer Stensland", profile: "2f3c49d7-d217-4b1a-8aca-ed24fc181bf7", nationality: "USA", result: "39 m", announced: "47 m", points: 30, penalties: 9}
+      female:
+        - {medal: "gold", rank: "1.", name: "Laurie Feist", profile: "040df318-4bdc-4716-9a3e-90f0d69bb663", nationality: "GBR", result: "40 m", announced: "40 m", points: 40, penalties: 0}
+  overall:
+    male:
+      - {rank: "1.", name: "Brian Yifeng Tong", profile: "3ece8d3e-da1e-43ae-92f0-4d7c5725bd63", nationality: "CHN", scores: ["-", "-", "50", "-"], points: 50}
+      - {rank: "1.", name: "Shaun Parrott", profile: "c4baa831-9654-499d-8aa2-6dab71cee15b", nationality: "USA", scores: ["-", "-", "-", "50"], points: 50}
+      - {rank: "2.", name: "Christoph Ka Wing Wong", profile: "c826a096-24b6-4d2d-9f33-5bec06b11f44", nationality: "GER", scores: ["33", "-", "-", "-"], points: 33}
+      - {rank: "3.", name: "Kristofer Stensland", profile: "2f3c49d7-d217-4b1a-8aca-ed24fc181bf7", nationality: "USA", scores: ["-", "-", "-", "30"], points: 30}
+      - {rank: "4.", name: "Walt Nestell", profile: "7b6d48b4-1509-4839-8deb-457a94e08b3a", nationality: "USA", scores: ["-", "-", "18", "-"], points: 18}
+    female:
+      - {rank: "1.", name: "Karen Ogilvie", profile: "b83cbfef-698d-4de1-b59f-1ad6c6dddb26", nationality: "CAN", scores: ["42", "-", "-", "-"], points: 42}
+      - {rank: "2.", name: "Laurie Feist", profile: "040df318-4bdc-4716-9a3e-90f0d69bb663", nationality: "GBR", scores: ["-", "-", "-", "40"], points: 40}
+      - {rank: "3.", name: "Hanna Wade", profile: "1a3df175-bc6c-4d36-be87-897c64a24c8f", nationality: "USA", scores: ["-", "-", "25", "-"], points: 25}
+      - {rank: "4.", name: "Ting Huang", profile: "7c824cea-ef1e-42d2-8d8a-f7b3cc47ced4", nationality: "CHN", scores: ["10", "-", "-", "-"], points: 10}

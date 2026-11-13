@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<article>
+<article class="menu-title{% if page.article_class %} {{ page.article_class }}{% endif %}">
   <header><h1><a href="{{ page.url | relative_url }}">{{ page.title }}</a></h1></header>
   {{ content }}
 </article>

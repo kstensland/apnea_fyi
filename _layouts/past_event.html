@@ -5,7 +5,7 @@ layout: default
   {%- include event_date_text.html event=page -%}
 {%- endcapture -%}
 
-<article class="event past-event">
+<article class="event past-event menu-title">
   <header>
     <h1>{{ page.title | escape }}</h1>
     <p class="event-lead">{% include event_description.html event=page %}</p>
@@ -56,7 +56,30 @@ layout: default
     {% include aida_results.html data=aida_data %}
   {% endif %}
 
-  {% if page.youtube_id %}
+  {%- comment -%}
+    Several livestreams (`livestreams`: a list of `id` and `label`) show as a
+    carousel, one video at a time. One video can still use `youtube_id`.
+  {%- endcomment -%}
+  {% if page.livestreams %}
+    {%- assign videos = page.livestreams -%}
+    <h2>Competition Livestream{% if videos.size > 1 %}s{% endif %}</h2>
+    <div class="event-video video-carousel" role="region" aria-roledescription="carousel" aria-label="Competition livestreams">
+      {%- for v in videos %}
+      <div class="video-slide" role="group" aria-roledescription="slide" aria-label="{{ v.label | escape }}, {{ forloop.index }} of {{ videos.size }}" data-label="{{ v.label | escape }}"{% unless forloop.first %} hidden{% endunless %}>
+        {%- comment -%} Only the first video loads with the page; the others load when shown. {%- endcomment %}
+        <iframe {% if forloop.first %}src{% else %}data-src{% endif %}="https://www.youtube-nocookie.com/embed/{{ v.id }}?enablejsapi=1" title="{{ page.title | escape }}, {{ v.label | escape }}" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <p class="event-video-link"><a href="https://www.youtube.com/watch?v={{ v.id }}" target="_blank" rel="noopener noreferrer">Watch {{ v.label | escape }} on YouTube</a></p>
+      </div>
+      {%- endfor %}
+      {%- if videos.size > 1 %}
+      <div class="video-carousel-controls">
+        <button type="button" class="video-carousel-prev" aria-label="Previous livestream"><svg viewBox="0 0 12 20" aria-hidden="true"><path d="M10 2 2 10l8 8"/></svg></button>
+        <span class="video-carousel-status" aria-live="polite">{{ videos.first.label | escape }} of {{ videos.size }}</span>
+        <button type="button" class="video-carousel-next" aria-label="Next livestream"><svg viewBox="0 0 12 20" aria-hidden="true"><path d="M2 2l8 8-8 8"/></svg></button>
+      </div>
+      {%- endif %}
+    </div>
+  {% elsif page.youtube_id %}
     <h2>Competition Livestream</h2>
     <div class="event-video">
       <iframe src="https://www.youtube-nocookie.com/embed/{{ page.youtube_id }}" title="{{ page.title | escape }} video" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -64,7 +87,14 @@ layout: default
     </div>
   {% endif %}
 
-  {% if page.map_query %}
+  {%- comment -%} An event held at two places (e.g. July 2025: depth at Magnuson
+    Park, pool at Snohomish) lists `maps`, each with a `label` and `query`. {%- endcomment -%}
+  {% if page.maps %}
+    {% for map in page.maps %}
+      <h3 class="event-map-label">{{ map.label | escape }}</h3>
+      {% include event_map.html query=map.query label=map.label %}
+    {% endfor %}
+  {% elsif page.map_query %}
     {% include event_map.html query=page.map_query label=page.location %}
   {% endif %}
 
@@ -87,6 +117,28 @@ layout: default
 </article>
 
 <script>
+  // Livestream carousel: one video at a time; arrows loop around. Leaving a
+  // video pauses it, and a video's player loads the first time it's shown.
+  (function () {
+    document.querySelectorAll('.video-carousel').forEach(function (box) {
+      var slides = box.querySelectorAll('.video-slide');
+      var status = box.querySelector('.video-carousel-status');
+      if (slides.length < 2) return;
+      var current = 0;
+      function show(i) {
+        var old = slides[current].querySelector('iframe');
+        if (old.contentWindow) old.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+        current = (i + slides.length) % slides.length;
+        slides.forEach(function (s, n) { s.hidden = n !== current; });
+        var frame = slides[current].querySelector('iframe');
+        if (!frame.getAttribute('src') && frame.dataset.src) frame.setAttribute('src', frame.dataset.src);
+        status.textContent = slides[current].dataset.label + ' of ' + slides.length;
+      }
+      box.querySelector('.video-carousel-prev').addEventListener('click', function () { show(current - 1); });
+      box.querySelector('.video-carousel-next').addEventListener('click', function () { show(current + 1); });
+    });
+  })();
+
   (function () {
     document.querySelectorAll('.results-trigger').forEach(function (trigger) {
       var dialog = document.getElementById(trigger.getAttribute('aria-controls'));

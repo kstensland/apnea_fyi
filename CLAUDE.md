@@ -28,10 +28,27 @@ Write for readers new to competition freediving. Verify AIDA rules against AIDA'
 | Events list (upcoming and past) | `events.html` | `/events/` |
 | Upcoming event pages | `_events/*.md`, layout `event` | `/events/<name>/` |
 | Past event pages | `_past_events/*.md`, layout `past_event` | `/events/past/<name>/` |
+| Get Involved (placeholder) | `get-involved/index.md` | `/get-involved/` |
+| Compete, Volunteer, Safety, Sponsor (placeholders) and Judge (real text) | `get-involved/<name>.md` | `/get-involved/<name>/` |
+| Courses (placeholder) | `courses.md` | `/courses/` |
+| Competitions (upcoming and past competitions) | `competitions.md` | `/events/competitions/` |
+| Other Events (placeholder) | `other_events.md` | `/events/other/` |
+| Contact (email form) | `contact.md` | `/contact/` |
+| Contact form thank-you | `contact_thanks.md` | `/contact/thanks/` |
 | Linktree redirect | `linktree.html`, `ecac_linktree.html` (no layout, meta refresh; body in `_includes/linktree_redirect.html`) | `/linktree`, `/emeraldcity/linktree` |
 | Old blog post list (noindex) | `emeraldcity.html` | `/emeraldcity/` |
 
-- The header nav is set in `_config.yml` under `navigation`: Home (`/#home`), About (`/#about`), Events (`/#events`). Each jumps to a page of the home page carousel. A nav item with a `url` links there. An item with a `file` looks up that page by file name.
+- The header is always dark (`#111318`, light text), in light and dark mode alike. It has `color-scheme: dark`, and the `theme-color` meta (`#111111`, from `_includes/seo.html`) keeps the browser's own bar (Safari) dark too.
+- The header has only the logo and title on the left (they link home) and the **MENU** button on the right. The old nav links (Home, About, Events) and the `navigation` list in `_config.yml` were removed on purpose. The menu replaces them.
+- The **MENU** button at the far right of the header opens the full-screen Menu (`_includes/site_menu.html`, styles in `_sass/menu.sass`). Its items come from `_data/menu.yml`: Get Involved (Compete, Volunteer, Safety, Judge, Sponsor), Events (`/events/`, the standalone page; Competitions `/events/competitions/`, Courses, Other), About (`/about/`, the standalone page), Contact (`/contact/`). Each top-level item is a big link with its small links beside it, or below it on phones.
+  - The design follows the Super Evil Genius Corp menu on Awwwards. When it opens, the page dims, a panel shows on the right (full width on phones), the divider lines draw in, and the titles flicker through random letters before settling. On hover, a highlight sweeps across a title. Small links and MENU/CLOSE show brackets on hover. Close with CLOSE, Escape, or a click on the dimmed page. A link to a spot on the same page (like `/#about`) closes the menu at once so the page can scroll. The effects are skipped when the reader prefers reduced motion.
+  - It is a native `<dialog>` opened with `showModal()`, so focus stays inside it. Page scroll is locked with `html.menu-open`.
+  - The **Get Involved** page shows five full-width linked photos, one after another (not a carousel), the same size as the home hero: Compete, Volunteer, Safety, Judge, Sponsor. They reuse `home_page_hero_2.jpg` to `_6.jpg`, keeping the same crops. The list is `roles` in `get-involved/index.md`'s front matter, and `_includes/role_photos.html` renders it (styles in `_sass/roles.sass`). On hover or keyboard focus, a photo darkens and the role name appears in the Get Involved title's Raleway capitals (larger). The names have no highlight sweep, on purpose. On touch screens the names always show. The photos break out of the page column with `margin: calc(50% - 50vw)`, and `html:has(.role-photos) { overflow-x: clip }` prevents a sideways scrollbar.
+  - **Page titles:** every page's `<h1>` (layouts `page`, `event`, `past_event`, and `events.html`) looks and behaves like the big menu titles: the same Raleway capitals and size, and a highlight sweep shortly after the page loads and again on hover. The page titles do not scramble, on purpose; only the menu does. Those layouts put `menu-title` on the `<article>`. The script in `site_menu.html` splits the title into letters, grouped by word so long titles wrap only between words, once the page has loaded. A page using `layout: page` can also set `article_class: menu-text` (Get Involved and Contact do; `events.html` puts it on its `<article>` directly), so its paragraphs and form labels use the menu's small-link lettering.
+  - The Get Involved, Courses and Other Events pages are placeholders ("details coming soon" plus the contact email), marked with an HTML comment. Replace them with real content.
+- The **Contact** page has an email form (Name, Email, Message). GitHub Pages can't send email, so the form posts to **FormSubmit** at `https://formsubmit.co/a9463ffb7787f5549fc2f7b593ad6843`, its alias for emeraldcityapneachallenge@gmail.com. FormSubmit emails each message to that inbox. The sender's address is the reply-to. Hidden fields set the subject, a table layout, and the redirect to `/contact/thanks/` (built from `url` in `_config.yml` with `absolute_url`). A hidden `_honey` field catches bots. FormSubmit shows a captcha after Send.
+  - **The form is activated** (November 2026), and the alias came from FormSubmit's activation email. If the form is ever pointed at a different address, FormSubmit sends a new activation email to that inbox, and someone must click it before messages are delivered.
+  - Form styles are in `_sass/forms.sass`.
 - `/about/` and `/events/` still exist as standalone pages for old links. Their content comes from the same includes as the home page sections (`_includes/about_content.html`, `_includes/event_lists.html`), so edit it there.
 - `README.md` is developer documentation. It is excluded from the site (see `exclude` in `_config.yml`). Do not put organization content there.
 - `CLAUDE.md` is excluded from the site too.
@@ -54,11 +71,13 @@ Write for readers new to competition freediving. Verify AIDA rules against AIDA'
 
 - A full-width **hero carousel** of slides from `_data/hero_slides.yml` (image, optional `srcset`, width, height, alt, text, and optional `position` for the crop). Slide 1 is `home_page_hero_2400.jpg` (with a 1200 px `srcset` version) and the heading "Community-Hosted Freediving Competitions in Seattle and the PNW", which is the page's `<h1>`. The other slides' text is a `<p class="hero-heading">`. Slide 2 is `hero_boat_2000.jpg` (with a 1200 px version, crop `position: "50% 35%"` to keep faces in view): two smiling freedivers on the side of a boat with a volunteer and judges behind them, under "Friendly environment that welcomes new and experienced freediving athletes." Slide 3 is `hero_crew_2000.jpg` (with a 1200 px version, crop `position: "50% 22%"` so the "VOLUNTEER" and "SAFETY" shirts stay in view): the competition crew on a boat with two divers in ECAC shirts, under "Don't want to compete? Come be a volunteer!" The slide 2 and 3 originals are only 2000 px wide; replace them with larger copies if they turn up. Add, remove or reorder slides in the data file.
 - The carousel is a sideways scroll-snap track (`.hero-track`) with arrows (hidden below 40em), a short line per slide (`.hero-dots`), swipe and left/right keys. The current slide's line fills from left to right as a countdown, and the slide advances when the fill finishes (the length is `--hero-interval`, 7s, in `hero.sass`; the JS waits on that animation, so the two can't drift apart). Auto-advance stops for good once the visitor uses a control, pauses on hover or focus or when the hero is off screen, and is off with reduced motion; the current line is then shown full. Headless Chrome with `--virtual-time-budget` never finishes the fill animation, so test the auto-advance in a visible browser. The JS is the second script in `home.html`; styles are in `_sass/hero.sass`.
-- Below the carousel, a "Register for an upcoming event" button links to `/#events` for every slide.
+- Below the carousel, a "Register for an upcoming event" button (`.outline-button`) links to `/#events` for every slide.
+- `home_page_hero_2.jpg` to `home_page_hero_6.jpg` came from an earlier cross-fade slideshow that this carousel replaced. They are not used; add them to `_data/hero_slides.yml` to show them.
 - The hero is not inside an `<article>`, so it reaches the window edges.
-- Hero height steps at fixed widths in `_sass/hero.sass` (11em, 16em, 22em, 28em, 34em). The image is cropped with `object-fit: cover`, centered.
+- Hero height steps at fixed widths in `_sass/hero.sass` (11em, 16em, 22em, 28em, 34em), set on `.hero-media`. Each photo is cropped with `object-fit: cover`, centered.
 - The heading uses **Raleway** at weight 300, loaded from Google Fonts in `_layouts/default.html`.
 - The pages are `<section class="home-page">` elements with ids `home`, `about`, `events` inside `.home-pages`. Styles are at the end of `_sass/hero.sass`. Snapping (`scroll-snap-type: y mandatory`), the sticky header and smooth scrolling apply only on pages containing `.home-pages` (`html:has(.home-pages)`).
+- The home section headings, "About" on the home about page and "Upcoming Events" and "Past Events" on the home events page, use the menu titles' Raleway capitals at heading size. The two event headings get the highlight sweep each time they scroll into view and on hover (set up in `site_menu.html`). "About" has no sweep, and the standalone Events page shares the event headings but not the sweep; both on purpose.
 - Each page is `100svh` minus the header height. A small script in `home.html` sets `--header-height` and highlights the carousel dots (`.home-dots`) on the right edge.
 - Each slide's `alt` describes its photo (slide 1: a freediver in open water with the Seattle skyline behind). Update it when a photo changes.
 
@@ -89,7 +108,7 @@ registration_url: "https://ecac.wufoo.com/forms/..."
 ### Past events (`_past_events/`)
 
 - Collection `past_events`, layout `past_event`, URL `/events/past/<file-name>/`.
-- Listed under "Past events" on the home page and `/events/`, newest first. Upcoming and past events never share a list.
+- Listed under "Past Events" newest first: all of them on `/events/`, and only the newest three on the home events page (`past_limit=3` in `home.html`). On the home events page the "Upcoming Events" and "Past Events" headings link to `/events/#upcoming-events` and `/events/#past-events` (`link_headings=true`). Upcoming and past events never share a list.
 - Same front matter as upcoming events, **without** `registration_url`. There is no Register button.
 - Adds `drive_url` (the Google Drive photo folder) and a `results` list:
 
@@ -113,9 +132,9 @@ results:
 ```
 
 - Optional `aida_results` (a file name in `_data/aida_results/`, without `.yml`) shows the **Official AIDA Results** after the results thumbnails: a tab for each competition day plus an **Event Ranking** tab with Discipline and Gender filters, like AIDA's own page. The disciplines come from the data file (depth: CWT, CNF, FIM, CWTB; pool: DYN, DNF, STA, DYNB), and each Overall row's `scores` list follows that order. Diver names link to their AIDA athlete profiles. Rendered by `_includes/aida_results.html`.
-  - The data is copied by hand from the AIDA event page (`/Events/EventResults-<id>`, one table per day tab) and ranking page (`/Events/EventRanking-<id>`, a form posted with `discipline` = 3 CWT, 4 CNF, 5 FIM, 12 CWTB or `overall`, and `gender` = 0 male or 1 female). Follow `_data/aida_results/sept_2026_depth.yml` (depth, two days) or `nov_2026_pool.yml` (pool, one day) for the format. AIDA can correct results later, so re-check before relying on it.
-- Optional `sponsors` (a list of `name`, `image`, and optional `url`) shows a **Sponsors** section at the end of the page, after the map: logos on light cards (so black logos stay readable on the dark background), five across on desktop and two on phones. Sponsor logos are transparent PNGs in `assets/images/sponsor_*.png`. The Sept 2026 ones were cut from the Sept 5 results sheet and the Nov 2026 ones from the Nov 1 sheet, with white turned to transparency (white inside letters too). Two logos keep their white because it is part of the artwork: the Lighthouse Freediving square icon (white waves) and the Lighthouse Diving Center dive flag (white stripe). SPITSEA and Jana Strain appear on both sheets; the files hold the sharper Nov versions and both events use them.
-- Optional `youtube_id` (the ID from a YouTube link, e.g. `lBtrWxJAnho`) embeds the video under a "Competition Livestream" heading, just before the map, with a "Watch on YouTube" link below. The video's owner must allow embedding (YouTube Studio → the video → Details → Show more → Allow embedding), or the player shows "Video unavailable".
+  - The data is copied by hand from the AIDA event page (`/Events/EventResults-<id>`, one table per day tab) and ranking page (`/Events/EventRanking-<id>`, a form posted with `discipline` = 3 CWT, 4 CNF, 5 FIM, 12 CWTB or `overall`, and `gender` = 0 male or 1 female). Follow `_data/aida_results/sept_2026_depth.yml` (depth, two days), `aug_2026_training_depth.yml` (depth, one day) or `nov_2026_pool.yml` (pool, one day) for the format. The ranking form also needs `apply=` in the POST, or it ignores the filters. Keep every discipline AIDA lists, even one nobody dove: an empty list (`male: []`) shows "No dives in this discipline." When an event's results are split across two AIDA events (Nov 2025: the competition 4788 and the Double Dippers 4836), add the second as another `days` entry with its own `label` and `source_url`. It becomes another tab, and the Source line links both. For a ranking tab per AIDA event, use a `rankings` list instead of `ranking`. Each entry has its own `label` ("Nov 2 Event Ranking", "Double Dippers Event Ranking"), `ranking_url`, `disciplines` and `overall`, and gets its own Discipline and Gender filters. An optional `note` on a ranking shows a line above it. AIDA can correct results later, so re-check before relying on it.
+- Optional `sponsors` (a list of `name`, `image`, and optional `url`) shows a **Sponsors** section at the end of the page, after the map: logos on light cards (so black logos stay readable on the dark background), five across on desktop and two on phones. Sponsor logos are transparent PNGs in `assets/images/sponsor_*.png`. The Sept 2026 ones were cut from the Sept 5 results sheet and the Nov 2026 ones from the Nov 1 sheet, with white turned to transparency (white inside letters too). Two logos keep their white because it is part of the artwork: the Lighthouse Freediving square icon (white waves) and the Lighthouse Diving Center dive flag (white stripe). SPITSEA and Jana Strain appear on both sheets; the files hold the sharper Nov versions and both events use them. The Apr 2026 sheet has Lighthouse Freediving and Jana Strain, the same artwork, so that event reuses the existing files. The Jan 2026 sheet has its logos at the top right: Lighthouse Freediving, Salvimar and Jana Strain. Salvimar (`sponsor_salvimar.png`) was cut from that sheet; its outline letters rely on the light card. The Nov 2025 logos came from the start list on Instagram (Lighthouse Freediving, Salvimar, Jana Strain, Shark Snot). Only Shark Snot (`sponsor_shark_snot.png`) was new: it was captured from the 818 px post image, upscaled 3x, smoothed and lightly sharpened.
+- Optional `youtube_id` (the ID from a YouTube link, e.g. `lBtrWxJAnho`) embeds the video under a "Competition Livestream" heading, just before the map, with a "Watch on YouTube" link below. For several videos use `livestreams` instead, a list of `{id, label}` in order (April and January 2026: Part 1, 2, 3). They show as a carousel under "Competition Livestreams": one video at a time, with ‹ › arrows and "Part 1 of 3" between them, looping at the ends. Leaving a video pauses it, and each player loads the first time it's shown. The summary line then says "the livestreams", and the first video is used in the search data. The video's owner must allow embedding (YouTube Studio → the video → Details → Show more → Allow embedding), or the player shows "Video unavailable". Check with `curl -s -o /dev/null -w '%{http_code}' "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=<id>"`: 200 means embedding is allowed, 401 means it's off. As of 2026-11-12 the Nov 2026 video allows it and the Apr 2026 video (`72jNI_c2tTs`) does not.
 - Each result is a **thumbnail** with a caption. Results sit side by side on wide screens and stack on phones.
 - Thumbnails are fixed at 15rem wide and 3:4 tall (`aspect-ratio: 0.75`), cropped with `object-fit: cover`. The modal shows the full image.
 - Clicking a thumbnail opens that result in a native `<dialog>` modal. Clicking the image inside the modal toggles full-width zoom. Close with the × button, a click on the dark backdrop, or Escape.
@@ -131,6 +150,7 @@ results:
 - `_includes/event_map.html` renders the map. Pass it `query` and `label`.
 - It shows a "Loading map…" placeholder with an "Open in Google Maps" link. The Google embed iframe is hidden until it loads, then the placeholder is removed.
 - Do not add `loading="lazy"` to the iframe. Browsers skip lazy-loading hidden frames, so the map would never load.
+- An event held at two places lists `maps` instead of `map_query`. Each entry has a `label` (shown above its map) and a `query`. July 2025 uses this for depth at Magnuson Park and pool at Snohomish. Write its `location` and `city` to cover both, or give it a `description`.
 - `map_query` is a Google Maps search string. Check the pin on the built page, since a search can land on the wrong place. Precise coordinates are the most reliable fix.
 
 ### Adding an event
@@ -195,7 +215,10 @@ bundle exec jekyll serve --livereload   # http://localhost:4000/
   - `event_date_text.html`: formatted event date.
   - `event_map.html`: map embed with placeholder.
   - `social-links.html`: footer social icons (from `site.social`).
+  - `social_text_links.html`: the Instagram, Facebook, YouTube and Email text links at the bottom of the menu (URLs from `site.social`).
   - `menu.html`: nav and footer link lists.
+  - `role_photos.html`: full-width linked photos (Get Involved page).
+  - `site_menu.html`: the header MENU button and full-screen Menu (items from `_data/menu.yml`).
   - `sidebar.html`, `archive.html`, `ecac_home.html`, `embed.html`, `meta.html`: older, mostly unused.
 - `_events/`, `_past_events/`: event collections (see Events).
 - `_sass/`: partials, all in indented `.sass` syntax.
@@ -205,11 +228,15 @@ bundle exec jekyll serve --livereload   # http://localhost:4000/
   - `social.sass`: footer social icons and the `.footer-links` row.
   - `events.sass`: event cards, event details, map placeholder, results grid, and the modal.
   - `hero.sass`: home hero, overlay text, and stepped heights.
+  - `menu.sass`: the header Menu, plus a `.visually-hidden` helper class.
+  - `forms.sass`: the Contact page form.
+  - `roles.sass`: the Get Involved linked photos.
+  - `buttons.sass`: `.outline-button`, the outlined button (MENU's lettering, fills white on hover) used by the home page's Register button and the Contact page's Send button.
 - `assets/css/`: `main.sass` (the live stylesheet), `frame.sass` (unused, `show_frame: false`), `sidebar.sass` (unused, `show_sidebar: false`). Each starts with `---` front matter, then `@use "index" as *;` and `@use` for each partial.
 - `assets/images/`: logos (`ecac_black.png` in the header, `ecac_white.png`), `snorkel_frog.png` (old header image), favicons, `home_page_hero.jpg`, event result images, and placeholder SVGs (`hero_placeholder.svg`, `results_placeholder.svg`).
 - `assets/fontawesome/icons.svg`: Font Awesome sprite used by the menu and footer.
 - `assets/katex/`: KaTeX assets (math, off by default).
-- `_config.yml`: `navigation`, `external` (footer mail link), `social`, `collections` (`events`, `past_events`), `exclude` (`README.md`, `CLAUDE.md`), `plugins` (`jekyll-feed`, `jekyll-sitemap`), `url`, `tagline`, `description`, `logo`, `og_image`, and the layout flags `minimal` (dark header), `show_frame`, `show_sidebar`, `show_excerpts`, `mathjax`.
+- `_config.yml`: `external` (footer mail link), `social`, `collections` (`events`, `past_events`), `exclude` (`README.md`, `CLAUDE.md`), `plugins` (`jekyll-feed`, `jekyll-sitemap`), `url`, `tagline`, `description`, `logo`, `og_image`, and the layout flags `minimal` (dark header), `show_frame`, `show_sidebar`, `show_excerpts`, `mathjax`. There is no `navigation` list any more; the header uses the Menu (`_data/menu.yml`).
 
 ### Styling notes
 
@@ -224,7 +251,7 @@ bundle exec jekyll serve --livereload   # http://localhost:4000/
 - **Stylesheet and partial names must differ.** `assets/css/main.sass` and `_sass/index.sass` are named differently on purpose. A stylesheet with the same name as a partial imports itself.
 - The compiled stylesheet is `/assets/css/main.css`.
 - Do not paste shell commands into the Gemfile.
-- Browsers can cache `main.css` for up to 10 minutes after a deploy (`max-age=600`). If the live site looks wrong after a push, try a hard refresh (Cmd+Shift+R) before debugging.
+- GitHub Pages lets browsers cache `main.css` for 10 minutes (`max-age=600`). The stylesheet link in `default.html` adds `?v=<build time>`, so each deploy gets a fresh URL and browsers fetch the new CSS right away. If the live site still looks wrong after a push, try a hard refresh (Cmd+Shift+R) before debugging.
 - Dates for events: use `event_date` (see Events).
 
 ## Hosting and deployment
@@ -243,7 +270,7 @@ The site is hosted on **GitHub Pages** at **emeraldcity.apnea.fyi** (custom doma
 - **Second past event:** the owner has not yet provided details for a second September 2026 event. Ask for them before adding one.
 - **Results sheets:** the Sept and Nov 2026 events show the Official AIDA Results tables instead of their results sheet images. The `results` images were removed from both pages on purpose, but the image files stay in `assets/images/` (the sponsor logos were cut from those sheets). New past events can follow the steps under "Adding an event".
 - **Map pins:** the Seacrest Park Cove 1 pin has not been confirmed. Check it on the page and send coordinates if it is off.
-- **Footer social links:** Facebook (`https://www.facebook.com/profile.php?id=61584381043663`), Instagram (`https://www.instagram.com/emeraldcityapneachallenge`), YouTube (`https://www.youtube.com/@emeraldcityapneachallenge`). They are gray by default and take brand colors on hover.
+- **Footer social links:** icons for Facebook (`https://www.facebook.com/profile.php?id=61584381043663`), Instagram (`https://www.instagram.com/emeraldcityapneachallenge`), YouTube (`https://www.youtube.com/@emeraldcityapneachallenge`), plus the mail icon from `external`. They are gray by default and take brand colors on hover. Two alternatives were tried and reverted on purpose: text links like the menu's (too easy to miss) and thin line icons in outlined circles.
 - **Linktree:** `/linktree` and the older `/emeraldcity/linktree` redirect to the ECAC Linktree (`https://linktr.ee/emeraldcityapneachallenge`). The `fbclid` parameter was dropped on purpose.
 - **Old blog content:** posts in `_posts/` are not linked from the navigation. Decide whether to keep them.
 

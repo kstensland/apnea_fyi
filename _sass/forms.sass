@@ -1,0 +1,56 @@
+@use "index" as *
+
+// The Contact page form (contact.md). Dark fields to match the dropdowns on
+// the event results, and the send button's place in the form.
+.contact-form
+  display: flex
+  flex-direction: column
+  gap: .35em
+  max-width: 34em
+  margin: 1.5em 0
+
+  label
+    margin-top: .75em
+    font-weight: $heading-weight
+    font-size: .95em
+
+    &:first-of-type
+      margin-top: 0
+
+  input, textarea
+    width: 100%
+    box-sizing: border-box
+    padding: .6em .75em
+    border: 1px solid rgba($light, .3)
+    border-radius: 3px
+    background: #0b2230
+    color: $light
+    font: inherit
+    line-height: 1.4
+
+    &:focus
+      outline: 2px solid $link-color
+      outline-offset: 1px
+      border-color: transparent
+
+  textarea
+    min-height: 9em
+    resize: vertical
+
+// Hidden from people; only bots fill it in (FormSubmit ignores those).
+.contact-honey
+  position: absolute
+  left: -9999px
+  width: 1px
+  height: 1px
+  opacity: 0
+
+// Send button: looks come from .outline-button (_sass/buttons.sass).
+.contact-submit
+  align-self: flex-start
+  margin-top: 1.5em
+
+// Left-aligned: justified text spreads this short line (with its long
+// address) into wide gaps on phones. Its lettering comes from `menu-text`.
+.contact-alt
+  text-align: left

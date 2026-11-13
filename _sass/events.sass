@@ -3,11 +3,37 @@
 .event-list
   margin: 2em 0
 
+// "Upcoming Events" and "Past Events": the page titles' lettering (Raleway
+// capitals, see _sass/menu.sass) at the usual heading size. On the home events
+// page they also get the highlight sweep (script in site_menu.html).
 .event-list h2
   margin-bottom: .25em
+  font-family: "Raleway", "Helvetica Neue", Arial, sans-serif
+  font-weight: 400
+  letter-spacing: .03em
+  text-transform: uppercase
+
+// Only as wide as the words there, so hovering beside a heading doesn't sweep it.
+.home-pages #events .event-list h2
+  width: fit-content
+
+// On the home events page the headings link to the Events page sections; they
+// keep the heading's look, with the sweep as the hover cue.
+.home-pages #events .event-list h2 a
+  color: inherit
+  text-decoration: none
+
+  &:hover, &:focus
+    color: inherit
+    text-decoration: none
+
+  &:focus-visible
+    outline: 2px solid $link-color
+    outline-offset: 2px
 
 .past-events
   margin-top: 3em
+
 
 .results-trigger
   display: block
@@ -178,6 +204,11 @@
 .event-map
   margin: 1.5em 0
 
+// Heading above each map when an event lists several (`maps` in front matter).
+.event-map-label
+  margin: 1.5em 0 -.75em
+  font-size: 1em
+
 .event-map iframe
   display: block
   width: 100%
@@ -201,6 +232,57 @@
 .event-video-link
   margin: .5em 0 0
   font-size: .9em
+
+// Livestream carousel (`livestreams` in front matter): ‹ Part 1 of 3 › under
+// the video. The arrows are outlined circles that fill white on hover, like
+// the outline buttons.
+.video-carousel-controls
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: 1.25em
+  margin: 1em 0 0
+
+.video-carousel-status
+  min-width: 9em
+  color: rgba($light, .75)
+  font-size: .78rem
+  letter-spacing: .14em
+  text-align: center
+  text-transform: uppercase
+
+.video-carousel-prev, .video-carousel-next
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 2.5em
+  height: 2.5em
+  margin: 0
+  padding: 0
+  border: 1px solid rgba($light, .5)
+  border-radius: 50%
+  background: transparent
+  color: $light
+  cursor: pointer
+  transition: background .2s, color .2s, border-color .2s
+
+  svg
+    width: .6em
+    height: 1em
+    fill: none
+    stroke: currentColor
+    stroke-width: 2.4
+    stroke-linecap: round
+    stroke-linejoin: round
+
+  &:hover, &:focus-visible
+    border-color: $light
+    background: $light
+    color: #050b12
+
+  &:focus-visible
+    outline: 2px solid $link-color
+    outline-offset: 3px
 
 // Official AIDA results on a past event page (_includes/aida_results.html):
 // tabs for each competition day and the event ranking.
@@ -342,9 +424,21 @@
       outline: 2px solid $link-color
       outline-offset: 2px
 
+// Shown when nobody dove a discipline (e.g. CNF at the Aug 2026 event).
+.aida-table td.aida-empty
+  opacity: .6
+  font-style: italic
+  white-space: normal
+
 .aida-ranking h3
   margin: 0 0 .5em
   font-size: 1em
+
+// Optional note above the Event Ranking (`ranking.note` in the data file).
+.aida-note
+  margin: 0 0 1em
+  font-size: .85em
+  opacity: .8
 
 .aida-source
   margin: 1em 0 0

@@ -1,0 +1,145 @@
+# Official AIDA results for the July 2025 Mixed Competition.
+# Copied from https://www.aidainternational.org/Events/EventResults-4645
+# and https://www.aidainternational.org/Events/EventRanking-4645 on 2026-11-12.
+# `profile` is the AIDA athlete ID: https://www.aidainternational.org/Athletes/Profile-<profile>
+# Overall `scores` follow the order of ranking.disciplines.
+source_url: "https://www.aidainternational.org/Events/EventResults-4645"
+ranking_url: "https://www.aidainternational.org/Events/EventRanking-4645"
+days:
+  - date: 2025-07-27
+    label: "Jul 27"
+    rows:
+      - {start: 1, diver: "Laurie Feist", profile: "040df318-4bdc-4716-9a3e-90f0d69bb663", nationality: "GBR", gender: "F", discipline: "DYNB", line: "", official_top: "00:00", ap: "80 m", rp: "154 m", card: "RED", points: 0, remarks: "Dqbo-surface"}
+      - {start: 2, diver: "Lalena Desautels", profile: "06c31a7b-5197-4267-8b58-969e0c513ba4", nationality: "CAN", gender: "F", discipline: "DYNB", line: "", official_top: "00:00", ap: "5 m", rp: "105 m", card: "WHITE", points: 52.5, remarks: "Ok"}
+      - {start: 3, diver: "Kateryna Honcharova", profile: "c74310b3-e3cf-43e9-a9d8-a77c4d9a0907", nationality: "UKR", gender: "F", discipline: "DYNB", line: "", official_top: "00:00", ap: "110 m", rp: "114 m", card: "RED", points: 0, remarks: "Dqsp,dqairways"}
+      - {start: 4, diver: "Qi Zheng", profile: "9a1802be-d480-4eb3-8f96-a21f73ed3d48", nationality: "USA", gender: "M", discipline: "DYNB", line: "", official_top: "00:00", ap: "50 m", rp: "68 m", card: "WHITE", points: 34, remarks: "Ok"}
+      - {start: 5, diver: "Yiyi Xie", profile: "e9cb4f07-faa7-40af-b3d3-697f955c4ecf", nationality: "CHN", gender: "F", discipline: "DYNB", line: "", official_top: "00:00", ap: "60 m", rp: "68 m", card: "WHITE", points: 34, remarks: "Ok"}
+      - {start: 6, diver: "Benn Drysdale", profile: "246003e6-415d-4f90-88c9-078237cb68e1", nationality: "CAN", gender: "M", discipline: "DYNB", line: "", official_top: "00:00", ap: "100 m", rp: "136 m", card: "WHITE", points: 68, remarks: "Ok"}
+      - {start: 7, diver: "Yu-Hsuan Lo", profile: "a180208f-6100-4466-bfa4-820fe661a8eb", nationality: "TPE", gender: "M", discipline: "DYNB", line: "", official_top: "00:00", ap: "50 m", rp: "68 m", card: "WHITE", points: 34, remarks: "Ok"}
+      - {start: 8, diver: "Christina Sours Molina", profile: "a452fe68-eb0d-4b83-9617-cde470d14b5b", nationality: "USA", gender: "F", discipline: "DYNB", line: "", official_top: "00:00", ap: "25 m", rp: "95 m", card: "RED", points: 0, remarks: "Dqsp"}
+      - {start: 9, diver: "Ari Athair", profile: "5b9235f7-19cc-4973-8bf5-2c2922c5ad61", nationality: "USA", gender: "M", discipline: "DYNB", line: "", official_top: "00:00", ap: "50 m", rp: "81 m", card: "WHITE", points: 40.5, remarks: "Ok"}
+      - {start: 10, diver: "Lalena Desautels", profile: "06c31a7b-5197-4267-8b58-969e0c513ba4", nationality: "CAN", gender: "F", discipline: "DYN", line: "", official_top: "00:00", ap: "5 m", rp: "131 m", card: "WHITE", points: 65.5, remarks: "Ok"}
+      - {start: 11, diver: "Richard Vanderbyl", profile: "b69920a0-532c-4d10-9461-f61b0c77c11e", nationality: "CAN", gender: "M", discipline: "DYN", line: "", official_top: "00:00", ap: "44 m", rp: "121 m", card: "WHITE", points: 60.5, remarks: "Ok"}
+      - {start: 12, diver: "Farai Simbabure", profile: "d0c78eeb-485f-4175-852e-2eaa7da74451", nationality: "CAN", gender: "F", discipline: "DYN", line: "", official_top: "00:00", ap: "40 m", rp: "95 m", card: "WHITE", points: 47.5, remarks: "Ok"}
+      - {start: 13, diver: "Austin Reagan", profile: "999d5fbf-96ba-454f-8a85-97af835b00ce", nationality: "USA", gender: "M", discipline: "DNF", line: "", official_top: "00:00", ap: "60 m", rp: "51 m", card: "YELLOW", points: 21, remarks: "Under ap"}
+      - {start: 14, diver: "Kateryna Honcharova", profile: "c74310b3-e3cf-43e9-a9d8-a77c4d9a0907", nationality: "UKR", gender: "F", discipline: "DNF", line: "", official_top: "00:00", ap: "85 m", rp: "101 m", card: "RED", points: 0, remarks: "Dqsp,dqairways"}
+      - {start: 15, diver: "Richard Vanderbyl", profile: "b69920a0-532c-4d10-9461-f61b0c77c11e", nationality: "CAN", gender: "M", discipline: "DNF", line: "", official_top: "00:00", ap: "44 m", rp: "117 m", card: "WHITE", points: 58.5, remarks: "Ok"}
+      - {start: 16, diver: "Hanxiao（Leah） Gu", profile: "33c03e8a-5b70-4304-a6c5-31c813c9f531", nationality: "CHN", gender: "F", discipline: "DNF", line: "", official_top: "00:00", ap: "1 m", rp: "108 m", card: "WHITE", points: 54, remarks: "Ok"}
+      - {start: 17, diver: "Charles Turmel", profile: "86001f90-75eb-4272-947b-94d0221031a2", nationality: "CAN", gender: "M", discipline: "DNF", line: "", official_top: "00:00", ap: "50 m", rp: "83 m", card: "RED", points: 0, remarks: "Dqsp"}
+      - {start: 18, diver: "Brian Yifeng Tong", profile: "3ece8d3e-da1e-43ae-92f0-4d7c5725bd63", nationality: "CHN", gender: "M", discipline: "DNF", line: "", official_top: "00:00", ap: "75 m", rp: "75 m", card: "WHITE", points: 37.5, remarks: "Ok"}
+      - {start: 19, diver: "Natsuko Saito", profile: "7379aa8b-5eca-4abb-b7bb-6ad5f2bfb758", nationality: "USA", gender: "F", discipline: "DNF", line: "", official_top: "00:00", ap: "70 m", rp: "107 m", card: "WHITE", points: 53.5, remarks: "Ok"}
+      - {start: 20, diver: "Austin Reagan", profile: "999d5fbf-96ba-454f-8a85-97af835b00ce", nationality: "USA", gender: "M", discipline: "STA", line: "", official_top: "00:00", ap: "02:45", rp: "03:13", card: "WHITE", points: 38.6, remarks: "Ok"}
+      - {start: 21, diver: "Charles Turmel", profile: "86001f90-75eb-4272-947b-94d0221031a2", nationality: "CAN", gender: "M", discipline: "STA", line: "", official_top: "00:00", ap: "05:00", rp: "06:00", card: "WHITE", points: 72, remarks: "Ok"}
+      - {start: 22, diver: "Christoph Ka Wing Wong", profile: "c826a096-24b6-4d2d-9f33-5bec06b11f44", nationality: "GER", gender: "M", discipline: "STA", line: "", official_top: "00:00", ap: "02:30", rp: "03:15", card: "WHITE", points: 39, remarks: "Ok"}
+      - {start: 23, diver: "Daniel Adler", profile: "81b01189-27d0-4613-955a-6e7cc2eaa930", nationality: "USA", gender: "M", discipline: "STA", line: "", official_top: "00:00", ap: "01:30", rp: "05:45", card: "WHITE", points: 69, remarks: "Ok"}
+      - {start: 24, diver: "Ari Athair", profile: "5b9235f7-19cc-4973-8bf5-2c2922c5ad61", nationality: "USA", gender: "M", discipline: "STA", line: "", official_top: "00:00", ap: "03:00", rp: "04:05", card: "WHITE", points: 49, remarks: "Ok"}
+      - {start: 25, diver: "Brian Yifeng Tong", profile: "3ece8d3e-da1e-43ae-92f0-4d7c5725bd63", nationality: "CHN", gender: "M", discipline: "STA", line: "", official_top: "00:00", ap: "05:00", rp: "03:41", card: "YELLOW", points: 28.4, remarks: "Under ap"}
+      - {start: 26, diver: "Benn Drysdale", profile: "246003e6-415d-4f90-88c9-078237cb68e1", nationality: "CAN", gender: "M", discipline: "STA", line: "", official_top: "00:00", ap: "04:00", rp: "03:18", card: "YELLOW", points: 31.2, remarks: "Under ap"}
+      - {start: 27, diver: "Austin Reagan", profile: "999d5fbf-96ba-454f-8a85-97af835b00ce", nationality: "USA", gender: "M", discipline: "CNF", line: "", official_top: "00:00", ap: "20 m", rp: "20 m", card: "WHITE", points: 20, remarks: "Ok"}
+      - {start: 28, diver: "Lalena Desautels", profile: "06c31a7b-5197-4267-8b58-969e0c513ba4", nationality: "CAN", gender: "F", discipline: "CNF", line: "", official_top: "00:00", ap: "31 m", rp: "31 m", card: "WHITE", points: 31, remarks: "Ok"}
+      - {start: 29, diver: "Natsuko Saito", profile: "7379aa8b-5eca-4abb-b7bb-6ad5f2bfb758", nationality: "USA", gender: "F", discipline: "CNF", line: "", official_top: "00:00", ap: "30 m", rp: "30 m", card: "WHITE", points: 30, remarks: "Ok"}
+      - {start: 30, diver: "Terry C Huang", profile: "c94ca66b-c9e2-4fbc-a7dc-021c75af201c", nationality: "USA", gender: "M", discipline: "CNF", line: "", official_top: "00:00", ap: "22 m", rp: "22 m", card: "WHITE", points: 22, remarks: "Ok"}
+      - {start: 31, diver: "Brian Yifeng Tong", profile: "3ece8d3e-da1e-43ae-92f0-4d7c5725bd63", nationality: "CHN", gender: "M", discipline: "CNF", line: "", official_top: "00:00", ap: "35 m", rp: "35 m", card: "WHITE", points: 35, remarks: "Ok"}
+      - {start: 32, diver: "Yiyi Xie", profile: "e9cb4f07-faa7-40af-b3d3-697f955c4ecf", nationality: "CHN", gender: "F", discipline: "FIM", line: "", official_top: "00:00", ap: "10 m", rp: "10 m", card: "YELLOW", points: 9, remarks: "Earlystart"}
+      - {start: 33, diver: "Farai Simbabure", profile: "d0c78eeb-485f-4175-852e-2eaa7da74451", nationality: "CAN", gender: "F", discipline: "FIM", line: "", official_top: "00:00", ap: "31 m", rp: "31 m", card: "WHITE", points: 31, remarks: "Ok"}
+      - {start: 34, diver: "Charles Turmel", profile: "86001f90-75eb-4272-947b-94d0221031a2", nationality: "CAN", gender: "M", discipline: "FIM", line: "", official_top: "00:00", ap: "35 m", rp: "35 m", card: "WHITE", points: 35, remarks: "Ok"}
+      - {start: 35, diver: "Ze Chen", profile: "115b55c0-4a03-4bb5-91d3-b3a95a508cf0", nationality: "USA", gender: "M", discipline: "FIM", line: "", official_top: "00:00", ap: "35 m", rp: "35 m", card: "WHITE", points: 35, remarks: "Ok"}
+      - {start: 36, diver: "Hanna Wade", profile: "1a3df175-bc6c-4d36-be87-897c64a24c8f", nationality: "USA", gender: "F", discipline: "FIM", line: "", official_top: "00:00", ap: "25 m", rp: "25 m", card: "WHITE", points: 25, remarks: "Ok"}
+      - {start: 37, diver: "Ari Athair", profile: "5b9235f7-19cc-4973-8bf5-2c2922c5ad61", nationality: "USA", gender: "M", discipline: "CWTB", line: "", official_top: "00:00", ap: "28 m", rp: "28 m", card: "WHITE", points: 28, remarks: "Ok"}
+      - {start: 38, diver: "Yu-Hsuan Lo", profile: "a180208f-6100-4466-bfa4-820fe661a8eb", nationality: "TPE", gender: "M", discipline: "CWTB", line: "", official_top: "00:00", ap: "20 m", rp: "20 m", card: "WHITE", points: 20, remarks: "Ok"}
+      - {start: 39, diver: "Christoph Ka Wing Wong", profile: "c826a096-24b6-4d2d-9f33-5bec06b11f44", nationality: "GER", gender: "M", discipline: "CWTB", line: "", official_top: "00:00", ap: "20 m", rp: "20 m", card: "WHITE", points: 20, remarks: "Ok"}
+      - {start: 40, diver: "Meng Iris Zhang", profile: "83631a2a-f344-4747-82c9-98e14beca501", nationality: "CHN", gender: "F", discipline: "CWTB", line: "", official_top: "00:00", ap: "20 m", rp: "20 m", card: "WHITE", points: 20, remarks: "Ok"}
+      - {start: 41, diver: "Lauren Smith", profile: "e1881899-0f2a-4391-807f-1cac3d9467fc", nationality: "USA", gender: "F", discipline: "CWTB", line: "", official_top: "00:00", ap: "20 m", rp: "20 m", card: "WHITE", points: 20, remarks: "Ok"}
+ranking:
+  disciplines:
+    - name: "DYN"
+      male:
+        - {medal: "gold", rank: "1.", name: "Richard Vanderbyl", profile: "b69920a0-532c-4d10-9461-f61b0c77c11e", nationality: "CAN", result: "121 m", announced: "44 m", points: 60.5, penalties: 0}
+      female:
+        - {medal: "gold", rank: "1.", name: "Lalena Desautels", profile: "06c31a7b-5197-4267-8b58-969e0c513ba4", nationality: "CAN", result: "131 m", announced: "5 m", points: 65.5, penalties: 0}
+        - {medal: "silver", rank: "2.", name: "Farai Simbabure", profile: "d0c78eeb-485f-4175-852e-2eaa7da74451", nationality: "CAN", result: "95 m", announced: "40 m", points: 47.5, penalties: 0}
+    - name: "DNF"
+      male:
+        - {medal: "gold", rank: "1.", name: "Richard Vanderbyl", profile: "b69920a0-532c-4d10-9461-f61b0c77c11e", nationality: "CAN", result: "117 m", announced: "44 m", points: 58.5, penalties: 0}
+        - {medal: "silver", rank: "2.", name: "Brian Yifeng Tong", profile: "3ece8d3e-da1e-43ae-92f0-4d7c5725bd63", nationality: "CHN", result: "75 m", announced: "75 m", points: 37.5, penalties: 0}
+        - {medal: "bronze", rank: "3.", name: "Austin Reagan", profile: "999d5fbf-96ba-454f-8a85-97af835b00ce", nationality: "USA", result: "51 m", announced: "60 m", points: 21, penalties: 4.5}
+        - {medal: "", rank: "4.", name: "Charles Turmel", profile: "86001f90-75eb-4272-947b-94d0221031a2", nationality: "CAN", result: "83 m", announced: "50 m", points: 0, penalties: 0}
+      female:
+        - {medal: "gold", rank: "1.", name: "Hanxiao（Leah） Gu", profile: "33c03e8a-5b70-4304-a6c5-31c813c9f531", nationality: "CHN", result: "108 m", announced: "1 m", points: 54, penalties: 0}
+        - {medal: "silver", rank: "2.", name: "Natsuko Saito", profile: "7379aa8b-5eca-4abb-b7bb-6ad5f2bfb758", nationality: "USA", result: "107 m", announced: "70 m", points: 53.5, penalties: 0}
+        - {medal: "bronze", rank: "3.", name: "Kateryna Honcharova", profile: "c74310b3-e3cf-43e9-a9d8-a77c4d9a0907", nationality: "UKR", result: "101 m", announced: "85 m", points: 0, penalties: 0}
+    - name: "STA"
+      male:
+        - {medal: "gold", rank: "1.", name: "Charles Turmel", profile: "86001f90-75eb-4272-947b-94d0221031a2", nationality: "CAN", result: "06:00", announced: "05:00", points: 72, penalties: 0}
+        - {medal: "silver", rank: "2.", name: "Daniel Adler", profile: "81b01189-27d0-4613-955a-6e7cc2eaa930", nationality: "USA", result: "05:45", announced: "01:30", points: 69, penalties: 0}
+        - {medal: "bronze", rank: "3.", name: "Ari Athair", profile: "5b9235f7-19cc-4973-8bf5-2c2922c5ad61", nationality: "USA", result: "04:05", announced: "03:00", points: 49, penalties: 0}
+        - {medal: "", rank: "4.", name: "Christoph Ka Wing Wong", profile: "c826a096-24b6-4d2d-9f33-5bec06b11f44", nationality: "GER", result: "03:15", announced: "02:30", points: 39, penalties: 0}
+        - {medal: "", rank: "5.", name: "Austin Reagan", profile: "999d5fbf-96ba-454f-8a85-97af835b00ce", nationality: "USA", result: "03:13", announced: "02:45", points: 38.6, penalties: 0}
+        - {medal: "", rank: "6.", name: "Benn Drysdale", profile: "246003e6-415d-4f90-88c9-078237cb68e1", nationality: "CAN", result: "03:18", announced: "04:00", points: 31.2, penalties: 8.4}
+        - {medal: "", rank: "7.", name: "Brian Yifeng Tong", profile: "3ece8d3e-da1e-43ae-92f0-4d7c5725bd63", nationality: "CHN", result: "03:41", announced: "05:00", points: 28.4, penalties: 15.8}
+      female: []
+    - name: "DYNB"
+      male:
+        - {medal: "gold", rank: "1.", name: "Benn Drysdale", profile: "246003e6-415d-4f90-88c9-078237cb68e1", nationality: "CAN", result: "136 m", announced: "100 m", points: 68, penalties: 0}
+        - {medal: "silver", rank: "2.", name: "Ari Athair", profile: "5b9235f7-19cc-4973-8bf5-2c2922c5ad61", nationality: "USA", result: "81 m", announced: "50 m", points: 40.5, penalties: 0}
+        - {medal: "bronze", rank: "3.", name: "Qi Zheng", profile: "9a1802be-d480-4eb3-8f96-a21f73ed3d48", nationality: "USA", result: "68 m", announced: "50 m", points: 34, penalties: 0}
+        - {medal: "bronze", rank: "3.", name: "Yu-Hsuan Lo", profile: "a180208f-6100-4466-bfa4-820fe661a8eb", nationality: "TPE", result: "68 m", announced: "50 m", points: 34, penalties: 0}
+      female:
+        - {medal: "gold", rank: "1.", name: "Lalena Desautels", profile: "06c31a7b-5197-4267-8b58-969e0c513ba4", nationality: "CAN", result: "105 m", announced: "5 m", points: 52.5, penalties: 0}
+        - {medal: "silver", rank: "2.", name: "Yiyi Xie", profile: "e9cb4f07-faa7-40af-b3d3-697f955c4ecf", nationality: "CHN", result: "68 m", announced: "60 m", points: 34, penalties: 0}
+        - {medal: "bronze", rank: "3.", name: "Kateryna Honcharova", profile: "c74310b3-e3cf-43e9-a9d8-a77c4d9a0907", nationality: "UKR", result: "114 m", announced: "110 m", points: 0, penalties: 0}
+        - {medal: "", rank: "4.", name: "Christina Sours Molina", profile: "a452fe68-eb0d-4b83-9617-cde470d14b5b", nationality: "USA", result: "95 m", announced: "25 m", points: 0, penalties: 0}
+        - {medal: "", rank: "5.", name: "Laurie Feist", profile: "040df318-4bdc-4716-9a3e-90f0d69bb663", nationality: "GBR", result: "154 m", announced: "80 m", points: 0, penalties: 0}
+    - name: "CWT"
+      male: []
+      female: []
+    - name: "CNF"
+      male:
+        - {medal: "gold", rank: "1.", name: "Brian Yifeng Tong", profile: "3ece8d3e-da1e-43ae-92f0-4d7c5725bd63", nationality: "CHN", result: "35 m", announced: "35 m", points: 35, penalties: 0}
+        - {medal: "silver", rank: "2.", name: "Terry C Huang", profile: "c94ca66b-c9e2-4fbc-a7dc-021c75af201c", nationality: "USA", result: "22 m", announced: "22 m", points: 22, penalties: 0}
+        - {medal: "bronze", rank: "3.", name: "Austin Reagan", profile: "999d5fbf-96ba-454f-8a85-97af835b00ce", nationality: "USA", result: "20 m", announced: "20 m", points: 20, penalties: 0}
+      female:
+        - {medal: "gold", rank: "1.", name: "Lalena Desautels", profile: "06c31a7b-5197-4267-8b58-969e0c513ba4", nationality: "CAN", result: "31 m", announced: "31 m", points: 31, penalties: 0}
+        - {medal: "silver", rank: "2.", name: "Natsuko Saito", profile: "7379aa8b-5eca-4abb-b7bb-6ad5f2bfb758", nationality: "USA", result: "30 m", announced: "30 m", points: 30, penalties: 0}
+    - name: "FIM"
+      male:
+        - {medal: "gold", rank: "1.", name: "Ze Chen", profile: "115b55c0-4a03-4bb5-91d3-b3a95a508cf0", nationality: "USA", result: "35 m", announced: "35 m", points: 35, penalties: 0}
+        - {medal: "gold", rank: "1.", name: "Charles Turmel", profile: "86001f90-75eb-4272-947b-94d0221031a2", nationality: "CAN", result: "35 m", announced: "35 m", points: 35, penalties: 0}
+      female:
+        - {medal: "gold", rank: "1.", name: "Farai Simbabure", profile: "d0c78eeb-485f-4175-852e-2eaa7da74451", nationality: "CAN", result: "31 m", announced: "31 m", points: 31, penalties: 0}
+        - {medal: "silver", rank: "2.", name: "Hanna Wade", profile: "1a3df175-bc6c-4d36-be87-897c64a24c8f", nationality: "USA", result: "25 m", announced: "25 m", points: 25, penalties: 0}
+        - {medal: "bronze", rank: "3.", name: "Yiyi Xie", profile: "e9cb4f07-faa7-40af-b3d3-697f955c4ecf", nationality: "CHN", result: "10 m", announced: "10 m", points: 9, penalties: 1}
+    - name: "CWTB"
+      male:
+        - {medal: "gold", rank: "1.", name: "Ari Athair", profile: "5b9235f7-19cc-4973-8bf5-2c2922c5ad61", nationality: "USA", result: "28 m", announced: "28 m", points: 28, penalties: 0}
+        - {medal: "silver", rank: "2.", name: "Yu-Hsuan Lo", profile: "a180208f-6100-4466-bfa4-820fe661a8eb", nationality: "TPE", result: "20 m", announced: "20 m", points: 20, penalties: 0}
+        - {medal: "silver", rank: "2.", name: "Christoph Ka Wing Wong", profile: "c826a096-24b6-4d2d-9f33-5bec06b11f44", nationality: "GER", result: "20 m", announced: "20 m", points: 20, penalties: 0}
+      female:
+        - {medal: "gold", rank: "1.", name: "Meng Iris Zhang", profile: "83631a2a-f344-4747-82c9-98e14beca501", nationality: "CHN", result: "20 m", announced: "20 m", points: 20, penalties: 0}
+        - {medal: "gold", rank: "1.", name: "Lauren Smith", profile: "e1881899-0f2a-4391-807f-1cac3d9467fc", nationality: "USA", result: "20 m", announced: "20 m", points: 20, penalties: 0}
+  overall:
+    male:
+      - {rank: "1.", name: "Richard Vanderbyl", profile: "b69920a0-532c-4d10-9461-f61b0c77c11e", nationality: "CAN", scores: ["60.5", "58.5", "-", "-", "-", "-", "-", "-"], points: 119}
+      - {rank: "2.", name: "Ari Athair", profile: "5b9235f7-19cc-4973-8bf5-2c2922c5ad61", nationality: "USA", scores: ["-", "-", "49", "40.5", "-", "-", "-", "28"], points: 117.5}
+      - {rank: "3.", name: "Charles Turmel", profile: "86001f90-75eb-4272-947b-94d0221031a2", nationality: "CAN", scores: ["-", "0", "72", "-", "-", "-", "35", "-"], points: 107}
+      - {rank: "4.", name: "Brian Yifeng Tong", profile: "3ece8d3e-da1e-43ae-92f0-4d7c5725bd63", nationality: "CHN", scores: ["-", "37.5", "28.4", "-", "-", "35", "-", "-"], points: 100.9}
+      - {rank: "5.", name: "Benn Drysdale", profile: "246003e6-415d-4f90-88c9-078237cb68e1", nationality: "CAN", scores: ["-", "-", "31.2", "68", "-", "-", "-", "-"], points: 99.2}
+      - {rank: "6.", name: "Austin Reagan", profile: "999d5fbf-96ba-454f-8a85-97af835b00ce", nationality: "USA", scores: ["-", "21", "38.6", "-", "-", "20", "-", "-"], points: 79.6}
+      - {rank: "7.", name: "Daniel Adler", profile: "81b01189-27d0-4613-955a-6e7cc2eaa930", nationality: "USA", scores: ["-", "-", "69", "-", "-", "-", "-", "-"], points: 69}
+      - {rank: "8.", name: "Christoph Ka Wing Wong", profile: "c826a096-24b6-4d2d-9f33-5bec06b11f44", nationality: "GER", scores: ["-", "-", "39", "-", "-", "-", "-", "20"], points: 59}
+      - {rank: "9.", name: "Yu-Hsuan Lo", profile: "a180208f-6100-4466-bfa4-820fe661a8eb", nationality: "TPE", scores: ["-", "-", "-", "34", "-", "-", "-", "20"], points: 54}
+      - {rank: "10.", name: "Ze Chen", profile: "115b55c0-4a03-4bb5-91d3-b3a95a508cf0", nationality: "USA", scores: ["-", "-", "-", "-", "-", "-", "35", "-"], points: 35}
+      - {rank: "11.", name: "Qi Zheng", profile: "9a1802be-d480-4eb3-8f96-a21f73ed3d48", nationality: "USA", scores: ["-", "-", "-", "34", "-", "-", "-", "-"], points: 34}
+      - {rank: "12.", name: "Terry C Huang", profile: "c94ca66b-c9e2-4fbc-a7dc-021c75af201c", nationality: "USA", scores: ["-", "-", "-", "-", "-", "22", "-", "-"], points: 22}
+    female:
+      - {rank: "1.", name: "Lalena Desautels", profile: "06c31a7b-5197-4267-8b58-969e0c513ba4", nationality: "CAN", scores: ["65.5", "-", "-", "52.5", "-", "31", "-", "-"], points: 149}
+      - {rank: "2.", name: "Natsuko Saito", profile: "7379aa8b-5eca-4abb-b7bb-6ad5f2bfb758", nationality: "USA", scores: ["-", "53.5", "-", "-", "-", "30", "-", "-"], points: 83.5}
+      - {rank: "3.", name: "Farai Simbabure", profile: "d0c78eeb-485f-4175-852e-2eaa7da74451", nationality: "CAN", scores: ["47.5", "-", "-", "-", "-", "-", "31", "-"], points: 78.5}
+      - {rank: "4.", name: "Hanxiao（Leah） Gu", profile: "33c03e8a-5b70-4304-a6c5-31c813c9f531", nationality: "CHN", scores: ["-", "54", "-", "-", "-", "-", "-", "-"], points: 54}
+      - {rank: "5.", name: "Yiyi Xie", profile: "e9cb4f07-faa7-40af-b3d3-697f955c4ecf", nationality: "CHN", scores: ["-", "-", "-", "34", "-", "-", "9", "-"], points: 43}
+      - {rank: "6.", name: "Hanna Wade", profile: "1a3df175-bc6c-4d36-be87-897c64a24c8f", nationality: "USA", scores: ["-", "-", "-", "-", "-", "-", "25", "-"], points: 25}
+      - {rank: "7.", name: "Meng Iris Zhang", profile: "83631a2a-f344-4747-82c9-98e14beca501", nationality: "CHN", scores: ["-", "-", "-", "-", "-", "-", "-", "20"], points: 20}
+      - {rank: "7.", name: "Lauren Smith", profile: "e1881899-0f2a-4391-807f-1cac3d9467fc", nationality: "USA", scores: ["-", "-", "-", "-", "-", "-", "-", "20"], points: 20}
+      - {rank: "8.", name: "Christina Sours Molina", profile: "a452fe68-eb0d-4b83-9617-cde470d14b5b", nationality: "USA", scores: ["-", "-", "-", "0", "-", "-", "-", "-"], points: 0}
+      - {rank: "8.", name: "Laurie Feist", profile: "040df318-4bdc-4716-9a3e-90f0d69bb663", nationality: "GBR", scores: ["-", "-", "-", "0", "-", "-", "-", "-"], points: 0}
+      - {rank: "8.", name: "Kateryna Honcharova", profile: "c74310b3-e3cf-43e9-a9d8-a77c4d9a0907", nationality: "UKR", scores: ["-", "0", "-", "0", "-", "-", "-", "-"], points: 0}

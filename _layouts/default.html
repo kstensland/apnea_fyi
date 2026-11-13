@@ -8,10 +8,12 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap">
 <meta name="author" content="{{ page.author | default: site.title | escape }}">
 <meta name="generator" content="Jekyll v{{ jekyll.version }}">
+{%- comment -%} ?v= changes with every build, so browsers fetch the new stylesheet
+  right after a deploy instead of reusing an old cached copy for up to 10 minutes. {%- endcomment %}
 {% if site.show_frame %}
-<link rel="stylesheet" href="{{ "/assets/css/frame.css" | relative_url }}">
+<link rel="stylesheet" href="{{ "/assets/css/frame.css" | relative_url }}?v={{ site.time | date: '%s' }}">
 {% else %}
-<link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+<link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}?v={{ site.time | date: '%s' }}">
 {% endif %}
 {% if site.plugins contains "jekyll-feed" %}<link rel="alternate" href="{{ site.feed.path | default: "/feed.xml" | relative_url }}" type="application/atom+xml" title="{{ site.title }}">{% endif %}
 {% if page.mathjax or site.mathjax %}
@@ -23,11 +25,6 @@
 {% if site.comments.isso_domain and page.layout == "post" %}<script data-isso="http://{{ site.comments.isso_domain }}" src="//{{ site.comments.isso_domain }}/js/embed.min.js"></script>{% endif %}
 {% if site.show_sidebar or site.sidebar %}{% include sidebar.html %}{% endif %}
 
-{% if site.navigation %}
-  {% assign pages = site.navigation %}
-{% else %}
-  {% assign pages = site.pages | where_exp: "item", "item.title and item.sitemap != false" | sort: "order" %}
-{% endif %}
 <link rel='icon' type='image/png' href='{{ '/assets/images/favicon.png' | relative_url }}'>
 <link rel='icon' sizes='16x16 32x32 48x48' href='{{ '/assets/images/favicon.ico' | relative_url }}'>
 <link rel='apple-touch-icon' sizes='180x180' href='{{ '/assets/images/apple-touch-icon.png' | relative_url }}'>
@@ -39,7 +36,7 @@
     <span class="header_title">Emerald City Apnea Challenge</span>
     
   </a>
-  {% include menu.html menu=pages %}
+  {% include site_menu.html %}
 </header>
 
 {{ content }}

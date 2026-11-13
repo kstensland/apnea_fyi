@@ -1,0 +1,18 @@
+{%- comment -%}
+  Full-width photos that link to pages, stacked one after another, the same
+  size as the home page hero. On hover (or keyboard focus) the photo darkens
+  and the page name appears in bold. On touch screens, which can't hover, the
+  names always show.
+  Pass `items`: a list of {title, url, image, alt, position (optional
+  object-position, e.g. "50% 25%")}.
+{%- endcomment -%}
+<ul class="role-photos">
+  {%- for item in include.items %}
+  <li>
+    <a class="role-photo" href="{{ item.url | relative_url }}">
+      <img src="{{ item.image | relative_url }}" alt="{{ item.alt | escape }}"{% if item.position %} style="object-position: {{ item.position }}"{% endif %} width="2000" height="1506" loading="lazy" decoding="async">
+      <span class="role-photo-label">{{ item.title }}</span>
+    </a>
+  </li>
+  {%- endfor %}
+</ul>

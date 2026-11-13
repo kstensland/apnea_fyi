@@ -1,5 +1,15 @@
-<section class="event-list">
-  <h2>Upcoming Events</h2>
+{%- comment -%}
+  Upcoming and past events. Optional:
+  - `link_headings`: the "Upcoming Events" and "Past Events" headings link to
+    those sections of the standalone Events page (the home events page uses this).
+  - `past_limit`: show only the newest N past events (the home events page
+    passes 3). The standalone Events page passes neither and shows them all.
+  - `noun`: the word in the headings, "Upcoming <noun>" and "Past <noun>"
+    (default "Events"; the Competitions page passes "Competitions").
+{%- endcomment -%}
+{%- assign noun = include.noun | default: "Events" -%}
+<section class="event-list" id="upcoming-events">
+  <h2>{% if include.link_headings %}<a href="{{ '/events/#upcoming-events' | relative_url }}">Upcoming {{ noun }}</a>{% else %}Upcoming {{ noun }}{% endif %}</h2>
   {%- assign events = site.events | sort: "event_date" -%}
   {% for event in events %}
     <a class="event-card" href="{{ event.url | relative_url }}">
@@ -12,10 +22,11 @@
   {% endfor %}
 </section>
 
-<section class="event-list past-events">
-  <h2>Past Events and Results</h2>
+<section class="event-list past-events" id="past-events">
+  <h2>{% if include.link_headings %}<a href="{{ '/events/#past-events' | relative_url }}">Past {{ noun }}</a>{% else %}Past {{ noun }}{% endif %}</h2>
   {%- assign past_events = site.past_events | sort: "event_date" | reverse -%}
-  {% for event in past_events %}
+  {%- assign past_limit = include.past_limit | default: past_events.size -%}
+  {% for event in past_events limit: past_limit %}
     <a class="event-card" href="{{ event.url | relative_url }}">
       <span class="event-card-title">{{ event.title | escape }}</span>
       <span class="event-card-meta">

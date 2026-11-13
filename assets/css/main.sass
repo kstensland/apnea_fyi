@@ -9,6 +9,10 @@
 @use "social";
 @use "events";
 @use "hero";
+@use "menu";
+@use "forms";
+@use "roles";
+@use "buttons";
 
 @media (min-width: 40em)
   body > header, body > article, body > footer
@@ -33,9 +37,22 @@ body > header
 // instead of inside the centered content column.
 body > header
   padding: .4em 1.5em
+  // Always dark, whether the system is in light or dark mode: the colors
+  // above are fixed, and this keeps the browser's built-in parts (focus
+  // rings, selection) in their dark versions too.
+  color-scheme: dark
 
-// Keep the links on the right even when they wrap below the title on phones.
-body > header > nav
+// Logo and title on the left, MENU on the right, always on one row. On narrow
+// screens the title wraps onto two lines instead of pushing MENU down.
+body > header
+  flex-wrap: nowrap
+  gap: 1em
+
+body > header > a.title
+  min-width: 0
+
+.menu-toggle
+  flex: none
   margin-left: auto
 
 body > footer
