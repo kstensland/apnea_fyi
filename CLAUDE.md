@@ -78,7 +78,7 @@ Write for readers new to competition freediving. Verify AIDA rules against AIDA'
 - The heading uses **Raleway** at weight 300, loaded from Google Fonts in `_layouts/default.html`.
 - The pages are `<section class="home-page">` elements with ids `home`, `about`, `events` inside `.home-pages`. Styles are at the end of `_sass/hero.sass`. Snapping (`scroll-snap-type: y mandatory`), the sticky header and smooth scrolling apply only on pages containing `.home-pages` (`html:has(.home-pages)`).
 - The home section headings, "About" on the home about page and "Upcoming Events" and "Past Events" on the home events page, use the menu titles' Raleway capitals at heading size. The two event headings get the highlight sweep each time they scroll into view and on hover (set up in `site_menu.html`). "About" has no sweep, and the standalone Events page shares the event headings but not the sweep; both on purpose.
-- Each page is `100svh` minus the header height. A small script in `home.html` sets `--header-height` and highlights the carousel dots (`.home-dots`) on the right edge.
+- Each page is exactly `100svh` minus the header height, with `overflow-y: auto`. When a page's content is longer than the screen (About and Events on small phones such as the iPhone SE), it scrolls inside its page, and the next swipe after its end snaps to the next page. Before this, iPhone Safari kept snapping a too-tall page back to its top, so the email link at the end of About couldn't be tapped. A small script in `home.html` sets `--header-height` and highlights the carousel dots (`.home-dots`) on the right edge.
 - Each slide's `alt` describes its photo (slide 1: a freediver in open water with the Seattle skyline behind). Update it when a photo changes.
 
 ## Events

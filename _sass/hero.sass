@@ -224,23 +224,35 @@ html:has(.home-pages) body > header
   top: 0
   z-index: 10
 
+// Each page is exactly one screen tall, so snapping always lands cleanly.
+// When a page's content is longer than the screen (About and Events on small
+// phones such as the iPhone SE), it scrolls inside its page; once its end is
+// reached, the next swipe snaps to the next page. Before this, iPhone Safari
+// kept snapping a too-tall page back to its top, so its end (the email link
+// in About) couldn't be reached.
 .home-page
   display: flex
   flex-direction: column
-  justify-content: center
-  min-height: calc(100svh - var(--header-height, 4.5rem))
+  height: calc(100svh - var(--header-height, 4.5rem))
+  overflow-y: auto
+  scrollbar-width: thin
   box-sizing: border-box
   scroll-snap-align: start
   // One flick moves one page; a fast scroll can't skip past a page.
-  // A page taller than the window (a long event list) still scrolls normally.
   scroll-snap-stop: always
+
+// Content is centered when it fits and starts at the top when it scrolls
+// (auto margins, unlike justify-content: center, never cut off the top).
+.home-page > *
+  margin-top: auto
+  margin-bottom: auto
 
 // A thin line marks where one page ends and the next begins.
 .home-page + .home-page
   border-top: 1px solid rgba($light, .08)
 
 .home-page-hero .hero
-  margin: 0
+  margin: auto 0
 
 // Extra room on the right so text never runs under the carousel dots.
 .home-page-inner
