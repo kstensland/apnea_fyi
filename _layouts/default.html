@@ -24,8 +24,12 @@
 {% endif %}
 {% if site.comments.disqus_shortname and page.layout == "post" %}<script src="//{{ site.comments.disqus_shortname }}.disqus.com/embed.js" async></script>{% endif %}
 {% if site.comments.isso_domain and page.layout == "post" %}<script data-isso="http://{{ site.comments.isso_domain }}" src="//{{ site.comments.isso_domain }}/js/embed.min.js"></script>{% endif %}
-<link rel='icon' type='image/png' href='{{ '/assets/images/favicon.png' | relative_url }}'>
-<link rel='icon' sizes='16x16 32x32 48x48' href='{{ '/assets/images/favicon.ico' | relative_url }}'>
+{%- comment -%} Site icon (the green gem from the logo). Google shows it next to the site in search
+  results only if it's square and a multiple of 48 px, so the main icon is 192 x 192.
+  /favicon.ico at the site root is where Google and browsers look by default. {%- endcomment %}
+<link rel='icon' type='image/png' sizes='192x192' href='{{ '/assets/images/favicon-192.png' | relative_url }}'>
+<link rel='icon' type='image/png' sizes='48x48' href='{{ '/assets/images/favicon-48.png' | relative_url }}'>
+<link rel='icon' sizes='16x16 32x32 48x48' href='{{ '/favicon.ico' | relative_url }}'>
 <link rel='apple-touch-icon' sizes='180x180' href='{{ '/assets/images/apple-touch-icon.png' | relative_url }}'>
 </head>
 <body>
