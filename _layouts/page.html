@@ -2,6 +2,13 @@
 layout: default
 ---
 <article class="menu-title{% if page.article_class %} {{ page.article_class }}{% endif %}">
+  {%- if page.photos %}
+  <!-- A page with `photos` in its front matter (Safety) opens with a photo
+       carousel, above the title. -->
+  <div class="hero page-carousel">
+    {% include photo_carousel.html slides=page.photos label=page.photos_label id="page-slide" %}
+  </div>
+  {%- endif %}
   <header><h1><a href="{{ page.url | relative_url }}">{{ page.title }}</a></h1></header>
   {{ content }}
 </article>

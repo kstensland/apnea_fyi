@@ -71,6 +71,11 @@
   position: relative
   flex: 0 0 100%
   margin: 0
+
+// No margin around the photo (images get a small one site-wide), or a strip
+// of background shows above and below it, darkened by the text overlay.
+.hero-slide img
+  margin: 0
   scroll-snap-align: start
   scroll-snap-stop: always
 
@@ -93,10 +98,19 @@
   line-height: 1
   cursor: pointer
   transform: translateY(-50%)
-  transition: background .2s
+  // Hidden until the pointer is over the carousel (or keyboard focus is in
+  // it); on touch screens, swiping and the lines do the job.
+  opacity: 0
+  pointer-events: none
+  transition: background .2s, opacity .25s
 
   &:hover, &:focus-visible
     background: rgba($dark, .7)
+
+.hero-carousel:hover .hero-arrow,
+.hero-carousel:focus-within .hero-arrow
+  opacity: 1
+  pointer-events: auto
 
 .hero-prev
   left: .5em
@@ -205,6 +219,22 @@
 .hero-action
   margin: 1.25em 0 0
   text-align: center
+
+// The same carousel on a regular page (Safety), above the page title.
+// It reaches the window edges and sits right under the header, breaking
+// out of the page's padding.
+body > article:has(> .page-carousel)
+  padding-top: 0
+
+.page-carousel
+  margin: 0 calc(50% - 50vw) 1.5em
+
+html:has(.page-carousel)
+  overflow-x: clip
+
+// No page dots here, so the next arrow can sit at the edge.
+.page-carousel .hero-next
+  right: .5em
 
 // Home page: a vertical carousel. Home, About and Events are each a
 // full-screen page, and scrolling snaps from one page to the next.
