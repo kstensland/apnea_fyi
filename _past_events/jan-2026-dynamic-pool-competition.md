@@ -18,8 +18,11 @@ livestreams:
 sponsors:
   - name: "Lighthouse Freediving"
     image: "/assets/images/sponsor_lighthouse_freediving.png"
+    url: "https://lighthousediving.com/"
   - name: "Salvimar"
     image: "/assets/images/sponsor_salvimar.png"
+    url: "https://www.salvimar.com"
   - name: "Jana Strain"
     image: "/assets/images/sponsor_jana_strain.png"
+    url: "https://janastrain.com/"
 ---

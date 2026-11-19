@@ -17,6 +17,8 @@ aida_results: apr_2026_pool   # _data/aida_results/apr_2026_pool.yml
 sponsors:
   - name: "Lighthouse Freediving"
     image: "/assets/images/sponsor_lighthouse_freediving.png"
+    url: "https://lighthousediving.com/"
   - name: "Jana Strain"
     image: "/assets/images/sponsor_jana_strain.png"
+    url: "https://janastrain.com/"
 ---

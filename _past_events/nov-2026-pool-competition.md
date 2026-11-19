@@ -12,8 +12,11 @@ aida_results: nov_2026_pool   # _data/aida_results/nov_2026_pool.yml
 sponsors:
   - name: "SPITSEA"
     image: "/assets/images/sponsor_spitsea.png"
+    url: "https://www.spitsea.com"
   - name: "Jana Strain"
     image: "/assets/images/sponsor_jana_strain.png"
+    url: "https://janastrain.com/"
   - name: "Lighthouse Diving Center"
     image: "/assets/images/sponsor_lighthouse_diving_center.png"
+    url: "https://lighthousediving.com/"
 ---

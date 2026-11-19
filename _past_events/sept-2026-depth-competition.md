@@ -12,12 +12,17 @@ aida_results: sept_2026_depth   # _data/aida_results/sept_2026_depth.yml
 sponsors:
   - name: "Lighthouse Freediving"
     image: "/assets/images/sponsor_lighthouse_freediving.png"
+    url: "https://lighthousediving.com/"
   - name: "Waterever Freediving"
     image: "/assets/images/sponsor_waterever.png"
+    url: "https://www.watereverfreediving.com"
   - name: "SpearPro"
     image: "/assets/images/sponsor_spearpro.png"
+    url: "https://www.spearpro.com"
   - name: "Jana Strain"
     image: "/assets/images/sponsor_jana_strain.png"
+    url: "https://janastrain.com/"
   - name: "SPITSEA"
     image: "/assets/images/sponsor_spitsea.png"
+    url: "https://www.spitsea.com"
 ---
